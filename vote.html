@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600;700&family=Inter:wght@400;500;600;700&display=swap">
+<style>
+  :root{
+    --bg:#F3F5F8; --ink:#1D1D1F; --ink-2:#515154; --ink-3:#6E6E73; --pattern:#C3CEDC; --track:#E3E8EF;
+    --glass:rgba(255,255,255,.66); --glass-hi:rgba(255,255,255,.88); --glass-line:rgba(255,255,255,.95); --shade:28,58,104;
+    --blue:#0071E3; --blue-2:#2A8CFF; --blue-soft:rgba(0,113,227,.12); --teal:#0A8F9A; --teal-soft:rgba(10,143,154,.13);
+    --orange:#C2410C; --orange-soft:rgba(234,106,0,.13);
+    --display:'Inter Tight',-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif;
+    --text:'Inter',-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif;
+    color-scheme:light;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#0A111C; --ink:#F2F5F8; --ink-2:#C9D1DC; --ink-3:#9AA6B6; --pattern:#24344B; --track:#1C2838;
+      --glass:rgba(255,255,255,.07); --glass-hi:rgba(255,255,255,.11); --glass-line:rgba(255,255,255,.16); --shade:0,0,0;
+      --blue:#4DA3FF; --blue-2:#6BB4FF; --blue-soft:rgba(77,163,255,.16); --teal:#3CCBD5; --teal-soft:rgba(60,203,213,.16);
+      --orange:#FF9F5A; --orange-soft:rgba(255,159,90,.16); color-scheme:dark; }
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;min-height:100%}
+  body{background-color:var(--bg);background-image:radial-gradient(circle, var(--pattern) 1.3px, transparent 1.8px);background-size:22px 22px;
+    color:var(--ink);font-family:var(--text);-webkit-font-smoothing:antialiased;
+    padding:28px max(16px, env(safe-area-inset-right, 0px)) 40px max(16px, env(safe-area-inset-left, 0px))}
+  .wrap{max-width:560px;margin:0 auto;display:flex;flex-direction:column;gap:16px;position:relative}
+  .glow{position:fixed;z-index:-1;width:520px;height:520px;border-radius:50%;pointer-events:none;background:radial-gradient(circle, rgba(0,113,227,.16) 0%, transparent 70%);top:-160px;right:-200px}
+  .glow.b{background:radial-gradient(circle, rgba(20,184,198,.16) 0%, transparent 70%);top:auto;bottom:-200px;left:-220px;right:auto}
+  .eyebrow{margin:0;font:600 14px/1.2 var(--text);color:var(--blue)}
+  h1{margin:4px 0 0;font:700 42px/1.04 var(--display);letter-spacing:-1.2px}
+  .status{align-self:flex-start;display:inline-flex;align-items:center;gap:8px;margin:0;font:600 13px/1.35 var(--text);color:var(--ink-3);
+    padding:8px 12px;border-radius:14px;background:var(--glass);border:1px solid var(--glass-line)}
+  .status i{flex:none;width:8px;height:8px;border-radius:50%;background:currentColor}
+  .status.ok{color:var(--teal);background:var(--teal-soft);border-color:transparent}
+  .status.err{color:var(--orange);background:var(--orange-soft);border-color:transparent}
+  .status.busy i{animation:blink 1s ease-in-out infinite}
+  @keyframes blink{50%{opacity:.25}}
+  .card{display:flex;flex-direction:column;gap:10px;padding:18px;border-radius:24px;background:var(--glass-hi);border:1px solid var(--glass-line);
+    -webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);box-shadow:0 14px 30px rgba(var(--shade),.10);animation:up .6s cubic-bezier(.2,.8,.2,1) backwards}
+  .card:nth-of-type(2){animation-delay:.08s}
+  @keyframes up{from{opacity:0;transform:translateY(14px)}}
+  .n{margin:0;font:600 13px/1.2 var(--text);color:var(--blue)}
+  h2{margin:0 0 4px;font:600 19px/1.3 var(--text)}
+  button{all:unset;box-sizing:border-box;cursor:pointer;-webkit-tap-highlight-color:transparent}
+  .opt{position:relative;overflow:hidden;display:grid;grid-template-columns:32px 1fr auto;align-items:center;gap:12px;min-height:54px;padding:10px 14px;border-radius:16px;
+    background:var(--glass);border:1.5px solid var(--glass-line);font:500 16px/1.3 var(--text);color:var(--ink);transition:border-color .2s, box-shadow .2s, background .2s, transform .15s}
+  .opt:active{transform:scale(.98)}
+  .opt:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+  .l{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;font:700 14px/1 var(--text);color:var(--blue);background:var(--blue-soft);transition:background .2s, color .2s}
+  .p{font:600 14px/1 var(--text);color:var(--ink-3);font-variant-numeric:tabular-nums}
+  .bar{position:absolute;left:0;bottom:0;height:3px;width:0;background:var(--blue);transition:width .6s cubic-bezier(.2,.8,.2,1)}
+  .opt[aria-pressed="true"]{border-color:var(--blue);background:var(--glass-hi);box-shadow:0 0 0 4px var(--blue-soft)}
+  .opt[aria-pressed="true"] .l{background:var(--blue);color:#fff}
+  .note{margin:0;font:400 14px/1.5 var(--text);color:var(--ink-3)}
+  .court{border:1.5px solid color-mix(in srgb, var(--blue) 40%, transparent);box-shadow:0 0 0 5px var(--blue-soft), 0 14px 30px rgba(var(--shade),.12)}
+  .card[hidden],.court[hidden]{display:none}
+  .badge{align-self:flex-start;font:700 12px/1 var(--text);letter-spacing:.04em;text-transform:uppercase;padding:7px 10px;border-radius:999px;color:var(--blue);background:var(--blue-soft)}
+  .badge.wait{color:var(--ink-3);background:var(--glass)}
+  .badge.again{color:var(--teal);background:var(--teal-soft)}
+  .role{gap:6px}
+  .role .badge{align-self:flex-start}
+  .role h2{font:700 26px/1.15 var(--display);letter-spacing:-.4px;margin:2px 0 0}
+  .role.az h2,.role.az .badge{color:var(--blue)} .role.az .badge{background:var(--blue-soft)}
+  .role.up h2,.role.up .badge{color:var(--orange)} .role.up .badge{background:var(--orange-soft)}
+  .role.jury h2,.role.jury .badge{color:var(--teal)} .role.jury .badge{background:var(--teal-soft)}
+  .lbl{margin:8px 0 -4px;font:700 12px/1.2 var(--text);letter-spacing:.05em;text-transform:uppercase;color:var(--ink-3)}
+  .claim{margin:0;font:600 17px/1.4 var(--text)}
+  .pts{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px}
+  .pts li{position:relative;padding-left:18px;font:400 15px/1.45 var(--text)}
+  .pts li::before{content:"";position:absolute;left:0;top:.55em;width:7px;height:7px;border-radius:50%;background:var(--blue)}
+  .az-brief .pts li::before{background:var(--blue)} .up-brief .pts li::before{background:var(--orange)}
+  .txt{margin:0;font:400 15px/1.45 var(--text);color:var(--ink-2)}
+  .lead{margin:0;font:600 14px/1.4 var(--text);color:var(--teal)}
+  .opt .l.ro{display:none}
+  .ph{opacity:.55}
+
+  .opt[disabled]{opacity:.5;cursor:default}
+  .cnote{margin:0;font:500 14px/1.45 var(--text);color:var(--ink-3)}
+  .cnote.ok{color:var(--teal)} .cnote.err{color:var(--orange)}
+  .section{margin:6px 0 -4px;font:700 13px/1.2 var(--text);letter-spacing:.05em;text-transform:uppercase;color:var(--ink-3)}
+  @media (prefers-reduced-motion: reduce){ *{animation:none!important;transition:none!important} }
+</style>
+</head>
+<body>
+<i class="glow" aria-hidden="true"></i><i class="glow b" aria-hidden="true"></i>
+<main class="wrap">
+  <div><p class="eyebrow">Azerbaijani Water Law</p><h1>Moot court</h1></div>
+  <p class="status" id="status" aria-live="polite"><i></i><span>Joining the court…</span></p>
+  <section class="card role" id="role" hidden>
+    <span class="badge" id="r-badge">Your role</span>
+    <h2 id="r-name"></h2>
+    <p class="note" id="r-sub"></p>
+  </section>
+  <section class="card" id="wait" hidden aria-live="polite">
+    <span class="badge wait">Court not in session</span>
+    <p class="note" id="w-text"></p>
+  </section>
+  <section class="card court" id="court" hidden aria-live="polite">
+    <p class="n" id="c-n"></p>
+    <span class="badge" id="c-badge"></span>
+    <h2 id="c-q"></h2>
+    <div id="c-body" style="display:flex;flex-direction:column;gap:10px"></div>
+    <p class="cnote" id="c-note"></p>
+  </section>
+  <p class="note">Anonymous. You keep the same role for the whole session.</p>
+</main>
+<script>
+(function () {
+  var C = [
+    { q: 'Was filling the reservoir a lawful use of the river?', o: ['Yes: a fair use in a drought', 'No: it harmed Azerbaijan too much'] },
+    { q: 'Did Upland have to warn Azerbaijan before filling?', o: ['Yes, before it started', 'No, the dam was already notified'] },
+    { q: 'Should Upland compensate the downstream farmers?', o: ['Yes, for the lost harvest', 'No, the drought caused it', 'Share the cost and agree a plan'] }
+  ];
+  var ROLES = {
+    jury: { name: 'Juror', sub: 'Listen to both sides, then vote on each question. The judge gives the final ruling.' },
+    az: { name: 'Counsel for Azerbaijan', sub: 'You are the claimant. Persuade the judge and the jury.' },
+    up: { name: 'Counsel for Upland', sub: 'You are the respondent. Persuade the judge and the jury.' }
+  };
+  var BRIEF = {
+    az: [
+      { claim: 'No. Filling the reservoir harmed Azerbaijan too much to be lawful.',
+        pts: ['States must not cause significant harm to their neighbours (UNWC, Art. 7; UNECE Water Convention, Art. 2(1)).', 'A 30% cut for four months cost downstream farms part of their harvest and put two villages on water trucks.', 'Drinking water is a vital human need (UNWC, Art. 10(2)). A shortage should be shared, not passed downstream.'],
+        expect: 'Upland will say it used the river fairly in the same drought, and that the cut was only temporary.',
+        answer: 'Equitable use does not outrank harm prevention. Two villages needed water trucks, and vital human needs come first (UNWC, Art. 10(2)).' },
+      { claim: 'Yes. Upland had to warn Azerbaijan before it started filling.',
+        pts: ['Neighbours must share information and warn of critical situations without delay (UNECE Water Convention, Arts. 13–14).', 'Running the dam in a new way, in a record drought, is a new measure with new effects downstream.', 'The 2019 notice was for normal years. Nobody was told about filling during a drought.'],
+        expect: 'Upland will say the dam and its rules were notified in 2019, and that Azerbaijan did not object.',
+        answer: 'A notice from 2019 could not foresee a record drought. Filling in these conditions is a new situation, so a fresh warning was due.' },
+      { claim: 'Yes. Upland must compensate the downstream farmers.',
+        pts: ['The 30% cut came from the reservoir, not only from the drought.', 'Where significant harm is caused, states should discuss compensation (UNWC, Art. 7(2)).', 'Flows can be measured at the border, so the dam’s share of the loss can be shown.'],
+        expect: 'Upland will say the drought alone caused the loss, and that its use of the river was lawful.',
+        answer: 'A shared drought does not erase the harm a reservoir adds.',
+        tip: 'The jury has a third option: share the cost. Be ready to say why that is not enough.' }
+    ],
+    up: [
+      { claim: 'Yes. Filling the reservoir was a fair use of a shared river in a drought.',
+        pts: ['Each state may use a shared river equitably, weighing both sides’ needs (UNECE Water Convention, Art. 2; UNWC, Arts. 5–6).', 'No use has automatic priority, and the cut was temporary: the river never stopped.', 'Upland’s own harvest was failing in the same drought.'],
+        expect: 'Azerbaijan will say two villages needed water trucks, and that harm must be prevented.',
+        answer: 'Harm is weighed against Upland’s own needs (UNWC, Arts. 5–6). A temporary cut is not automatically “significant”.' },
+      { claim: 'No. The dam and its operating rules were already notified.',
+        pts: ['The dam and its operating rules were notified in 2019, and Azerbaijan did not object.', 'A slow drought is not a sudden emergency, and Upland announced the filling publicly.', 'Warning duties cover critical situations, not routine operation under known rules.'],
+        expect: 'Azerbaijan will say the 2019 notice was for normal years, and that filling in a drought is new.',
+        answer: 'The 2019 rules did not exclude dry years. Azerbaijan could have asked for consultations at any time (UNECE Water Convention, Art. 10).' },
+      { claim: 'No. The drought caused the loss, and lawful use creates no duty to pay.',
+        pts: ['Low flows would have come anyway; the dam’s share of the loss is hard to prove.', 'A use that is equitable is lawful, and lawful use creates no duty to pay.', 'Azerbaijan did not object to the dam’s rules in 2019.'],
+        expect: 'Azerbaijan will say the reservoir caused the 30% cut, and that flows can be measured at the border.',
+        answer: 'Compensation answers wrongful harm, and Upland’s use was equitable.',
+        tip: 'The jury has a third option: share the cost. If a flat “No” fails, steer them there rather than to full payment.' }
+    ]
+  };
+  var store = {
+    get: function (k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
+    set: function (k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+  };
+  var voter = store.get('awl-voter');
+  if (!voter) { voter = 'v' + Date.now().toString(36) + Math.random().toString(36).slice(2, 10); store.set('awl-voter', voter); }
+
+  var $ = function (id) { return document.getElementById(id); };
+  var statusEl = $('status'), roleEl = $('role'), waitEl = $('wait'), court = $('court');
+  var role = null, st = { q: -1, r: 0 }, picks = [-1, -1, -1], busy = false, shownKey = '', joining = false, lastNote = '';
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  function setStatus(kind, text) { statusEl.className = 'status' + (kind ? ' ' + kind : ''); statusEl.lastChild.textContent = text; }
+
+  function renderRole() {
+    if (!role) { roleEl.hidden = true; return; }
+    var def = ROLES[role.r], lead = (role.n - 1) % 3;
+    roleEl.hidden = false; roleEl.className = 'card role ' + role.r;
+    $('r-name').textContent = def.name;
+    $('r-sub').textContent = def.sub + (role.r === 'jury' ? '' : ' You open on Question ' + (lead + 1) + '; on the others, back up your side when the judge allows.');
+  }
+  function brief(q) {
+    var b = BRIEF[role.r][q], lead = (role.n - 1) % 3 === q;
+    return '<p class="lbl">Your claim</p><p class="claim">' + esc(b.claim) + '</p>' +
+      '<p class="lbl">Your points</p><ul class="pts">' + b.pts.map(function (p) { return '<li>' + esc(p) + '</li>'; }).join('') + '</ul>' +
+      '<p class="lbl">They will say</p><p class="txt">' + esc(b.expect) + '</p>' +
+      '<p class="lbl">Your answer</p><p class="txt">' + esc(b.answer) + '</p>' +
+      (b.tip ? '<p class="lbl">Tip</p><p class="txt">' + esc(b.tip) + '</p>' : '') +
+      '<p class="lead">' + (lead ? 'You open on this question.' : 'Back up your side on this question.') + '</p>';
+  }
+  function options(q, enabled) {
+    return C[q].o.map(function (o, k) {
+      return '<button class="opt' + (enabled ? '' : ' ph') + '" type="button" data-k="' + k + '"' + (enabled ? '' : ' disabled') + ' aria-pressed="' + (picks[q] === k) + '"><span class="l">' + 'ABC'[k] + '</span><span>' + esc(o) + '</span><span class="p"></span><i class="bar"></i></button>';
+    }).join('');
+  }
+  function render(note, kind) {
+    renderRole();
+    if (!role) { waitEl.hidden = true; court.hidden = true; return; }
+    if (st.q < 0) {
+      court.hidden = true; waitEl.hidden = false; shownKey = '';
+      $('w-text').textContent = role.r === 'jury' ? 'Waiting for the judge to call the first question.' : 'Your brief for each question appears here when the judge calls it.';
+      return;
+    }
+    waitEl.hidden = true; court.hidden = false;
+    var q = st.q, voting = st.r === 1, jury = role.r === 'jury';
+    var key = [q, st.r, role.r, picks[q]].join('|');
+    if (key !== shownKey || note) {
+      var fresh = shownKey.split('|')[0] !== String(q);
+      $('c-n').textContent = 'Question ' + (q + 1) + ' of ' + C.length;
+      $('c-q').textContent = C[q].q;
+      var badge = $('c-badge');
+      badge.className = 'badge' + (jury ? (voting ? '' : ' wait') : ' wait');
+      badge.textContent = jury ? (voting ? 'The jury votes' : 'Counsel are speaking') : (voting ? 'The jury is voting' : 'Counsel are speaking');
+      $('c-body').innerHTML = jury ? options(q, voting) : brief(q);
+      var n = $('c-note');
+      n.className = 'cnote' + (kind ? ' ' + kind : '');
+      n.textContent = note || (jury ? (voting ? (picks[q] >= 0 ? 'Vote recorded. You can still change it.' : 'Tap your answer.') : 'Listen to both sides. Voting opens in a moment.') : '');
+      if (fresh) { court.style.animation = 'none'; void court.offsetWidth; court.style.animation = ''; }
+      shownKey = key;
+    }
+  }
+  function apply(r) {
+    if (!r) return;
+    if (r.state && typeof r.state.q === 'number') st = r.state;
+    role = r.role || null;
+    if (r.mine && !busy) picks = r.mine.slice(); else if (!r.mine && !busy) picks = [-1, -1, -1];
+    if (role) setStatus('ok', 'You are in the court. This page updates by itself.');
+    render();
+    if (!role) join();
+  }
+  var API = 'https://script.google.com/macros/s/AKfycbwsRMt9u3p8yfMEryERcrq9w7eKzFURwt8FGlgXg2oRN0n3iwDzb_lMLBJY5EzAsVv8/exec';
+  function call(p) {
+    var qs = Object.keys(p).map(function (k) { return encodeURIComponent(k) + '=' + encodeURIComponent(p[k]); }).join('&');
+    return fetch(API + '?' + qs, { cache: 'no-store' }).then(function (r) {
+      if (!r.ok) throw new Error('http ' + r.status);
+      return r.json();
+    }).then(function (j) { if (j && j.error) throw new Error(j.error); return j; });
+  }
+  function join() {
+    if (joining) return; joining = true;
+    call({ api: 'join', voter: voter }).then(function (r) { joining = false; apply(r); })
+      .catch(function () { joining = false; setStatus('err', 'Couldn’t join. Check your connection; this page will try again.'); });
+  }
+  function sync() {
+    if (document.visibilityState !== 'visible' || busy || joining) return;
+    call({ api: 'sync', voter: voter }).then(apply)
+      .catch(function () { setStatus('err', 'Connection lost. Trying again…'); });
+  }
+  court.addEventListener('click', function (e) {
+    var b = e.target.closest('.opt'); if (!b || b.disabled || !role || role.r !== 'jury' || st.q < 0 || st.r !== 1) return;
+    var k = +b.getAttribute('data-k'), q = st.q;
+    picks[q] = k; shownKey = ''; render('Sending…');
+    busy = true;
+    call({ api: 'vote', q: q, k: k, voter: voter }).then(function (res) {
+      busy = false;
+      if (res && res.state) st = res.state;
+      shownKey = '';
+      render(res && res.ok ? 'Vote recorded. You can still change it.' : 'Voting on this question is closed.', res && res.ok ? 'ok' : 'err');
+    }).catch(function () { busy = false; shownKey = ''; render('Couldn’t send. Check your connection and tap again.', 'err'); });
+  });
+  join();
+  setInterval(sync, 2000);
+  document.addEventListener('visibilitychange', sync);
+})();
+</script>
+</body>
+</html>
