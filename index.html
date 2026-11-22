@@ -1,0 +1,1935 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head><body><title>Azerbaijani Water Law</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: one 1920×1080 stage scaled to the window. Light, Apple-like canvas with a dot or wave pattern,
+   frosted cards with small glass icons, and glass shapes that drift over the text. */
+:root{
+  --bg:#F3F5F8; --bg-alt:#EDF1F6; --ink:#1D1D1F; --ink-2:#515154; --ink-3:#6E6E73;
+  --pattern:#C3CEDC; --track:#E3E8EF; --spec:rgba(255,255,255,.62); --tile-top:rgba(255,255,255,.96);
+  --glass:rgba(255,255,255,.66); --glass-hi:rgba(255,255,255,.86); --glass-line:rgba(255,255,255,.95);
+  --shade:28,58,104; --chrome:rgba(255,255,255,.8);
+  --blue:#0071E3; --blue-2:#2A8CFF; --teal:#0A8F9A; --indigo:#5E5CE6; --orange:#C2410C; --orange-hi:#EA6A00; --on-accent:#FFFFFF;
+  --blue-soft:rgba(0,113,227,.12); --teal-soft:rgba(10,143,154,.13); --indigo-soft:rgba(94,92,230,.13); --orange-soft:rgba(234,106,0,.13);
+  --display:'Inter Tight', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+  --text:'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+  --ease:cubic-bezier(.2,.8,.2,1);
+  color-scheme:light;
+}
+html.night{
+  --bg:#0A111C; --bg-alt:#0C1522; --ink:#F2F5F8; --ink-2:#C9D1DC; --ink-3:#9AA6B6;
+  --pattern:#24344B; --track:#1C2838; --spec:rgba(255,255,255,.12); --tile-top:rgba(255,255,255,.16);
+  --glass:rgba(255,255,255,.07); --glass-hi:rgba(255,255,255,.12); --glass-line:rgba(255,255,255,.16);
+  --shade:0,0,0; --chrome:rgba(18,26,38,.82);
+  --blue:#4DA3FF; --blue-2:#6BB4FF; --teal:#3CCBD5; --indigo:#A3A1FF; --orange:#FF9F5A; --orange-hi:#FFB067;
+  --blue-soft:rgba(77,163,255,.16); --teal-soft:rgba(60,203,213,.16); --indigo-soft:rgba(163,161,255,.16); --orange-soft:rgba(255,159,90,.16);
+  color-scheme:dark;
+}
+[hidden]{display:none!important}
+html,body{height:100%}
+body{margin:0;box-sizing:border-box;overflow:hidden;background:var(--bg);color:var(--ink);font-family:var(--text);
+  padding-block:14px;padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px));
+  -webkit-font-smoothing:antialiased;transition:background .5s}
+h1,h2,h3,p,ul,ol{margin:0}
+ul,ol{padding:0;list-style:none}
+button{all:unset;box-sizing:border-box;cursor:pointer;-webkit-tap-highlight-color:transparent}
+button:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+svg.ic{fill:none;stroke:currentColor;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;flex:none}
+
+#app{position:relative;height:100%}
+#app:fullscreen{background:var(--bg)}
+#viewport{position:absolute;inset:0;overflow:hidden}
+#stage{position:absolute;left:50%;top:50%;width:1920px;height:1080px;border-radius:28px;overflow:hidden;background:var(--bg);
+  transform:translate(-50%,-50%) scale(.5);box-shadow:0 30px 80px rgba(var(--shade),.12), 0 0 0 1px rgba(var(--shade),.07)}
+#app:fullscreen #stage{border-radius:0;box-shadow:none}
+#prog{position:absolute;left:0;top:0;height:6px;width:0;z-index:40;border-radius:0 6px 6px 0;
+  background:linear-gradient(90deg,var(--blue-2),var(--blue),var(--teal));transition:width .7s var(--ease)}
+
+/* ---------- slides ---------- */
+.slide{--sbg:var(--bg);position:absolute;inset:0;box-sizing:border-box;padding:112px 128px 160px;display:flex;flex-direction:column;gap:40px;
+  background:var(--sbg);overflow:hidden;isolation:isolate;opacity:0;visibility:hidden;transform:translateX(70px) scale(.985);
+  transition:opacity .6s ease, transform .9s var(--ease), visibility 0s linear .9s}
+.slide.alt{--sbg:var(--bg-alt)}
+.slide.past{transform:translateX(-70px) scale(.985)}
+.slide.active{opacity:1;visibility:visible;transform:none;transition:opacity .6s ease, transform .9s var(--ease), visibility 0s}
+.slide.reset *{transition:none!important;animation:none!important}
+.slide .notes{display:none}
+.pat{position:absolute;top:0;bottom:0;left:0;right:0;z-index:-3;pointer-events:none;background:var(--pattern)}
+.dots .pat{-webkit-mask:radial-gradient(circle,#000 1.8px,transparent 2.3px) 0 0/36px 36px;mask:radial-gradient(circle,#000 1.8px,transparent 2.3px) 0 0/36px 36px}
+.waves .pat{right:-144px;
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='28'%3E%3Cpath d='M0 14 Q18 4 36 14 T72 14' fill='none' stroke='black' stroke-width='1.6'/%3E%3C/svg%3E") 0 0/72px 28px;
+  mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='28'%3E%3Cpath d='M0 14 Q18 4 36 14 T72 14' fill='none' stroke='black' stroke-width='1.6'/%3E%3C/svg%3E") 0 0/72px 28px;
+  animation:drift 18s linear infinite}
+@keyframes drift{to{transform:translateX(-72px)}}
+.vig{position:absolute;inset:0;z-index:-2;pointer-events:none;background:radial-gradient(ellipse 72% 66% at var(--vx,50%) var(--vy,56%), var(--sbg) 0%, transparent 100%)}
+.glow{position:absolute;z-index:-1;left:var(--x);top:var(--y);width:var(--s);height:var(--s);border-radius:50%;pointer-events:none;
+  background:radial-gradient(circle, var(--c) 0%, transparent 70%);animation:breathe 14s ease-in-out infinite alternate}
+@keyframes breathe{from{transform:scale(.92) translate(-20px,10px)}to{transform:scale(1.08) translate(20px,-10px)}}
+
+/* type */
+.eyebrow{font:600 24px/1.2 var(--text);color:var(--blue)}
+h1{font:700 120px/1.02 var(--display);letter-spacing:-4px;color:var(--ink);text-wrap:balance}
+h2{font:700 72px/1.08 var(--display);letter-spacing:-2px;color:var(--ink);text-wrap:balance}
+h3{font:600 32px/1.2 var(--text);color:var(--ink)}
+.lede{font:400 32px/1.35 var(--text);color:var(--ink-2);max-width:1240px;text-wrap:pretty}
+.body{font:400 24px/1.4 var(--text);color:var(--ink-3)}
+.meta{font:600 24px/1.3 var(--text);color:var(--blue)}
+.big{font:700 120px/1.02 var(--display);letter-spacing:-4px;font-variant-numeric:tabular-nums}
+.grad{background:linear-gradient(90deg,var(--blue),var(--teal));-webkit-background-clip:text;background-clip:text;color:transparent}
+.grad-o{background:linear-gradient(90deg,var(--orange-hi),var(--orange));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hd{display:flex;flex-direction:column;gap:16px}
+.foot{position:absolute;left:128px;right:128px;bottom:52px;font:400 24px/1.3 var(--text);color:var(--ink-3)}
+.hint{font:500 24px/1.3 var(--text);color:var(--ink-3);display:inline-flex;align-items:center;gap:10px}
+.hint kbd{font:600 22px/1 var(--text);padding:6px 10px;border-radius:10px;background:var(--glass);border:1px solid var(--glass-line);box-shadow:0 2px 6px rgba(var(--shade),.08);color:var(--ink-2)}
+.row{display:flex;gap:24px}
+.col{display:flex;flex-direction:column}
+.grow{flex:1;min-width:0}
+.abs{position:absolute}
+
+/* word-by-word headings */
+.w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.16em;margin-bottom:-.16em}
+.w>span{display:inline-block;translate:0 108%;transition:translate .95s var(--ease)}
+.slide.in .w>span{translate:0 0;transition-delay:calc(var(--k)*65ms + 80ms)}
+
+/* entry + steps */
+.rise{opacity:0;translate:0 30px;transition:opacity .7s ease, translate .9s var(--ease)}
+.slide.in .rise{opacity:1;translate:0 0;transition-delay:calc(var(--i,0)*90ms + 150ms)}
+[data-step]{opacity:0;translate:0 28px;transition:opacity .6s ease, translate .8s var(--ease)}
+.slide.in [data-step].on{opacity:1;translate:0 0}
+
+/* glass card */
+.card{position:relative;box-sizing:border-box;background:var(--glass);border:1px solid var(--glass-line);border-radius:32px;
+  -webkit-backdrop-filter:blur(24px) saturate(1.8);backdrop-filter:blur(24px) saturate(1.8);
+  box-shadow:inset 0 1px 0 var(--glass-line), 0 24px 48px rgba(var(--shade),.10), 0 2px 6px rgba(var(--shade),.06);
+  transition:transform .45s var(--ease), box-shadow .45s, background .3s, border-color .3s, opacity .7s ease, translate .9s var(--ease)}
+.slide.in .card.rise{transition-delay:0s,0s,0s,0s, calc(var(--i,0)*90ms + 150ms), calc(var(--i,0)*90ms + 150ms)}
+.card::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .35s;
+  background:radial-gradient(420px circle at var(--mx,50%) var(--my,-30%), var(--spec), transparent 65%)}
+.card:hover::before{opacity:1}
+.card>*{position:relative}
+.lift{cursor:pointer}
+.lift:hover{transform:translateY(-6px);box-shadow:inset 0 1px 0 var(--glass-line), 0 36px 64px rgba(var(--shade),.16), 0 2px 6px rgba(var(--shade),.06)}
+.card.sel{background:var(--glass-hi);border-color:color-mix(in srgb, var(--blue) 45%, transparent);
+  box-shadow:inset 0 1px 0 var(--glass-line), 0 0 0 6px var(--blue-soft), 0 30px 60px rgba(0,113,227,.16)}
+.card.warm{background:var(--glass-hi);border:2px solid color-mix(in srgb, var(--orange-hi) 35%, transparent);box-shadow:inset 0 1px 0 var(--glass-line), 0 24px 48px rgba(200,100,0,.12)}
+.card.cool{background:var(--glass-hi);border:2px solid color-mix(in srgb, var(--blue) 30%, transparent);box-shadow:inset 0 1px 0 var(--glass-line), 0 24px 48px rgba(0,113,227,.12)}
+
+/* glass icon tiles */
+.gi{flex:none;width:72px;height:72px;border-radius:22px;display:grid;place-items:center;color:var(--tc,var(--blue));
+  background:linear-gradient(145deg, var(--tile-top) 0%, var(--tb,rgba(160,205,255,.6)) 100%);border:1px solid var(--glass-line);
+  box-shadow:inset 0 -8px 16px var(--ts,rgba(0,113,227,.16)), 0 10px 24px var(--ts,rgba(0,113,227,.18));transition:transform .45s var(--ease)}
+.gi svg{width:40px;height:40px}
+.gi.t{--tc:var(--teal);--tb:rgba(150,232,228,.65);--ts:rgba(0,150,160,.18)}
+.gi.v{--tc:var(--indigo);--tb:rgba(190,182,255,.65);--ts:rgba(94,92,230,.18)}
+.gi.o{--tc:var(--orange);--tb:rgba(255,206,150,.7);--ts:rgba(230,120,0,.18)}
+.gi.gr{--tc:var(--ink-2);--tb:rgba(205,214,228,.7);--ts:rgba(80,95,120,.15)}
+.gi.s{width:56px;height:56px;border-radius:18px}.gi.s svg{width:30px;height:30px}
+.gi.l{width:96px;height:96px;border-radius:28px}.gi.l svg{width:52px;height:52px}
+.card:hover .gi, .river:hover .gi{transform:translateY(-3px) rotate(-6deg)}
+
+/* glass shapes */
+.g{position:absolute;display:block;width:var(--sz);height:var(--sz);pointer-events:none;z-index:6;opacity:0;scale:.7;
+  translate:calc(var(--px,0) * var(--z,20) * 1px) calc(var(--py,0) * var(--z,20) * 1px);
+  transition:translate 1.2s var(--ease), opacity .9s ease, scale 1.1s cubic-bezier(.3,1.35,.5,1);
+  animation:bob var(--dur,10s) ease-in-out infinite alternate;animation-delay:calc(var(--i,0) * -2.3s)}
+.slide.in .g{opacity:1;scale:1;transition-delay:0s, calc(.2s + var(--i,0)*.12s), calc(.2s + var(--i,0)*.12s)}
+@keyframes bob{0%{transform:translateY(-14px) rotate(var(--rot,0deg))}100%{transform:translateY(14px) rotate(calc(var(--rot,0deg) + 7deg))}}
+.orb{border-radius:50%;border:1px solid rgba(255,255,255,.85);-webkit-backdrop-filter:blur(5px) saturate(1.8);backdrop-filter:blur(5px) saturate(1.8);
+  background:radial-gradient(circle at 30% 26%, rgba(255,255,255,.96) 0%, rgba(255,255,255,.42) 20%, rgba(160,205,255,.26) 58%, rgba(0,113,227,.34) 100%);
+  box-shadow:inset -12px -14px 28px rgba(0,80,190,.22), inset 10px 12px 24px rgba(255,255,255,.75), 0 28px 56px rgba(28,58,104,.18)}
+.orb.t{background:radial-gradient(circle at 30% 26%, rgba(255,255,255,.95) 0%, rgba(255,255,255,.4) 22%, rgba(150,225,235,.24) 60%, rgba(20,184,198,.36) 100%);
+  box-shadow:inset -10px -12px 24px rgba(0,120,160,.22), inset 8px 10px 20px rgba(255,255,255,.7), 0 24px 48px rgba(28,58,104,.16)}
+.orb.p{background:radial-gradient(circle at 30% 26%, rgba(255,255,255,.95) 0%, rgba(255,255,255,.4) 20%, rgba(255,214,170,.28) 58%, rgba(245,124,0,.32) 100%);
+  box-shadow:inset -12px -14px 28px rgba(200,90,0,.2), inset 10px 12px 24px rgba(255,255,255,.75), 0 28px 56px rgba(28,58,104,.18)}
+.orb.v{background:radial-gradient(circle at 30% 26%, rgba(255,255,255,.95) 0%, rgba(255,255,255,.4) 20%, rgba(200,195,255,.3) 58%, rgba(94,92,230,.3) 100%);
+  box-shadow:inset -12px -14px 28px rgba(70,60,200,.18), inset 10px 12px 24px rgba(255,255,255,.75), 0 28px 56px rgba(28,58,104,.18)}
+.orb.big::after{content:"";position:absolute;inset:6%;border-radius:50%;filter:blur(12px);mix-blend-mode:soft-light;animation:spin 10s linear infinite;
+  background:conic-gradient(from 0deg, transparent 0 55%, rgba(255,255,255,.9) 68%, transparent 80%)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.cube{border-radius:27%;--rot:16deg;border:1px solid rgba(255,255,255,.9);-webkit-backdrop-filter:blur(6px) saturate(1.8);backdrop-filter:blur(6px) saturate(1.8);
+  background:linear-gradient(140deg, rgba(255,255,255,.88) 0%, rgba(190,225,255,.36) 50%, rgba(0,113,227,.28) 100%);
+  box-shadow:inset 0 2px 0 rgba(255,255,255,1), inset -10px -14px 30px rgba(0,90,200,.18), 0 30px 60px rgba(28,58,104,.16)}
+.cube.t{background:linear-gradient(140deg, rgba(255,255,255,.88) 0%, rgba(190,235,240,.36) 50%, rgba(20,184,198,.30) 100%)}
+.cube.p{background:linear-gradient(140deg, rgba(255,255,255,.88) 0%, rgba(255,214,170,.4) 50%, rgba(245,124,0,.26) 100%)}
+.cube.v{background:linear-gradient(140deg, rgba(255,255,255,.88) 0%, rgba(200,195,255,.4) 50%, rgba(94,92,230,.26) 100%)}
+.ring{border-radius:50%;box-sizing:border-box;border:var(--bw,14px) solid rgba(190,220,255,.6);
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.95), 0 0 0 1px rgba(255,255,255,.95), 0 24px 48px rgba(28,58,104,.14)}
+.capsule{width:var(--w);height:var(--h);border-radius:999px;border:1px solid rgba(255,255,255,.9);-webkit-backdrop-filter:blur(8px) saturate(1.8);backdrop-filter:blur(8px) saturate(1.8);
+  background:linear-gradient(140deg, rgba(255,255,255,.9) 0%, rgba(180,170,255,.34) 100%);box-shadow:inset 0 2px 0 rgba(255,255,255,1), 0 24px 48px rgba(28,58,104,.14)}
+.capsule.t{background:linear-gradient(140deg, rgba(255,255,255,.9) 0%, rgba(150,232,228,.38) 100%)}
+.g.wht{background:radial-gradient(circle at 30% 26%, rgba(255,255,255,.8) 0%, rgba(255,255,255,.22) 40%, rgba(255,255,255,.06) 100%);border-color:rgba(255,255,255,.65);
+  box-shadow:inset -18px -22px 44px rgba(0,40,120,.25), inset 14px 16px 32px rgba(255,255,255,.45), 0 40px 80px rgba(0,30,90,.35)}
+.cube.wht{background:linear-gradient(140deg, rgba(255,255,255,.65) 0%, rgba(255,255,255,.14) 60%, rgba(150,240,235,.2) 100%)}
+.ring.wht{background:none;border-color:rgba(255,255,255,.35);box-shadow:inset 0 0 0 1px rgba(255,255,255,.7), 0 0 0 1px rgba(255,255,255,.7), 0 24px 48px rgba(0,30,90,.25)}
+
+/* buttons, segmented controls, tags */
+.btn{display:inline-flex;align-items:center;gap:12px;font:600 26px/1 var(--text);padding:20px 32px;border-radius:999px;color:var(--ink);
+  background:var(--glass);border:1px solid var(--glass-line);-webkit-backdrop-filter:blur(20px) saturate(1.8);backdrop-filter:blur(20px) saturate(1.8);
+  box-shadow:inset 0 1px 0 var(--glass-line), 0 12px 28px rgba(var(--shade),.10);transition:transform .3s var(--ease), box-shadow .3s, opacity .7s ease, translate .9s var(--ease)}
+.btn:hover{transform:translateY(-2px)}
+.btn:active{transform:scale(.97)}
+.btn .ic{width:28px;height:28px}
+.btn.primary{background:linear-gradient(135deg,var(--blue-2) 0%,var(--blue) 100%);color:var(--on-accent);border-color:transparent;
+  box-shadow:inset 0 2px 0 rgba(255,255,255,.35), 0 14px 30px rgba(0,113,227,.32)}
+.btn.sm{font-size:24px;padding:14px 24px}
+.seg{position:relative;display:inline-flex;gap:4px;padding:6px;border-radius:999px;background:var(--glass);border:1px solid var(--glass-line);
+  -webkit-backdrop-filter:blur(20px) saturate(1.8);backdrop-filter:blur(20px) saturate(1.8);box-shadow:inset 0 1px 0 var(--glass-line), 0 12px 28px rgba(var(--shade),.08)}
+.seg .thumb{position:absolute;left:0;top:6px;bottom:6px;width:0;border-radius:999px;opacity:0;
+  background:linear-gradient(135deg,var(--blue-2),var(--blue));box-shadow:inset 0 2px 0 rgba(255,255,255,.3), 0 8px 20px rgba(0,113,227,.3);
+  transition:transform .5s var(--ease), width .5s var(--ease), opacity .3s}
+.seg button{position:relative;font:600 24px/1 var(--text);color:var(--ink-2);padding:16px 26px;border-radius:999px;transition:color .3s;white-space:nowrap}
+.seg button[aria-pressed="true"]{color:var(--on-accent)}
+.tag{display:inline-block;font:600 22px/1 var(--text);padding:9px 16px;border-radius:999px;white-space:nowrap;color:var(--blue);background:var(--blue-soft)}
+.tag.t{color:var(--teal);background:var(--teal-soft)}
+.tag.v{color:var(--indigo);background:var(--indigo-soft)}
+.tag.o{color:var(--orange);background:var(--orange-soft)}
+
+/* cover */
+#cover{justify-content:center}
+.cover-copy{width:1080px;display:flex;flex-direction:column;gap:28px}
+
+/* agenda */
+.agenda-card{flex:1;display:flex;flex-direction:column;gap:18px;padding:40px 32px;text-align:left}
+.agenda-card .num{font:600 24px/1 var(--text);color:var(--blue)}
+.agenda-card .t{font:600 32px/1.2 var(--text);color:var(--ink)}
+.agenda-card .d{font:400 24px/1.4 var(--text);color:var(--ink-3)}
+.agenda-card .go{margin-top:auto;display:inline-flex;align-items:center;gap:8px;font:600 24px/1 var(--text);color:var(--blue);opacity:0;translate:-8px 0;transition:opacity .35s, translate .35s var(--ease)}
+.agenda-card .go svg{width:24px;height:24px}
+.agenda-card:hover .go, .agenda-card:focus-visible .go{opacity:1;translate:0 0}
+
+/* context donut */
+.river{display:flex;gap:24px;align-items:center;padding:12px 16px;margin-left:-16px;border-radius:24px;transition:background .3s}
+.river:hover{background:var(--glass)}
+.donut{position:absolute;left:1110px;top:178px;width:640px;height:640px;cursor:pointer}
+.donut svg{width:100%;height:100%;overflow:visible}
+.donut .trk{fill:none;stroke:var(--track);stroke-width:40}
+.donut .arc{fill:none;stroke-width:40;stroke-linecap:round;transition:stroke-dashoffset 2s cubic-bezier(.22,.9,.24,1), opacity .5s}
+.donut .a1{stroke-dasharray:615.7 1000;stroke-dashoffset:615.7}
+.donut .a2{stroke:var(--teal);stroke-dasharray:238.7 1000;stroke-dashoffset:238.7;transition-duration:1.2s}
+.slide.in .donut .a1{stroke-dashoffset:0;transition-delay:.3s}
+.slide.in .donut[data-mode="in"] .a2{stroke-dashoffset:0;transition-delay:0s}
+.donut[data-mode="in"] .a1{opacity:.22}
+.donut-c{position:absolute;inset:0;display:grid;place-content:center;justify-items:center;gap:6px;text-align:center;pointer-events:none}
+.donut-c .dn{font:700 150px/1 var(--display);letter-spacing:-6px;color:var(--ink);font-variant-numeric:tabular-nums}
+.donut-c .dl{font:400 30px/1.2 var(--text);color:var(--ink-3)}
+.donut-seg{position:absolute;left:1110px;width:640px;top:858px;display:flex;justify-content:center}
+
+/* decline bars */
+.chart-card{flex:1;padding:48px 56px;display:flex;flex-direction:column;gap:30px}
+.cc-top{display:flex;justify-content:space-between;align-items:flex-start;gap:24px}
+.delta{font:700 56px/1 var(--display);letter-spacing:-1px;color:var(--orange-hi);font-variant-numeric:tabular-nums}
+.bar-row{display:flex;flex-direction:column;gap:10px}
+.bl{display:flex;justify-content:space-between;align-items:baseline;font:500 24px/1.2 var(--text);color:var(--ink-2)}
+.bl b{font:700 32px/1 var(--text);color:var(--ink);font-variant-numeric:tabular-nums}
+.track{height:48px;border-radius:24px;background:var(--track);overflow:hidden}
+.fill{position:relative;display:block;height:100%;width:0;border-radius:24px;overflow:hidden;box-shadow:inset 0 2px 0 rgba(255,255,255,.45)}
+.fill.a{background:linear-gradient(90deg,#7DB8FF,var(--blue))}
+.fill.o{background:linear-gradient(90deg,#FFC37A,var(--orange-hi))}
+.slide.in .fill{width:var(--w);transition:width 1.7s cubic-bezier(.22,.9,.24,1) var(--dl,.3s)}
+.fill::after{content:"";position:absolute;top:0;bottom:0;width:140px;left:-160px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.55),transparent)}
+.slide.in .fill::after{animation:sheen 1.4s ease calc(var(--dl,.3s) + 1.5s) 1 both}
+@keyframes sheen{from{left:-160px}to{left:110%}}
+
+/* timeline */
+.tl-top{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.tl{position:relative}
+.tl-eras{display:grid;grid-template-columns:repeat(17,1fr);margin-bottom:18px}
+.era{font:600 22px/1 var(--text);color:var(--ink-3);text-align:center;padding:10px 0;margin:0 6px;border-radius:999px;background:var(--glass);border:1px solid var(--glass-line);white-space:nowrap;transition:color .3s, background .3s}
+.era.on{color:var(--blue);background:var(--blue-soft)}
+.tl-axis{position:relative;display:grid;grid-template-columns:repeat(17,1fr)}
+.tl-track,.tl-fill{position:absolute;top:13px;height:4px;border-radius:2px}
+.tl-track{background:var(--track)}
+.tl-fill{background:linear-gradient(90deg,var(--blue-2),var(--teal));transition:width .8s var(--ease);width:0}
+.tl-node{display:flex;flex-direction:column;align-items:center;gap:16px;padding-bottom:4px;transition:opacity .35s}
+.tl-node i{display:block;width:30px;height:30px;border-radius:50%;box-sizing:border-box;background:var(--glass-hi);border:2px solid var(--glass-line);
+  box-shadow:0 6px 14px rgba(var(--shade),.14), inset 0 -3px 6px rgba(var(--shade),.08);transition:scale .4s var(--ease), background .3s, box-shadow .4s}
+.tl-node.key i{border:3px solid var(--teal)}
+.tl-node span{font:600 24px/1 var(--text);color:var(--ink-3);transition:color .3s;font-variant-numeric:tabular-nums}
+.tl-node:hover i{scale:1.3}
+.tl-node.sel i{scale:1.5;background:var(--blue);border-color:var(--glass-line);box-shadow:0 0 0 9px var(--blue-soft), 0 8px 20px rgba(0,113,227,.35)}
+.tl-node.sel span{color:var(--blue)}
+.tl-node.dim{opacity:.28}
+.slide.in .tl-node{animation:pop .6s cubic-bezier(.3,1.4,.5,1) backwards;animation-delay:calc(var(--k)*45ms + .3s)}
+@keyframes pop{from{opacity:0;scale:.4}}
+.tl-panel{flex:1;display:flex;gap:48px;padding:36px 48px;min-height:0}
+.tlp-y{width:300px;flex:none;display:flex;flex-direction:column;gap:8px}
+.tlp-y .yy{font:700 120px/1 var(--display);letter-spacing:-4px;font-variant-numeric:tabular-nums}
+.tlp-list{flex:1;min-width:0;display:flex;flex-direction:column;gap:18px;justify-content:center}
+.ev{display:grid;grid-template-columns:auto 1fr;column-gap:16px;row-gap:4px;align-items:center;animation:up .6s var(--ease) backwards;animation-delay:calc(var(--i)*90ms)}
+.ev .body{grid-column:2}
+@keyframes up{from{opacity:0;translate:0 18px}}
+.tlp-ov{flex:1;display:flex;flex-direction:column;gap:22px;justify-content:center}
+.tlp-stats{display:flex;gap:16px}
+.tlp-stat{display:flex;align-items:center;gap:14px;padding:14px 22px 14px 14px;border-radius:999px;background:var(--glass);border:1px solid var(--glass-line);animation:up .6s var(--ease) backwards;animation-delay:calc(var(--i)*90ms)}
+.tlp-stat b{font:700 32px/1 var(--display);color:var(--ink)}
+
+
+/* history: key dates */
+.tl-node.minor i{width:16px;height:16px;margin:7px 0}
+.tl-node.key span{color:var(--ink);font-weight:700}
+.tl:not(.all) .tl-node.minor span{visibility:hidden}
+.tl:not(.all) .tl-node.minor{pointer-events:none}
+.tl:not(.all) .tl-node.minor i{opacity:.6}
+.kd-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.kd{display:flex;gap:16px;align-items:center;padding:14px 18px;border-radius:20px;background:var(--glass);border:1px solid var(--glass-line);box-shadow:0 8px 20px rgba(var(--shade),.06);animation:up .6s var(--ease) backwards;animation-delay:calc(var(--i)*80ms);transition:transform .3s var(--ease), box-shadow .3s}
+.kd:hover{transform:translateY(-3px);box-shadow:0 14px 28px rgba(var(--shade),.12)}
+.kd b{font:700 32px/1 var(--display);letter-spacing:-.5px;color:var(--blue);font-variant-numeric:tabular-nums}
+.kd span{font:500 21px/1.3 var(--text);color:var(--ink);text-align:left}
+/* framework */
+.stack{position:absolute;left:330px;top:300px;width:460px;height:640px}
+.slab{position:absolute;left:100px;width:260px;height:260px;border-radius:36px;transform:rotate(-30deg) skewX(30deg);
+  border:1px solid rgba(255,255,255,.95);-webkit-backdrop-filter:blur(10px) saturate(1.8);backdrop-filter:blur(10px) saturate(1.8);
+  box-shadow:inset 0 2px 0 rgba(255,255,255,1), 0 36px 60px rgba(28,58,104,.18);transition:translate .55s var(--ease), opacity .45s, box-shadow .45s}
+.slab.s1{background:linear-gradient(135deg, rgba(255,255,255,.88) 0%, rgba(140,195,255,.62) 100%)}
+.slab.s2{background:linear-gradient(135deg, rgba(255,255,255,.88) 0%, rgba(150,232,228,.58) 100%)}
+.slab.s3{background:linear-gradient(135deg, rgba(255,255,255,.88) 0%, rgba(190,182,255,.55) 100%)}
+.slab.s4{background:linear-gradient(135deg, rgba(255,255,255,.9) 0%, rgba(205,214,228,.6) 100%)}
+.slide.in .slab{animation:drop 1s var(--ease) backwards;animation-delay:calc(var(--k)*140ms + .15s)}
+@keyframes drop{from{opacity:0;translate:0 -110px}}
+.slab.sel{translate:0 -30px;box-shadow:inset 0 2px 0 rgba(255,255,255,1), 0 0 0 8px var(--blue-soft), 0 50px 80px rgba(0,80,190,.25)}
+.stack.has-sel .slab:not(.sel){opacity:.42}
+.acc-list{position:absolute;left:920px;top:300px;width:872px;display:flex;flex-direction:column;gap:16px}
+.acc{display:flex;gap:24px;align-items:flex-start;padding:20px 28px;text-align:left}
+.acc .acc-t{flex:1;min-width:0;display:flex;flex-direction:column;gap:4px}
+.acc .h{font:600 32px/1.2 var(--text);color:var(--ink)}
+.acc .s{font:400 24px/1.35 var(--text);color:var(--ink-3)}
+.acc-d{display:grid;grid-template-rows:0fr;transition:grid-template-rows .55s var(--ease)}
+.acc-d>span{overflow:hidden;font:400 24px/1.45 var(--text);color:var(--ink-2)}
+.acc-d>span>span{display:block;padding-top:10px}
+.acc.sel .acc-d{grid-template-rows:1fr}
+.acc .chev{width:28px;height:28px;color:var(--ink-3);margin-top:22px;transition:transform .45s var(--ease)}
+.acc.sel .chev{transform:rotate(90deg);color:var(--blue)}
+
+/* zones */
+.zdiag{position:absolute;left:170px;top:376px;width:700px;height:520px}
+.zone{position:absolute;box-sizing:border-box;border:1px solid rgba(255,255,255,.95);-webkit-backdrop-filter:blur(16px) saturate(1.8);backdrop-filter:blur(16px) saturate(1.8);
+  transition:box-shadow .45s, border-color .45s, transform .45s var(--ease)}
+.zone .zl{position:absolute;left:0;right:0;top:20px;text-align:center;font:600 24px/1 var(--text)}
+.z-outer{inset:0;border-radius:120px;background:linear-gradient(135deg, rgba(255,255,255,.72) 0%, rgba(150,232,228,.42) 100%);box-shadow:inset 0 2px 0 rgba(255,255,255,1), 0 30px 60px rgba(28,58,104,.12)}
+.z-outer .zl{color:var(--teal)}
+.z-strip{left:90px;top:90px;width:520px;height:340px;border-radius:90px;background:linear-gradient(135deg, rgba(255,255,255,.78) 0%, rgba(160,205,255,.5) 100%);box-shadow:inset 0 2px 0 rgba(255,255,255,1), 0 24px 48px rgba(28,58,104,.12)}
+.z-strip .zl{color:var(--blue)}
+.zone:hover{transform:scale(1.01)}
+.zone.sel{border-color:var(--blue);animation:halo 2.2s ease-out infinite}
+.z-outer.sel{border-color:var(--teal)}
+@keyframes halo{0%{box-shadow:0 0 0 0 rgba(0,113,227,.35), 0 24px 48px rgba(28,58,104,.12)}100%{box-shadow:0 0 0 28px rgba(0,113,227,0), 0 24px 48px rgba(28,58,104,.12)}}
+.water{position:absolute;left:180px;top:180px;width:340px;height:160px;border-radius:80px;overflow:hidden;display:flex;align-items:center;justify-content:center;gap:14px;
+  pointer-events:none;color:#fff;font:600 32px/1 var(--text);background:linear-gradient(135deg,#5AAEFF 0%,#0071E3 100%);
+  box-shadow:inset 0 3px 0 rgba(255,255,255,.55), inset 0 -12px 24px rgba(0,50,140,.3), 0 24px 48px rgba(0,113,227,.3)}
+.water::before{content:"";position:absolute;left:0;right:-72px;top:0;bottom:0;background:rgba(255,255,255,.28);
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='28'%3E%3Cpath d='M0 14 Q18 4 36 14 T72 14' fill='none' stroke='black' stroke-width='2.4'/%3E%3C/svg%3E") 0 0/72px 28px;
+  mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='28'%3E%3Cpath d='M0 14 Q18 4 36 14 T72 14' fill='none' stroke='black' stroke-width='2.4'/%3E%3C/svg%3E") 0 0/72px 28px;animation:drift 4s linear infinite}
+.water>*{position:relative}
+.water svg{width:40px;height:40px}
+.z-prot{right:-28px;bottom:-28px;width:112px;height:112px;border-radius:50%;display:grid;place-items:center;color:var(--teal);
+  background:radial-gradient(circle at 30% 26%, rgba(255,255,255,.98) 0%, rgba(255,255,255,.6) 30%, rgba(150,232,228,.55) 100%);
+  box-shadow:inset -8px -10px 20px rgba(0,120,160,.2), 0 20px 40px rgba(28,58,104,.18)}
+.z-prot svg{width:48px;height:48px}
+.z-prot.sel{border-color:var(--teal)}
+.zpanel{position:absolute;left:940px;top:376px;width:852px;padding:40px 44px;display:flex;flex-direction:column;gap:26px}
+.zp-in{display:flex;flex-direction:column;gap:26px;animation:up .55s var(--ease) both}
+.zp-h{display:flex;gap:22px;align-items:center}
+.zp-list{display:grid;grid-template-columns:1fr;gap:16px}
+.zp-list li{display:flex;gap:16px;align-items:center;font:500 28px/1.3 var(--text);color:var(--ink);animation:up .55s var(--ease) backwards;animation-delay:calc(var(--i)*80ms + .1s)}
+.xb{flex:none;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;color:var(--orange);background:var(--orange-soft)}
+.xb svg{width:24px;height:24px}
+
+/* eia */
+.eia{position:absolute;left:128px;top:300px;width:1664px;display:grid;grid-template-columns:repeat(5,1fr)}
+.eia-track,.eia-fill{position:absolute;top:58px;height:4px;border-radius:2px}
+.eia-track{left:10%;right:10%;background:var(--track)}
+.eia-fill{left:10%;width:0;background:linear-gradient(90deg,var(--blue-2),var(--teal));transition:width .8s var(--ease)}
+.eia-node{display:flex;flex-direction:column;align-items:center;gap:18px}
+.bub{width:120px;height:120px;border-radius:50%;display:grid;place-items:center;color:var(--ink-3);box-sizing:border-box;
+  background:radial-gradient(circle at 30% 25%, var(--tile-top) 0%, var(--glass-hi) 45%, rgba(160,205,255,.4) 100%);border:1px solid var(--glass-line);
+  -webkit-backdrop-filter:blur(12px) saturate(1.8);backdrop-filter:blur(12px) saturate(1.8);box-shadow:inset 0 -10px 20px rgba(0,113,227,.12), 0 16px 32px rgba(var(--shade),.14);
+  transition:scale .5s cubic-bezier(.3,1.4,.5,1), color .3s, box-shadow .4s, background .4s}
+.bub svg{width:48px;height:48px}
+.eia-node .lbl{font:600 24px/1.25 var(--text);color:var(--ink-3);text-align:center;max-width:260px;transition:color .3s}
+.eia-node.done .bub{color:var(--blue)}
+.eia-node.sel .bub{scale:1.12;color:var(--on-accent);background:radial-gradient(circle at 30% 25%, #8CC4FF 0%, var(--blue) 70%);box-shadow:0 0 0 10px var(--blue-soft), 0 20px 40px rgba(0,113,227,.35)}
+.eia-node.sel .lbl,.eia-node.done .lbl{color:var(--ink)}
+.slide.in .eia-node{animation:pop .6s cubic-bezier(.3,1.4,.5,1) backwards;animation-delay:calc(var(--k)*110ms + .25s)}
+.eia-call{position:absolute;top:500px;width:700px;padding:26px 32px;display:flex;flex-direction:column;gap:8px;transition:left .65s var(--ease)}
+.eia-call::after{content:"";position:absolute;top:-12px;left:var(--pl,50%);width:22px;height:22px;margin-left:-11px;rotate:45deg;
+  background:var(--glass-hi);border-left:1px solid var(--glass-line);border-top:1px solid var(--glass-line);transition:left .65s var(--ease)}
+.eia-call p.ct{font:400 26px/1.4 var(--text);color:var(--ink);animation:up .5s var(--ease) both}
+.eia-cards{position:absolute;left:128px;top:704px;width:1664px;display:flex;gap:24px}
+.eia-cards .card{flex:1;padding:30px 36px;display:flex;flex-direction:column;gap:6px}
+.yr{font:700 44px/1.05 var(--display);letter-spacing:-1px}
+
+/* liability */
+.sev{position:absolute;left:128px;top:800px;width:1664px}
+.sev-track{position:relative;height:14px;border-radius:7px;background:var(--track)}
+.sev-fill{position:absolute;left:0;top:0;bottom:0;width:0;border-radius:7px;background:linear-gradient(90deg,#7DB8FF,var(--indigo),var(--orange-hi));transition:width 1s var(--ease)}
+.sev-m{position:absolute;top:-11px;width:36px;height:36px;margin-left:-18px;border-radius:50%;box-sizing:border-box;background:var(--glass-hi);border:3px solid var(--track);transition:border-color .4s, scale .4s}
+.sev-m.on{border-color:var(--blue);scale:1.15}
+.sev-m.on.o{border-color:var(--orange-hi)}
+.sev-l{display:flex;justify-content:space-between;margin-top:18px}
+
+/* institutions countdown */
+.cd{display:flex;align-items:center;gap:28px;padding:28px 36px}
+.cd-bar{height:14px;border-radius:7px;background:var(--track);overflow:hidden;margin-top:12px}
+.cd-bar i{display:block;height:100%;width:0;border-radius:7px;background:linear-gradient(90deg,var(--blue-2),var(--teal))}
+.slide.in .cd-bar i{width:var(--w);transition:width 1.8s var(--ease) .6s}
+.cd-n{display:flex;flex-direction:column;align-items:flex-end;flex:none}
+.cd-n b{font:700 72px/1 var(--display);letter-spacing:-2px;color:var(--ink);font-variant-numeric:tabular-nums}
+
+/* treaties */
+.tr-lines{position:absolute;left:0;top:0;width:1920px;height:1080px;pointer-events:none;z-index:0}
+.tr-lines line{stroke:color-mix(in srgb, var(--blue) 35%, var(--track));stroke-width:2;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.1s var(--ease), stroke .4s, stroke-width .4s, opacity .4s}
+.slide.in .tr-lines line{stroke-dashoffset:0;transition-delay:calc(var(--k)*120ms + .4s), 0s, 0s, 0s}
+.tr-lines line.hot{stroke:var(--blue);stroke-width:4}
+.tr-lines.has-sel line:not(.hot){opacity:.3}
+.tr-node{position:absolute;width:460px;display:flex;gap:18px;align-items:center;padding:20px 24px;text-align:left;z-index:2}
+.tr-node .nm{font:600 30px/1.2 var(--text);color:var(--ink)}
+.tr-node .sb{font:500 24px/1.3 var(--text);color:var(--blue)}
+.hub{position:absolute;left:960px;top:618px;width:300px;height:300px;translate:-50% -50%;border-radius:150px;z-index:3;overflow:hidden;
+  background:var(--glass-hi);border:1px solid var(--glass-line);-webkit-backdrop-filter:blur(14px) saturate(1.8);backdrop-filter:blur(14px) saturate(1.8);
+  box-shadow:inset 0 2px 0 var(--glass-line), 0 40px 80px rgba(var(--shade),.22);transition:width .65s var(--ease), height .65s var(--ease), border-radius .65s var(--ease), box-shadow .5s}
+.hub::before{content:"";position:absolute;inset:0;border-radius:inherit;transition:opacity .5s;
+  background:radial-gradient(circle at 32% 26%, rgba(255,255,255,.98) 0%, rgba(255,255,255,.7) 30%, rgba(180,215,255,.55) 70%, rgba(0,113,227,.35) 100%)}
+.hub.open{width:620px;height:430px;border-radius:44px}
+.hub.open::before{opacity:0}
+.hub-def,.hub-det{position:absolute;inset:0;display:flex;flex-direction:column;transition:opacity .4s}
+.hub-def{align-items:center;justify-content:center;gap:6px;text-align:center}
+.hub-def b{font:700 44px/1.1 var(--display);letter-spacing:-1px;color:#1D1D1F}
+.hub-def span{font:500 24px/1.2 var(--text);color:#515154}
+.hub-det{padding:40px 44px;gap:14px;opacity:0;pointer-events:none}
+.hub.open .hub-def{opacity:0;pointer-events:none}
+.hub.open .hub-det{opacity:1;pointer-events:auto;transition-delay:.25s}
+.hub-det .x{position:absolute;right:24px;top:24px;width:52px;height:52px;border-radius:50%;display:grid;place-items:center;color:var(--ink-3);background:var(--glass)}
+.hub-det .x svg{width:24px;height:24px}
+.slide.in .hub{animation:pop .9s cubic-bezier(.3,1.4,.5,1) backwards .2s}
+
+/* statement */
+.slide.blue{--sbg:#0071E3;background:linear-gradient(135deg,#2A8CFF 0%,#0071E3 45%,#0089A0 100%);--pattern:rgba(255,255,255,.17);--ink:#FFFFFF;--ink-2:#E6F0FF;justify-content:center;gap:28px}
+.slide.blue .vig{display:none}
+.slide.blue .eyebrow{color:#DDEBFF;font-size:32px}
+
+/* cases */
+.cx-list{position:absolute;left:128px;top:282px;width:520px;display:flex;flex-direction:column;gap:12px}
+.cx-item{display:grid;grid-template-columns:108px 1fr;column-gap:18px;align-items:center;padding:14px 20px 14px 14px;border-radius:24px;border:1px solid transparent;transition:background .3s, border-color .3s, box-shadow .3s}
+.cx-item:hover{background:var(--glass)}
+.cx-item.sel{background:var(--glass-hi);border-color:var(--glass-line);box-shadow:0 14px 30px rgba(var(--shade),.12)}
+.cx-yr{grid-row:span 2;font:700 24px/1 var(--text);text-align:center;padding:16px 0;border-radius:16px;color:var(--blue);background:var(--blue-soft)}
+.cx-yr.o{color:var(--orange);background:var(--orange-soft)}
+.cx-item.sel .cx-yr{color:var(--on-accent);background:linear-gradient(135deg,var(--blue-2),var(--blue))}
+.cx-item.sel .cx-yr.o{background:linear-gradient(135deg,#FFA25A,var(--orange-hi))}
+.cx-nm{font:600 26px/1.2 var(--text);color:var(--ink)}
+.cx-ct{font:400 24px/1.25 var(--text);color:var(--ink-3)}
+.cx-panel{position:absolute;left:680px;top:282px;width:1112px;height:620px;padding:40px 44px;display:flex;flex-direction:column;gap:24px}
+.cx-head{animation:up .5s var(--ease) both}
+.cx-t{font:700 44px/1.12 var(--display);letter-spacing:-1px;color:var(--ink);margin-top:8px}
+.cx-body{flex:1;min-height:0;animation:up .5s var(--ease) both}
+.cx-p{font:400 28px/1.45 var(--text);color:var(--ink);max-width:980px}
+.cx-ol{display:flex;flex-direction:column;gap:18px}
+.cx-ol li{display:flex;gap:18px;align-items:flex-start;font:400 27px/1.4 var(--text);color:var(--ink);animation:up .5s var(--ease) backwards;animation-delay:calc(var(--i)*90ms + .05s)}
+.nb{flex:none;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font:700 22px/1 var(--text);color:var(--blue);
+  background:radial-gradient(circle at 32% 28%, var(--tile-top) 0%, rgba(207,228,255,.9) 100%);border:1px solid var(--glass-line);box-shadow:inset 0 -4px 8px rgba(0,113,227,.14), 0 6px 14px rgba(0,113,227,.16)}
+.cx-quote{display:flex;gap:28px;align-items:flex-start}
+
+/* pulp mills votes */
+.vote-card{position:absolute;left:128px;top:334px;width:980px;padding:44px 52px;display:flex;flex-direction:column;gap:40px}
+.vrow-h{display:flex;justify-content:space-between;align-items:baseline;gap:20px}
+.vrow-h .q{font:600 28px/1.3 var(--text);color:var(--ink)}
+.vrow-h .sc{font:700 44px/1 var(--display);letter-spacing:-1px;font-variant-numeric:tabular-nums}
+.vdots{display:flex;gap:14px;margin:18px 0 12px}
+.vd{width:48px;height:48px;border-radius:50%;scale:0;transition:scale .5s cubic-bezier(.3,1.6,.5,1);
+  box-shadow:inset 0 2px 2px rgba(255,255,255,.7), inset 0 -4px 8px rgba(0,0,0,.12), 0 6px 12px rgba(0,60,140,.15)}
+.slide.in .vrow.on .vd{scale:1;transition-delay:calc(var(--k)*70ms + .25s)}
+.vd:hover{scale:1.18!important;transition-delay:0s!important}
+.vd.b{background:radial-gradient(circle at 32% 28%,#A9D2FF,#0071E3)}
+.vd.t{background:radial-gradient(circle at 32% 28%,#A6EEEA,#0A8F9A)}
+.vd.n{background:radial-gradient(circle at 32% 28%,#FFFFFF,#C5CEDA)}
+.side-col{position:absolute;left:1132px;top:334px;width:660px;display:flex;flex-direction:column;gap:24px}
+
+/* sediment */
+.sd-card{position:absolute;left:128px;top:352px;width:560px;height:560px;display:grid;place-items:center}
+.sd-grid{display:grid;grid-template-columns:repeat(10,38px);gap:10px}
+.sd{position:relative;width:38px;height:38px;border-radius:50%;scale:0;transition:scale .45s cubic-bezier(.3,1.5,.5,1), box-shadow .4s;
+  background:radial-gradient(circle at 32% 28%,#FFFFFF,#B7D3F2);box-shadow:inset 0 2px 2px rgba(255,255,255,.85), inset 0 -4px 8px rgba(0,80,180,.12), 0 4px 8px rgba(0,60,140,.10)}
+.sd::after{content:"";position:absolute;inset:0;border-radius:50%;opacity:0;transition:opacity .5s;background:radial-gradient(circle at 32% 28%,#FFD3A1,#EA6A00)}
+.slide.in .sd{scale:1;transition-delay:calc(var(--k)*11ms + .2s), 0s}
+.sd:hover{scale:1.25!important;transition-delay:0s!important}
+.sd-grid[data-mode="cr"] .sd:last-child::after{opacity:1;background:conic-gradient(#EA6A00 0 216deg, transparent 216deg)}
+.sd-grid[data-mode="court"] .sd:nth-last-child(-n+2)::after{opacity:1}
+.sd-grid[data-mode="court"] .sd:nth-last-child(-n+2), .sd-grid[data-mode="cr"] .sd:last-child{animation:ping 1.8s ease-out infinite .6s}
+@keyframes ping{0%{box-shadow:0 0 0 0 rgba(234,106,0,.5)}100%{box-shadow:0 0 0 16px rgba(234,106,0,0)}}
+.sd-side{position:absolute;left:720px;top:352px;width:1072px;display:flex;flex-direction:column;gap:18px}
+.stat{display:flex;align-items:center;gap:28px;padding:22px 32px;transition:opacity .4s, transform .45s var(--ease), box-shadow .45s, background .3s, border-color .3s}
+.stat .v{width:300px;flex:none;font:700 72px/1.05 var(--display);letter-spacing:-2px}
+.stat .body{color:var(--ink)}
+.sd-side[data-mode="cr"] .stat.court, .sd-side[data-mode="court"] .stat.cr{opacity:.5}
+
+/* pattern */
+.pt{position:absolute;left:128px;top:340px;width:1664px;display:grid;grid-template-columns:340px repeat(3,1fr);gap:18px 20px;align-items:stretch}
+.pt-h{font:600 24px/1.2 var(--text);color:var(--ink-3);padding:0 8px}
+.pt-case{display:flex;flex-direction:column;justify-content:center;gap:6px;padding:22px 28px}
+.pt-cell{display:flex;gap:18px;align-items:center;padding:22px 24px}
+.stamp{flex:none;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;scale:1.6;opacity:0;rotate:-20deg;transition:scale .5s cubic-bezier(.3,1.5,.5,1), opacity .3s, rotate .5s var(--ease)}
+.stamp svg{width:28px;height:28px}
+.slide.in .on .stamp{scale:1;opacity:1;rotate:0deg;transition-delay:calc(var(--k)*180ms + .35s)}
+.stamp.o{color:var(--orange);background:var(--orange-soft)}
+.stamp.t{color:var(--teal);background:var(--teal-soft)}
+.stamp.v{color:var(--indigo);background:var(--indigo-soft)}
+.pt-cell b{display:block;font:600 28px/1.2 var(--text);color:var(--ink)}
+.pt-row{display:contents}
+.pt-take{position:absolute;left:128px;top:760px;width:1664px;display:flex;gap:24px;align-items:center;padding:28px 36px}
+
+/* az cases tracker */
+.trk{position:relative;display:grid;grid-template-columns:repeat(4,1fr);margin-top:8px}
+.trk-line,.trk-fill{position:absolute;top:17px;height:4px;left:12.5%;border-radius:2px}
+.trk-line{right:12.5%;background:var(--track)}
+.trk-fill{width:0;background:linear-gradient(90deg,var(--blue-2),var(--teal))}
+.slide.in .trk-fill{width:50%;transition:width 1.6s var(--ease) .5s}
+.ms{display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center}
+.ms i{position:relative;display:block;width:38px;height:38px;border-radius:50%;box-sizing:border-box;background:var(--glass-hi);border:3px solid var(--track);transition:border-color .4s, background .4s}
+.slide.in .ms.done i{border-color:var(--blue);background:var(--blue);transition-delay:calc(var(--k)*450ms + .5s)}
+.ms.now i{border-color:var(--orange-hi);animation:ring 1.8s ease-out infinite}
+@keyframes ring{0%{box-shadow:0 0 0 0 rgba(234,106,0,.45)}100%{box-shadow:0 0 0 18px rgba(234,106,0,0)}}
+.ms b{font:700 24px/1.2 var(--text);color:var(--ink)}
+.ms span{font:400 24px/1.3 var(--text);color:var(--ink-3)}
+.pill{display:inline-flex;align-items:center;gap:10px;font:600 24px/1 var(--text);padding:10px 20px;border-radius:999px}
+.pill.o{color:var(--orange);background:var(--orange-soft)}
+.pill.v{color:var(--indigo);background:var(--indigo-soft)}
+.pill .dot{width:10px;height:10px;border-radius:50%;background:currentColor;animation:blink 1.4s ease-in-out infinite}
+@keyframes blink{50%{opacity:.25}}
+
+/* domestic */
+.story{position:relative;display:flex;flex-direction:column;gap:18px}
+.story::before,.story-fill{content:"";position:absolute;left:23px;top:24px;width:3px;border-radius:2px}
+.story::before{bottom:24px;background:var(--track)}
+.story-fill{height:0;background:linear-gradient(180deg,var(--blue-2),var(--teal));transition:height .7s var(--ease);z-index:1}
+.st{position:relative;z-index:2;display:flex;gap:18px;align-items:flex-start;font:400 26px/1.4 var(--text);color:var(--ink-2)}
+.st .nb{position:relative;z-index:2}
+
+/* challenges */
+.watch{display:flex;gap:16px}
+.watch p{flex:1;text-align:center;font:600 24px/1.3 var(--text);color:var(--on-accent);padding:20px 24px;border-radius:999px;position:relative;overflow:hidden;
+  background:linear-gradient(135deg,var(--blue-2),var(--blue));box-shadow:inset 0 2px 0 rgba(255,255,255,.35), 0 12px 28px rgba(0,113,227,.28)}
+.watch p::after{content:"";position:absolute;top:0;bottom:0;width:120px;left:-140px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.45),transparent);animation:sheen 3.2s ease-in-out infinite;animation-delay:calc(var(--i)*.6s + 1s)}
+
+/* tallies: moot court */
+.trows{display:flex;flex-direction:column;gap:18px}
+.trow{display:grid;grid-template-columns:52px minmax(0,1fr) auto;column-gap:22px;align-items:center;transition:opacity .4s}
+.ol{flex:none;width:52px;height:52px;border-radius:50%;display:grid;place-items:center;font:700 24px/1 var(--text);color:var(--blue);background:var(--blue-soft);transition:background .3s, color .3s}
+.tmain{min-width:0;display:flex;flex-direction:column;gap:10px}
+.tlab{display:flex;justify-content:space-between;align-items:baseline;gap:18px}
+.tname{font:500 28px/1.25 var(--text);color:var(--ink)}
+.tnum{font:500 24px/1 var(--text);color:var(--ink-3);white-space:nowrap;font-variant-numeric:tabular-nums}
+.tnum b{font:700 34px/1 var(--display);color:var(--ink);margin-right:10px}
+.tbar{height:16px;border-radius:8px;background:var(--track);overflow:hidden}
+.tbar i{display:block;height:100%;width:0;border-radius:8px;background:linear-gradient(90deg,#9CC8FF,#5AA2F5);transition:width .8s var(--ease), background .4s}
+.trow.lead .tbar i{background:linear-gradient(90deg,var(--blue-2),var(--blue))}
+.hands{display:flex;align-items:center;gap:4px;padding:5px;border-radius:999px;background:var(--glass);border:1px solid var(--glass-line);box-shadow:0 6px 16px rgba(var(--shade),.08)}
+.hands button{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;color:var(--ink-2);transition:background .2s, color .2s, transform .2s}
+.hands button:hover{background:var(--glass-hi);color:var(--blue)}
+.hands button:active{transform:scale(.88)}
+.hands button svg{width:24px;height:24px}
+.hands span{display:inline-flex;align-items:center;gap:6px;min-width:70px;justify-content:center;font:600 24px/1 var(--text);color:var(--ink-2);font-variant-numeric:tabular-nums}
+.hands span svg{width:24px;height:24px;color:var(--ink-3);stroke-width:2.6}
+.ptag{display:none;margin-left:14px;vertical-align:4px}
+.trow.right .ptag{display:inline-block}
+.trow.right .ol{background:var(--teal);color:var(--on-accent)}
+.trow.right .tbar i{background:linear-gradient(90deg,#6FE0D8,var(--teal))}
+.revealed .trow:not(.right){opacity:.45}
+.pips{display:flex;gap:12px;align-items:center}
+.pip{width:22px;height:22px;border-radius:50%;box-sizing:border-box;border:2px solid color-mix(in srgb, var(--ink-3) 45%, transparent);background:var(--glass);transition:all .35s}
+.pip.cur{border-color:var(--blue);scale:1.2}
+.pip.ok{background:var(--teal);border-color:var(--teal)}
+.pip.no{background:var(--orange-hi);border-color:var(--orange-hi)}
+.ctop{display:flex;justify-content:space-between;align-items:center;gap:20px;min-height:58px}
+
+
+/* moot court: arguments and second vote */
+.cbody{display:flex;flex-direction:column;gap:20px;flex:1;min-height:0;animation:up .5s var(--ease) both}
+.args{display:grid;gap:16px}
+.args.cols{grid-template-columns:1fr 1fr}
+.args.cols3{grid-template-columns:repeat(3,1fr);gap:14px}
+.args.cols3 .arg{padding:18px 18px}
+.args.cols3 li{font-size:20px;line-height:1.36}
+.arg{display:flex;flex-direction:column;gap:10px;padding:20px 22px;border-radius:22px;background:var(--glass);border:1px solid var(--glass-line);animation:up .55s var(--ease) backwards;animation-delay:calc(var(--i)*140ms + .1s)}
+.arg h4{margin:0;font:700 24px/1.25 var(--text);color:var(--blue)}
+.arg ul{display:flex;flex-direction:column;gap:8px}
+.arg li{position:relative;padding-left:18px;font:400 22px/1.38 var(--text);color:var(--ink)}
+.arg li::before{content:"";position:absolute;left:0;top:.55em;width:8px;height:8px;border-radius:50%;background:var(--blue)}
+.arg.b h4{color:var(--orange)} .arg.b li::before{background:var(--orange-hi)}
+.arg.c h4{color:var(--teal)} .arg.c li::before{background:var(--teal)}
+.first{margin-top:auto;font:500 22px/1.3 var(--text);color:var(--ink-3)}
+.tdelta{display:none;margin-left:12px;font:700 20px/1 var(--text);padding:6px 10px;border-radius:999px;vertical-align:4px;font-variant-numeric:tabular-nums}
+.revote .tdelta{display:inline-block}
+.tdelta.up{color:var(--teal);background:var(--teal-soft)}
+.tdelta.down{color:var(--orange);background:var(--orange-soft)}
+.tdelta.same{color:var(--ink-3);background:var(--glass-hi)}
+.tbar{position:relative}
+.tick{display:none;position:absolute;top:0;bottom:0;width:4px;margin-left:-2px;border-radius:2px;background:var(--ink-2);opacity:.75;transition:left .6s var(--ease)}
+.revote .tick{display:block}
+
+
+/* moot court: phone voting code */
+.court-qr{position:absolute;right:128px;top:76px;display:flex;align-items:center;gap:22px}
+.cq-text{display:flex;flex-direction:column;align-items:flex-end;gap:8px;text-align:right}
+.qr.qr-sm{width:196px;height:196px;padding:10px;border-radius:22px}
+.cq-text .live{font-size:20px;padding:8px 14px}
+
+/* presenter controls stay out of sight until the pointer is over the card */
+.court-card [data-cnext], .court-card [data-cagain], .court-card [data-creset], .hands button{opacity:0;transition:opacity .25s ease}
+.hands{transition:background .25s, border-color .25s, box-shadow .25s}
+.court-card:not(:hover):not(:focus-within) .hands{background:transparent;border-color:transparent;box-shadow:none}
+.court-card:hover [data-cnext], .court-card:focus-within [data-cnext],
+.court-card:hover [data-cagain], .court-card:focus-within [data-cagain],
+.court-card:hover [data-creset], .court-card:focus-within [data-creset],
+.court-card:hover .hands button, .court-card:focus-within .hands button{opacity:1}
+
+/* outlook: four larger cards fill the slide */
+#outlook .card.row{padding:44px 48px!important;min-height:260px;gap:28px!important}
+#outlook .card .gi{width:84px;height:84px;border-radius:26px}
+#outlook .card .gi svg{width:46px;height:46px}
+#outlook .card h3{font-size:36px}
+#outlook .card .body{font-size:27px;line-height:1.4}
+/* phone code */
+.qr{width:330px;height:330px;padding:14px;box-sizing:border-box;border-radius:28px;background:#fff;box-shadow:0 16px 34px rgba(var(--shade),.16), 0 0 0 1px rgba(0,0,0,.04)}
+.qr svg{display:block;width:100%;height:100%}
+.live{display:inline-flex;align-items:center;gap:10px;font:600 22px/1.2 var(--text);padding:10px 18px;border-radius:999px;color:var(--ink-3);background:var(--glass);border:1px solid var(--glass-line)}
+.live i{flex:none;width:10px;height:10px;border-radius:50%;background:currentColor}
+.live.on{color:var(--teal);background:var(--teal-soft);border-color:transparent}
+.live.on i{animation:blink 1.4s ease-in-out infinite}
+
+/* moot court */
+.case-card{position:absolute;left:128px;top:292px;width:640px;height:660px;padding:36px 40px;display:flex;flex-direction:column;gap:24px}
+.fact{display:flex;gap:20px;align-items:flex-start}
+.fact p{font:400 25px/1.42 var(--text);color:var(--ink)}
+.court-card{position:absolute;left:800px;top:292px;width:992px;height:660px;padding:30px 40px 34px;display:flex;flex-direction:column;gap:20px}
+.court-view{display:flex;flex-direction:column;gap:20px;height:100%;animation:up .5s var(--ease) both}
+.court-q{font:600 38px/1.2 var(--display);letter-spacing:-.5px;color:var(--ink);text-wrap:balance}
+.verdict{margin-top:auto;display:flex;gap:22px;align-items:flex-start;padding:22px 26px;border-radius:26px;background:var(--glass);border:1px solid var(--glass-line)}
+.verdict.pending{align-items:center}
+.verdict .vh{font:700 28px/1.2 var(--text);color:var(--teal)}
+.verdict .vt{flex:1;min-width:0;display:flex;flex-direction:column;gap:8px;animation:up .5s var(--ease) both}
+.verdict .vt .body{font-size:23px;line-height:1.42}
+.vrow{display:flex;justify-content:space-between;align-items:center;gap:16px}
+.agree{align-self:flex-start;display:inline-flex;align-items:center;gap:8px;font:600 22px/1.2 var(--text);padding:8px 14px;border-radius:999px;color:var(--ink-3);background:var(--glass-hi)}
+.agree.ok{color:var(--teal);background:var(--teal-soft)}
+.agree.no{color:var(--orange);background:var(--orange-soft)}
+.agree svg{width:22px;height:22px}
+.sum{display:grid;grid-template-columns:1.25fr 1fr 1fr 56px;gap:14px 20px;align-items:center}
+.sum .h{font:600 22px/1.2 var(--text);color:var(--ink-3)}
+.sum .c{font:600 28px/1.25 var(--text);color:var(--ink)}
+.sum .stamp, .rul .stamp{scale:1;opacity:1;rotate:0deg;animation:pop .6s cubic-bezier(.3,1.4,.5,1) backwards;animation-delay:calc(var(--k)*150ms + .2s)}
+.sum-line{height:1px;background:var(--track);grid-column:1 / -1}
+.cphase{display:flex;align-items:center;gap:8px;min-width:0}
+.cq-n{font:600 20px/1 var(--text);color:var(--ink-3);margin-right:8px;white-space:nowrap}
+.cph{font:600 19px/1 var(--text);padding:9px 14px;border-radius:999px;color:var(--ink-3);background:var(--glass);border:1px solid var(--glass-line);white-space:nowrap;transition:color .3s, background .3s, border-color .3s}
+.cph.done{color:var(--teal);background:var(--teal-soft);border-color:transparent}
+.cph.on{color:var(--on-accent);background:var(--blue);border-color:transparent}
+.arg .reply{margin:0;font:400 23px/1.45 var(--text);color:var(--ink)}
+.args.cols3 .reply{font-size:20px;line-height:1.38}
+.rul{display:grid;grid-template-columns:190px 1fr 56px;gap:14px 20px;align-items:center}
+.rul .c{margin:0;font:600 27px/1.3 var(--text);color:var(--ink)}
+.rul .c.q{font-size:21px;color:var(--ink-3)}
+.jnote{display:flex;gap:18px;align-items:flex-start;padding:18px 22px;border-radius:24px;background:var(--orange-soft)}
+.jnote[hidden]{display:none}
+.jnote .vh{font:700 24px/1.2 var(--text);color:var(--orange)}
+.jnote .vt{flex:1;min-width:0;display:flex;flex-direction:column;gap:6px}
+.jnote .body{font-size:22px;line-height:1.4;color:var(--ink-2)}
+.sides{display:grid;grid-template-columns:1fr 1fr;gap:16px;flex:1;min-height:0;max-height:340px}
+.side{display:flex;flex-direction:column;justify-content:center;gap:14px;padding:26px 30px;border-radius:24px;background:var(--glass);border:1px solid var(--glass-line);animation:up .55s var(--ease) backwards;animation-delay:calc(var(--i)*140ms + .1s)}
+.side .sn{margin:0;font:700 28px/1.2 var(--text)}
+.side .sn span{font:500 21px/1 var(--text);color:var(--ink-3);margin-left:8px}
+.side.az .sn{color:var(--blue)} .side.up .sn{color:var(--orange)}
+.side .sc{margin:0;font:600 34px/1.3 var(--text);color:var(--ink)}
+.stamp.sd{font:700 26px/1 var(--text)}
+.stamp.sd.az{color:var(--blue);background:var(--blue-soft)}
+.stamp.sd.up{color:var(--orange);background:var(--orange-soft)}
+.stamp.sd.sh{color:var(--teal);background:var(--teal-soft)}
+.stamp.sd.none{color:var(--ink-3);background:var(--glass-hi)}
+.rul .c.q small{display:block;margin-top:4px;font:500 18px/1.25 var(--text);color:var(--ink-2)}
+.jrow{display:block;text-align:left;border-radius:14px;padding:6px 10px;margin:-6px -10px;transition:background .2s}
+.jrow:hover,.jrow:focus-visible{background:var(--glass)}
+.jrow.open .c{color:var(--orange)}
+.court-card .btn.sm{font-size:21px;padding:13px 20px;gap:10px;white-space:nowrap}
+.court-card .btn.sm .ic{width:24px;height:24px}
+.cph{font-size:17px;padding:8px 12px}
+.cphase{gap:6px}.cq-n{font-size:18px;margin-right:4px}
+.rul{gap:8px 20px}
+.rul .c{font-size:24px;line-height:1.28}
+.rul .c.q{font-size:19px}
+.rul .stamp{width:48px;height:48px}
+.jnote{padding:14px 20px}
+.jnote .vh{font-size:22px}
+.jnote .body{font-size:20px;line-height:1.38}
+.rul ~ .verdict{padding:16px 22px}
+.rul ~ .verdict p{font-size:23px!important;line-height:1.33!important}
+
+a.btn{text-decoration:none}
+.bubble{position:absolute;z-index:30;width:var(--s);height:var(--s);margin:calc(var(--s)/-2) 0 0 calc(var(--s)/-2);border-radius:50%;pointer-events:none;
+  background:radial-gradient(circle at 30% 26%, rgba(255,255,255,.95), rgba(150,225,235,.35) 60%, rgba(20,184,198,.45));border:1px solid rgba(255,255,255,.9);
+  animation:float-up 1.5s cubic-bezier(.2,.7,.3,1) forwards;animation-delay:var(--d)}
+@keyframes float-up{from{opacity:0;transform:translate(0,0) scale(.4)}20%{opacity:1}to{opacity:0;transform:translate(var(--dx),-260px) scale(1)}}
+
+/* tooltip inside the stage */
+#tip{position:absolute;z-index:60;left:0;top:0;transform:translate(-50%,calc(-100% - 16px));pointer-events:none;opacity:0;transition:opacity .2s;
+  font:600 24px/1.2 var(--text);color:var(--ink);white-space:nowrap;padding:12px 18px;border-radius:16px;background:var(--glass-hi);
+  border:1px solid var(--glass-line);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);box-shadow:0 14px 30px rgba(var(--shade),.18)}
+#tip.show{opacity:1}
+
+/* ---------- chrome (real pixels, outside the stage) ---------- */
+#controls{position:absolute;left:50%;bottom:calc(14px + env(safe-area-inset-bottom, 0px));transform:translate(-50%,12px);z-index:20;display:flex;align-items:center;gap:4px;
+  padding:6px;border-radius:999px;background:var(--chrome);border:1px solid var(--glass-line);-webkit-backdrop-filter:blur(24px) saturate(1.8);backdrop-filter:blur(24px) saturate(1.8);
+  box-shadow:0 12px 32px rgba(var(--shade),.18);opacity:0;pointer-events:none;transition:opacity .35s, transform .45s var(--ease);font:500 13px/1 var(--text);color:var(--ink-2)}
+#app.show-ui #controls{opacity:1;transform:translate(-50%,0);pointer-events:auto}
+#controls button{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;color:var(--ink);transition:background .2s}
+#controls button:hover{background:var(--glass-hi)}
+#controls button[aria-pressed="true"]{color:var(--blue)}
+#controls svg{width:20px;height:20px;stroke-width:3.4}
+#controls .ctr{display:flex;flex-direction:column;align-items:center;gap:3px;min-width:96px;padding:0 6px}
+#controls .ctr b{font:600 13px/1 var(--text);color:var(--ink);font-variant-numeric:tabular-nums}
+#controls .ctr span{font:500 11px/1 var(--text);color:var(--ink-3);white-space:nowrap;max-width:140px;overflow:hidden;text-overflow:ellipsis}
+#controls .sep{width:1px;height:22px;background:var(--track);margin:0 4px}
+#toast{position:absolute;left:50%;top:calc(24px + env(safe-area-inset-top, 0px));transform:translateX(-50%);z-index:21;font:500 13px/1.3 var(--text);color:var(--ink-2);
+  padding:10px 16px;border-radius:999px;background:var(--chrome);border:1px solid var(--glass-line);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);
+  box-shadow:0 10px 26px rgba(var(--shade),.14);transition:opacity .6s, transform .6s var(--ease);text-align:center;max-width:calc(100% - 32px)}
+#toast.hide{opacity:0;transform:translate(-50%,-10px);pointer-events:none}
+#notes{position:absolute;left:16px;bottom:calc(64px + env(safe-area-inset-bottom, 0px));z-index:22;width:min(520px, calc(100% - 32px));max-height:40%;overflow:auto;box-sizing:border-box;padding:18px 20px;
+  border-radius:20px;background:var(--chrome);border:1px solid var(--glass-line);-webkit-backdrop-filter:blur(24px);backdrop-filter:blur(24px);box-shadow:0 14px 36px rgba(var(--shade),.2);
+  font:400 15px/1.5 var(--text);color:var(--ink)}
+#notes h4{margin:0 0 8px;font:600 12px/1 var(--text);letter-spacing:.06em;text-transform:uppercase;color:var(--blue)}
+#overview{position:absolute;inset:0;z-index:30;overflow:auto;box-sizing:border-box;padding:28px max(20px, env(safe-area-inset-right,0px)) 40px max(20px, env(safe-area-inset-left,0px));
+  background:color-mix(in srgb, var(--bg) 82%, transparent);-webkit-backdrop-filter:blur(24px);backdrop-filter:blur(24px);border-radius:20px;animation:fadein .3s ease}
+@keyframes fadein{from{opacity:0}}
+#overview .ov-top{display:flex;justify-content:space-between;align-items:center;gap:16px;max-width:1200px;margin:0 auto 20px}
+#overview h4{margin:0;font:700 24px/1.1 var(--display);color:var(--ink)}
+#overview .ov-x{font:600 14px/1 var(--text);color:var(--blue);padding:10px 14px;border-radius:999px;background:var(--glass-hi);border:1px solid var(--glass-line)}
+#ov-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px}
+.ov-item{display:flex;flex-direction:column;gap:8px;padding:16px;border-radius:18px;background:var(--glass-hi);border:1px solid var(--glass-line);box-shadow:0 8px 20px rgba(var(--shade),.08);transition:transform .25s var(--ease), box-shadow .25s}
+.ov-item:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(var(--shade),.14)}
+.ov-item.cur{outline:2px solid var(--blue)}
+.ov-n{font:700 22px/1 var(--display);color:var(--blue)}
+.ov-s{font:600 11px/1.2 var(--text);letter-spacing:.04em;text-transform:uppercase;color:var(--ink-3)}
+.ov-t{font:500 15px/1.35 var(--text);color:var(--ink)}
+
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;transition-delay:0s!important}
+  .waves .pat{animation:none}
+}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-drop" viewBox="0 0 40 40"><path d="M20 5C20 5 9.5 17 9.5 24.5a10.5 10.5 0 0 0 21 0C30.5 17 20 5 20 5Z"/></symbol>
+    <symbol id="i-waves" viewBox="0 0 40 40"><path d="M5 15c3.3-3.5 6.7-3.5 10 0s6.7 3.5 10 0 6.7-3.5 10 0M5 25c3.3-3.5 6.7-3.5 10 0s6.7 3.5 10 0 6.7-3.5 10 0"/></symbol>
+    <symbol id="i-scales" viewBox="0 0 40 40"><path d="M20 6v27M13 33h14M9 11h22M9 11l-4.5 9h9zM31 11l-4.5 9h9z"/></symbol>
+    <symbol id="i-gavel" viewBox="0 0 40 40"><path d="M11 15l7-7 7 7-7 7zM21.5 18.5L33 30M6 33h15"/></symbol>
+    <symbol id="i-factory" viewBox="0 0 40 40"><path d="M5 33V18l8 5v-5l8 5V9h7v24zM3 33h34"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 40 40"><path d="M20 5l12 5v9c0 8-5.5 13-12 16-6.5-3-12-8-12-16v-9zM14.5 20l4 4 7-8"/></symbol>
+    <symbol id="i-leaf" viewBox="0 0 40 40"><path d="M9 31C9 16 18 8 33 7c-1 15-9 24-24 24zM9 31l12-12"/></symbol>
+    <symbol id="i-doc" viewBox="0 0 40 40"><path d="M11 5h12l7 7v23H11zM23 5v7h7M15.5 19h10M15.5 24.5h10M15.5 30h6"/></symbol>
+    <symbol id="i-building" viewBox="0 0 40 40"><path d="M5 15l15-9 15 9zM9 15v15M16 15v15M24 15v15M31 15v15M5 33h30"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 40 40"><circle cx="20" cy="20" r="15"/><path d="M5 20h30M20 5a23 23 0 0 1 0 30M20 5a23 23 0 0 0 0 30"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 40 40"><circle cx="20" cy="20" r="15"/><path d="M20 12v8l5 3"/></symbol>
+    <symbol id="i-bulb" viewBox="0 0 40 40"><path d="M15 30h10M17 35h6M20 5a10 10 0 0 0-6.5 17.6c1.2 1.1 1.5 2.4 1.5 3.9h10c0-1.5.3-2.8 1.5-3.9A10 10 0 0 0 20 5z"/></symbol>
+    <symbol id="i-search" viewBox="0 0 40 40"><circle cx="18" cy="18" r="11"/><path d="M34 34l-8-8"/></symbol>
+    <symbol id="i-users" viewBox="0 0 40 40"><circle cx="15" cy="13" r="6"/><path d="M4 33v-2a8 8 0 0 1 8-8h6a8 8 0 0 1 8 8v2M27 7.3a6 6 0 0 1 0 11.4M36 33v-2a8 8 0 0 0-5-7.4"/></symbol>
+    <symbol id="i-checkc" viewBox="0 0 40 40"><circle cx="20" cy="20" r="15"/><path d="M13.5 20.5l4.5 4.5 8.5-9"/></symbol>
+    <symbol id="i-warn" viewBox="0 0 40 40"><path d="M20 6l16 27H4zM20 16v7M20 28.5v.5"/></symbol>
+    <symbol id="i-activity" viewBox="0 0 40 40"><path d="M4 20h7l4-12 8 24 4-12h9"/></symbol>
+    <symbol id="i-book" viewBox="0 0 40 40"><path d="M7 9a4 4 0 0 1 4-4h22v25H11a4 4 0 0 0-4 4zM7 34a4 4 0 0 0 4 3h22v-7"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 40 40"><path d="M6 33h28M11 28v-6M18 28V14M25 28v-9M32 28V9"/></symbol>
+    <symbol id="i-x" viewBox="0 0 40 40"><path d="M13 13l14 14M27 13L13 27"/></symbol>
+    <symbol id="i-check" viewBox="0 0 40 40"><path d="M10 21l7 7 13-15"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 40 40"><path d="M8 7h24a2 2 0 0 1 2 2v17a2 2 0 0 1-2 2H15l-8 6V9a2 2 0 0 1 1-2z"/></symbol>
+    <symbol id="i-link" viewBox="0 0 40 40"><path d="M17 23a6 6 0 0 0 8.5 0l5-5a6 6 0 0 0-8.5-8.5l-1.5 1.5M23 17a6 6 0 0 0-8.5 0l-5 5a6 6 0 0 0 8.5 8.5l1.5-1.5"/></symbol>
+    <symbol id="i-minus" viewBox="0 0 40 40"><path d="M12 20h16"/></symbol>
+    <symbol id="i-chev-r" viewBox="0 0 40 40"><path d="M16 9l11 11-11 11"/></symbol>
+    <symbol id="i-chev-l" viewBox="0 0 40 40"><path d="M24 9L13 20l11 11"/></symbol>
+    <symbol id="i-grid" viewBox="0 0 40 40"><rect x="7" y="7" width="11" height="11" rx="3"/><rect x="22" y="7" width="11" height="11" rx="3"/><rect x="7" y="22" width="11" height="11" rx="3"/><rect x="22" y="22" width="11" height="11" rx="3"/></symbol>
+    <symbol id="i-notes" viewBox="0 0 40 40"><path d="M10 10h20M10 18h20M10 26h13"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 40 40"><path d="M30 24.5A12 12 0 0 1 15.5 10a12 12 0 1 0 14.5 14.5z"/></symbol>
+    <symbol id="i-expand" viewBox="0 0 40 40"><path d="M8 15V8h7M25 8h7v7M32 25v7h-7M15 32H8v-7"/></symbol>
+    <symbol id="i-refresh" viewBox="0 0 40 40"><path d="M31 15A12 12 0 0 0 9.6 12M9 25a12 12 0 0 0 21.4 3M10 5v7h7M30 35v-7h-7"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 40 40"><circle cx="20" cy="20" r="7"/><path d="M20 4v4M20 32v4M4 20h4M32 20h4M8.7 8.7l2.8 2.8M28.5 28.5l2.8 2.8M8.7 31.3l2.8-2.8M28.5 11.5l2.8-2.8"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 40 40"><path d="M20 11v18M11 20h18"/></symbol>
+    <symbol id="i-hand" viewBox="0 0 40 40"><path d="M15 21V10a2.5 2.5 0 0 1 5 0v9M20 18V7.5a2.5 2.5 0 0 1 5 0V18M25 18V9.5a2.5 2.5 0 0 1 5 0V24c0 6.5-4.5 11-10.5 11-4 0-6.4-1.7-8.5-4.6l-4.2-6a2.4 2.4 0 0 1 3.7-3L15 26"/></symbol>
+    <symbol id="i-replay" viewBox="0 0 40 40"><path d="M9 20a11 11 0 1 0 3.5-8M9 6v7h7"/></symbol>
+  </defs>
+</svg>
+
+<div id="app" class="show-ui">
+<div id="viewport">
+<div id="stage">
+<i id="prog"></i>
+
+<!-- 1 -->
+<section class="slide waves alt" id="cover" data-title="Protecting the waters" data-sec="Introduction">
+  <i class="glow" style="--x:1060px;--y:80px;--s:820px;--c:rgba(0,113,227,.22)"></i>
+  <i class="glow" style="--x:1240px;--y:480px;--s:640px;--c:rgba(20,184,198,.22)"></i>
+  <div class="cover-copy">
+    <p class="eyebrow rise" style="font-size:32px">Environmental law of Azerbaijan</p>
+    <h1>Protecting the waters.</h1>
+    <p class="lede rise" style="--i:4;max-width:900px">Laws, court cases and the history of protecting the aquatic environment</p>
+    <p class="body rise" style="--i:5">Osman Mailli · Environmental Law · November 2026</p>
+  </div>
+  <i class="g orb big" style="left:1260px;top:190px;--sz:440px;--z:30;--dur:12s;--i:0"></i>
+  <i class="g cube t" style="left:1140px;top:560px;--sz:230px;--z:52;--rot:20deg;--dur:10s;--i:1"></i>
+  <i class="g ring" style="left:1500px;top:600px;--sz:300px;--z:22;--dur:13s;--i:2"></i>
+  <i class="g capsule" style="left:1580px;top:120px;--w:280px;--h:100px;--rot:-28deg;--z:60;--dur:9s;--i:3"></i>
+  <i class="g orb t" style="left:930px;top:650px;--sz:150px;--z:70;--dur:8s;--i:4"></i>
+  <aside class="notes">Introduce the topic: how Azerbaijan protects its rivers, lakes, groundwater and its sector of the Caspian Sea through national law, international treaties and case law. Press → to start.</aside>
+</section>
+
+<!-- 2 -->
+<section class="slide dots" id="agenda" data-title="Five parts" data-sec="Introduction">
+  <i class="glow" style="--x:1180px;--y:160px;--s:700px;--c:rgba(0,113,227,.14)"></i>
+  <header class="hd"><p class="eyebrow">Agenda</p><h2>Five parts.</h2><p class="lede rise" style="--i:2">From the rivers to the courtroom.</p></header>
+  <div class="row" style="gap:24px;margin-top:16px">
+    <button class="card lift agenda-card rise" style="--i:3" type="button" data-jump="context"><span class="gi"><svg class="ic"><use href="#i-drop"/></svg></span><span class="num">01</span><span class="t">Context</span><span class="d">Why water is a security issue downstream</span><span class="go">Open <svg class="ic"><use href="#i-chev-r"/></svg></span></button>
+    <button class="card lift agenda-card rise" style="--i:4" type="button" data-jump="history"><span class="gi t"><svg class="ic"><use href="#i-clock"/></svg></span><span class="num">02</span><span class="t">History</span><span class="d">An interactive timeline, 1970–2026</span><span class="go">Open <svg class="ic"><use href="#i-chev-r"/></svg></span></button>
+    <button class="card lift agenda-card rise" style="--i:5" type="button" data-jump="framework"><span class="gi v"><svg class="ic"><use href="#i-scales"/></svg></span><span class="num">03</span><span class="t">Legal framework</span><span class="d">Laws, zones, EIA, liability, treaties</span><span class="go">Open <svg class="ic"><use href="#i-chev-r"/></svg></span></button>
+    <button class="card lift agenda-card rise" style="--i:6" type="button" data-jump="statement"><span class="gi"><svg class="ic"><use href="#i-gavel"/></svg></span><span class="num">04</span><span class="t">Azerbaijan in court</span><span class="d">Its cases abroad and at home</span><span class="go">Open <svg class="ic"><use href="#i-chev-r"/></svg></span></button>
+    <button class="card lift agenda-card rise" style="--i:7" type="button" data-jump="outlook"><span class="gi o"><svg class="ic"><use href="#i-bulb"/></svg></span><span class="num">05</span><span class="t">Outlook</span><span class="d">Open problems and a moot court</span><span class="go">Open <svg class="ic"><use href="#i-chev-r"/></svg></span></button>
+  </div>
+  <p class="foot">Azerbaijani Water Law</p>
+  <i class="g cube" style="left:1650px;top:300px;--sz:170px;--z:40;--i:0"></i>
+  <i class="g orb t" style="left:56px;top:730px;--sz:120px;--z:60;--i:1"></i>
+  <aside class="notes">Five parts. The core is parts 3 and 4: the national framework and Azerbaijan’s own cases. Click a card to jump to that part.</aside>
+</section>
+
+<!-- 3 -->
+<section class="slide dots" id="context" data-title="Most of the water is born abroad" data-sec="01 · Context">
+  <i class="glow" style="--x:1060px;--y:180px;--s:760px;--c:rgba(0,113,227,.16)"></i>
+  <div class="col" style="width:880px;gap:36px">
+    <header class="hd"><p class="eyebrow">01 · Context</p><h2>Most of the water is born abroad.</h2></header>
+    <p class="lede rise" style="--i:2">About 70% of Azerbaijan’s water resources come from transboundary rivers that rise in neighbouring states.</p>
+    <div class="col" style="gap:8px">
+      <div class="river rise" style="--i:3"><span class="gi"><svg class="ic"><use href="#i-waves"/></svg></span><div><h3>Kura</h3><p class="body">1,515 km · rises in Türkiye, flows through Georgia</p></div></div>
+      <div class="river rise" style="--i:4"><span class="gi t"><svg class="ic"><use href="#i-waves"/></svg></span><div><h3>Araz</h3><p class="body">Border river from Türkiye, along Armenia and Iran</p></div></div>
+      <div class="river rise" style="--i:5"><span class="gi v"><svg class="ic"><use href="#i-waves"/></svg></span><div><h3>Samur</h3><p class="body">Shared with Russia under a bilateral agreement</p></div></div>
+    </div>
+  </div>
+  <div class="donut" id="donut" data-mode="out" role="button" tabindex="0" aria-label="Switch between transboundary and domestic share">
+    <svg viewBox="0 0 400 400" aria-hidden="true">
+      <defs>
+        <linearGradient id="dg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2A8CFF"/><stop offset="1" stop-color="#16B5C4"/></linearGradient>
+        <filter id="dsh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#0071E3" flood-opacity=".25"/></filter>
+      </defs>
+      <circle class="trk" cx="200" cy="200" r="150"/>
+      <circle class="arc a1" cx="200" cy="200" r="150" stroke="url(#dg)" transform="rotate(-81.6 200 200)" filter="url(#dsh)"/>
+      <circle class="arc a2" cx="200" cy="200" r="150" transform="rotate(170.4 200 200)"/>
+    </svg>
+    <div class="donut-c"><p class="dn" data-count="70" data-suffix="%">70%</p><p class="dl">from transboundary rivers</p></div>
+  </div>
+  <div class="donut-seg rise" style="--i:6"><div class="seg" id="donut-seg" role="group" aria-label="Share of water"><button type="button" data-v="out">Transboundary · 70%</button><button type="button" data-v="in">Domestic · 30%</button></div></div>
+  <p class="foot">Source: Ministry of Ecology and Natural Resources, via Trend (2024)</p>
+  <i class="g orb" style="left:1590px;top:250px;--sz:150px;--z:50;--i:0"></i>
+  <i class="g cube t" style="left:1040px;top:740px;--sz:120px;--z:36;--rot:-14deg;--i:1"></i>
+  <aside class="notes">Azerbaijan is a downstream state: about 70% of its water enters from neighbouring countries, so its quality and quantity depend on others. Click the ring or the chips to switch between the transboundary and domestic shares.</aside>
+</section>
+
+<!-- 4 -->
+<section class="slide waves alt" id="decline" data-title="Less water, every decade" data-sec="01 · Context">
+  <i class="glow" style="--x:1180px;--y:200px;--s:700px;--c:rgba(255,149,0,.14)"></i>
+  <i class="glow" style="--x:120px;--y:300px;--s:760px;--c:rgba(0,113,227,.14)"></i>
+  <header class="hd"><p class="eyebrow">01 · Context</p><h2>Less water, every decade.</h2><p class="lede rise" style="--i:2">Climate change and upstream withdrawals are shrinking supply.</p></header>
+    <div class="row" style="gap:32px">
+    <div class="card chart-card rise" style="--i:3">
+      <div class="cc-top"><div><h3>Water resources</h3><p class="body">billion m³ per year</p></div><p class="delta" data-count="26.4" data-dec="1" data-prefix="−" data-suffix="%" data-delay="500">−26.4%</p></div>
+      <div class="bar-row"><div class="bl"><span>1980</span><b data-count="35.6" data-dec="1" data-prefix="≈" data-delay="400">≈35.6</b></div><div class="track"><i class="fill a" style="--w:100%;--dl:.4s"></i></div></div>
+      <div class="bar-row"><div class="bl"><span>2023</span><b data-count="26.2" data-dec="1" data-delay="700">26.2</b></div><div class="track"><i class="fill o" style="--w:73.6%;--dl:.7s"></i></div></div>
+      <p class="body">1980 level implied by the reported 26.4% fall</p>
+    </div>
+    <div class="card chart-card rise" style="--i:4">
+      <div class="cc-top"><div><h3>Average annual rainfall</h3><p class="body">millimetres</p></div><p class="delta" data-count="14.4" data-dec="1" data-prefix="−" data-suffix="%" data-delay="650">−14.4%</p></div>
+      <div class="bar-row"><div class="bl"><span>2002–2011</span><b data-count="512.4" data-dec="1" data-delay="550">512.4</b></div><div class="track"><i class="fill a" style="--w:100%;--dl:.55s"></i></div></div>
+      <div class="bar-row"><div class="bl"><span>2012–2023</span><b data-count="438.6" data-dec="1" data-delay="850">438.6</b></div><div class="track"><i class="fill o" style="--w:85.6%;--dl:.85s"></i></div></div>
+      <p class="body">Period averages</p>
+    </div>
+  </div>
+  <p class="foot">Source: National Strategy for Efficient Use of Water Resources (2024), via Report.az</p>
+  <i class="g orb p" style="left:1740px;top:262px;--sz:170px;--z:44;--i:0"></i>
+  <i class="g cube" style="left:896px;top:836px;--sz:128px;--z:60;--rot:18deg;--i:1"></i>
+  <aside class="notes">Water resources fell 26.4% between 1980 and 2023, to 26.2 billion m³; the 1980 figure is derived from that percentage. Average rainfall dropped from 512.4 mm in 2002–2011 to 438.6 mm in 2012–2023. Press R to run the bars again.</aside>
+</section>
+
+<!-- 5 -->
+<section class="slide dots" id="history" data-title="Six key dates" data-sec="02 · History" data-steps="6">
+  <i class="glow" style="--x:560px;--y:420px;--s:900px;--c:rgba(0,113,227,.12)"></i>
+  <header class="hd"><p class="eyebrow">02 · History</p><h2>Six dates that built the system.</h2></header>
+  <div class="tl-top rise" style="--i:2">
+    <div class="seg" id="tl-filter" role="group" aria-label="Which dates to show">
+      <button type="button" data-v="key">6 key dates</button><button type="button" data-v="all">All milestones</button>
+    </div>
+  </div>
+  <div class="tl rise" style="--i:3" id="tl"></div>
+  <div class="card tl-panel rise" style="--i:4" id="tl-panel" aria-live="polite"></div>
+  <p class="foot">Sources: FAOLEX; UNECE treaty status; e-qanun.az; Tehran Convention; Report.az; Stop Ecocide</p>
+  <i class="g orb" style="left:1730px;top:96px;--sz:130px;--z:40;--i:0"></i>
+  <aside class="notes">Six dates carry the story: 1997 the Water Code; 1999 the core environmental laws and the Aarhus Convention; 2000 the UNECE Water Convention and water protection zones; 2018 binding EIA; 2023 one agency for water; 2024 the National Water Strategy and the ecocide offence. Press → to open each. If asked about another year, switch to “All milestones” and click it.</aside>
+</section>
+
+<!-- 6 -->
+<section class="slide waves alt" id="framework" data-title="Four layers of water law" data-sec="03 · Legal framework" data-steps="4">
+  <i class="glow" style="--x:180px;--y:280px;--s:760px;--c:rgba(0,113,227,.18)"></i>
+  <header class="hd"><p class="eyebrow">03 · Legal framework</p><h2>Four layers of water law.</h2></header>
+  <div class="stack" id="stack">
+    <button class="slab s4" type="button" data-layer="4" style="top:360px;--k:0" aria-label="Layer 4: subordinate acts"></button>
+    <button class="slab s3" type="button" data-layer="3" style="top:240px;--k:1" aria-label="Layer 3: codes and laws"></button>
+    <button class="slab s2" type="button" data-layer="2" style="top:120px;--k:2" aria-label="Layer 2: international treaties"></button>
+    <button class="slab s1" type="button" data-layer="1" style="top:0px;--k:3" aria-label="Layer 1: Constitution"></button>
+  </div>
+  <div class="acc-list">
+    <button class="card acc rise" style="--i:2" type="button" data-layer="1" aria-expanded="false"><span class="gi"><svg class="ic"><use href="#i-scales"/></svg></span><span class="acc-t"><span class="h">Constitution (1995)</span><span class="s">Art. 39 right · Art. 78 duty · Art. 148 treaties</span><span class="acc-d"><span><span>Everyone has the right to live in a healthy environment, and protecting it is everyone’s duty. International treaties are part of the legal system.</span></span></span></span><svg class="ic chev"><use href="#i-chev-r"/></svg></button>
+    <button class="card acc rise" style="--i:3" type="button" data-layer="2" aria-expanded="false"><span class="gi t"><svg class="ic"><use href="#i-globe"/></svg></span><span class="acc-t"><span class="h">International treaties</span><span class="s">Outrank conflicting national rules</span><span class="acc-d"><span><span>The Water Code repeats this for water in Art. 2: if a treaty Azerbaijan has joined sets different rules, the treaty applies.</span></span></span></span><svg class="ic chev"><use href="#i-chev-r"/></svg></button>
+    <button class="card acc rise" style="--i:4" type="button" data-layer="3" aria-expanded="false"><span class="gi v"><svg class="ic"><use href="#i-book"/></svg></span><span class="acc-t"><span class="h">Codes and laws</span><span class="s">Water Code, Environmental Protection, EIA Law</span><span class="acc-d"><span><span>Also the Criminal Code and the Code of Administrative Offences, which set liability for pollution.</span></span></span></span><svg class="ic chev"><use href="#i-chev-r"/></svg></button>
+    <button class="card acc rise" style="--i:5" type="button" data-layer="4" aria-expanded="false"><span class="gi gr"><svg class="ic"><use href="#i-doc"/></svg></span><span class="acc-t"><span class="h">Subordinate acts</span><span class="s">Presidential decrees, Cabinet decisions</span><span class="acc-d"><span><span>Cabinet decisions fill in the details, such as the size of protection zones and the steps of an assessment.</span></span></span></span><svg class="ic chev"><use href="#i-chev-r"/></svg></button>
+  </div>
+  <p class="foot">Sources: Constitution of the Republic of Azerbaijan; Water Code, Art. 2</p>
+  <i class="g orb" style="left:240px;top:330px;--sz:130px;--z:56;--i:0"></i>
+  <aside class="notes">International treaties outrank ordinary laws: if a treaty Azerbaijan has joined sets different rules on water, the treaty applies. That is why international treaties matter for domestic water law. Click a layer, or press → to open them in turn.</aside>
+</section>
+
+<!-- 7 -->
+<section class="slide dots" id="watercode" data-title="The Water Code of 1997" data-sec="03 · Legal framework">
+  <i class="glow" style="--x:60px;--y:300px;--s:700px;--c:rgba(0,113,227,.15)"></i>
+  <header class="hd"><p class="eyebrow">03 · Core act</p><h2>The Water Code of 1997.</h2><p class="lede rise" style="--i:2">Law No. 418-IQ of 26 December 1997, amended many times since</p></header>
+  <div class="row" style="gap:40px">
+    <div class="col" style="width:420px;gap:14px">
+      <div class="rise" style="--i:3"><p class="big grad" data-count="105">105</p><p class="body">articles</p></div>
+      <div class="rise" style="--i:4"><p class="big grad" data-count="17" data-delay="150">17</p><p class="body">chapters</p></div>
+      <div class="rise" style="--i:5"><p class="big grad" data-count="4" data-delay="300">4</p><p class="body">sections</p></div>
+    </div>
+    <div class="grow" style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
+      <div class="card lift rise col" style="--i:4;padding:32px;gap:12px"><span class="gi"><svg class="ic"><use href="#i-waves"/></svg></span><h3>Water fund</h3><p class="body">Internal waters plus the Azerbaijani sector of the Caspian Sea</p></div>
+      <div class="card lift rise col" style="--i:5;padding:32px;gap:12px"><span class="gi o"><svg class="ic"><use href="#i-factory"/></svg></span><h3>Pollution, Art. 1</h3><p class="body">Discharge of harmful substances that worsens water quality</p></div>
+      <div class="card lift rise col" style="--i:6;padding:32px;gap:12px"><span class="gi t"><svg class="ic"><use href="#i-shield"/></svg></span><h3>Protection, Ch. 14</h3><p class="body">Surface and groundwater, protection zones, pollution control</p></div>
+      <div class="card lift rise col" style="--i:7;padding:32px;gap:12px"><span class="gi v"><svg class="ic"><use href="#i-chart"/></svg></span><h3>State water accounting</h3><p class="body">Records water bodies, their use and their quality</p></div>
+    </div>
+  </div>
+  <p class="foot">Sources: FAOLEX summary of the Water Code; Water Code text (fhn.gov.az, prg.kz)</p>
+  <i class="g orb" style="left:1000px;top:850px;--sz:150px;--z:48;--i:0"></i>
+  <i class="g cube t" style="left:1720px;top:300px;--sz:140px;--z:36;--i:1"></i>
+  <aside class="notes">The Water Code declares the country’s waters, including its Caspian sector, the national wealth of the people. It defines pollution, sets up state water accounting, and in Chapter 14 deals with protection of surface and groundwater, protection zones and pollution control. Article 2 gives treaties priority.</aside>
+</section>
+
+<!-- 8 -->
+<section class="slide waves alt" id="zones" data-title="Buffers around every water body" data-sec="03 · Legal framework" data-steps="2">
+  <i class="glow" style="--x:140px;--y:320px;--s:760px;--c:rgba(20,184,198,.18)"></i>
+  <header class="hd"><p class="eyebrow">03 · Spatial protection</p><h2>Buffers around every water body.</h2><p class="lede rise" style="--i:2">A wider conservation zone and a stricter coastal strip.</p></header>
+  <div class="zdiag rise" style="--i:3">
+    <button class="zone z-outer" type="button" data-z="0"><span class="zl">Water conservation zone</span></button>
+    <button class="zone z-strip" type="button" data-z="1"><span class="zl">Coastal strip</span></button>
+    <div class="water"><svg class="ic"><use href="#i-waves"/></svg><span>Water body</span></div>
+    <button class="zone z-prot" type="button" data-z="2" aria-label="Protected areas"><svg class="ic"><use href="#i-leaf"/></svg></button>
+  </div>
+  <div class="card zpanel rise" style="--i:4" id="zpanel" aria-live="polite"></div>
+  <p class="foot">Source: Cabinet of Ministers Decision No. 56 of 24 March 2000 (implementing Water Code, Art. 82)</p>
+  <i class="g orb" style="left:640px;top:500px;--sz:120px;--z:44;--i:0"></i>
+  <i class="g cube t" style="left:1730px;top:290px;--sz:120px;--z:40;--i:1"></i>
+  <aside class="notes">The Water Code lets the Cabinet set the width and regime of protection zones. The 2000 decision creates two bands: a wider conservation zone and a narrower coastal strip with the strictest limits. Where a zone holds spawning grounds or drinking-water sources, it becomes a protected area (the leaf badge).</aside>
+</section>
+
+<!-- 9 -->
+<section class="slide dots" id="laws" data-title="The laws around the Code" data-sec="03 · Legal framework">
+  <i class="glow" style="--x:1100px;--y:120px;--s:780px;--c:rgba(94,92,230,.12)"></i>
+  <header class="hd"><p class="eyebrow">03 · Companion laws</p><h2>The laws around the Code.</h2></header>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px 24px">
+    <div class="card lift rise row" style="--i:2;padding:26px 32px;gap:22px"><span class="gi t"><svg class="ic"><use href="#i-leaf"/></svg></span><div class="col grow" style="gap:4px"><h3>Environmental Protection</h3><p class="meta">1999 · No. 678-IQ</p><p class="body">Principles, ecological expertise, monitoring</p></div></div>
+    <div class="card lift rise row" style="--i:3;padding:26px 32px;gap:22px"><span class="gi o"><svg class="ic"><use href="#i-warn"/></svg></span><div class="col grow" style="gap:4px"><h3>Ecological Safety</h3><p class="meta">1999 · No. 677-IQ</p><p class="body">Emergency and disaster situations</p></div></div>
+    <div class="card lift rise row" style="--i:4;padding:26px 32px;gap:22px"><span class="gi"><svg class="ic"><use href="#i-drop"/></svg></span><div class="col grow" style="gap:4px"><h3>Water Supply and Wastewater</h3><p class="meta">1999 · No. 723-IQ</p><p class="body">Drinking water, sewerage, discharges</p></div></div>
+    <div class="card lift rise row" style="--i:5;padding:26px 32px;gap:22px"><span class="gi t"><svg class="ic"><use href="#i-waves"/></svg></span><div class="col grow" style="gap:4px"><h3>Melioration and Irrigation</h3><p class="meta">1996</p><p class="body">Irrigation and drainage networks</p></div></div>
+    <div class="card lift rise row" style="--i:6;padding:26px 32px;gap:22px;grid-column:1 / -1"><span class="gi o"><svg class="ic"><use href="#i-factory"/></svg></span><div class="col grow" style="gap:4px"><h3>Waste</h3><p class="meta">1998 · No. 514-IQ</p><p class="body">Disposal sites; renamed “On Waste” in 2023</p></div></div>
+  </div>
+  <p class="foot">Sources: AMPEID; prg.kz; FAOLEX</p>
+  <i class="g cube v" style="left:1700px;top:230px;--sz:150px;--z:40;--i:0"></i>
+  <i class="g orb t" style="left:70px;top:800px;--sz:120px;--z:56;--i:1"></i>
+  <aside class="notes">The Water Code does not work alone. The 1999 Environmental Protection Law sets general principles and the state ecological expertise. The Water Supply and Wastewater Law governs drinking water and discharges. Waste law matters because landfills are a main pollution pathway into rivers and groundwater.</aside>
+</section>
+
+<!-- 10 -->
+<section class="slide waves alt" id="eia" data-title="Assess first, build later" data-sec="03 · Legal framework" data-steps="4">
+  <i class="glow" style="--x:560px;--y:100px;--s:820px;--c:rgba(0,113,227,.14)"></i>
+  <header class="hd"><p class="eyebrow">03 · Prevention</p><h2>Assess first, build later.</h2></header>
+  <div class="eia" id="eia-flow">
+    <i class="eia-track"></i><i class="eia-fill" id="eia-fill"></i>
+    <button class="eia-node" type="button" data-k="0" style="--k:0"><span class="bub"><svg class="ic"><use href="#i-factory"/></svg></span><span class="lbl">Planned activity</span></button>
+    <button class="eia-node" type="button" data-k="1" style="--k:1"><span class="bub"><svg class="ic"><use href="#i-doc"/></svg></span><span class="lbl">EIA document</span></button>
+    <button class="eia-node" type="button" data-k="2" style="--k:2"><span class="bub"><svg class="ic"><use href="#i-users"/></svg></span><span class="lbl">Public consultation</span></button>
+    <button class="eia-node" type="button" data-k="3" style="--k:3"><span class="bub"><svg class="ic"><use href="#i-search"/></svg></span><span class="lbl">Ecological expertise</span></button>
+    <button class="eia-node" type="button" data-k="4" style="--k:4"><span class="bub"><svg class="ic"><use href="#i-checkc"/></svg></span><span class="lbl">Decision and monitoring</span></button>
+  </div>
+  <div class="card eia-call" id="eia-call" aria-live="polite"></div>
+  <div class="eia-cards">
+    <div class="card rise" style="--i:3"><p class="yr grad">2018</p><h3>EIA Law</h3><p class="body">In force 17 July 2018; added strategic environmental assessment</p></div>
+    <div class="card rise" style="--i:4"><p class="yr grad">2022</p><h3>EIA Rules</h3><p class="body">Cabinet Resolution No. 362, including transboundary projects</p></div>
+    <div class="card warm rise" style="--i:5"><p class="yr grad-o">Oct 2026</p><h3>New thresholds</h3><p class="body">Numeric criteria from FAO, World Bank and EU practice; small farms exempt</p></div>
+  </div>
+  <p class="foot">Sources: Mondaq / BM Morrison Partners (2022); ADB (2014); Report.az (Oct 2026)</p>
+  <i class="g orb t" style="left:1660px;top:250px;--sz:110px;--z:48;--i:0"></i>
+  <i class="g cube p" style="left:1730px;top:880px;--sz:120px;--z:40;--i:1"></i>
+  <aside class="notes">EIA is the main preventive tool for water. Before 2018, practice relied on a 1996 handbook with no legal force. The 2018 law and the 2022 rules made EIA binding, including for transboundary projects. The October 2026 amendments add numeric thresholds: less burden on small farms, but a narrower scope in agriculture. Press → to walk through the five stages.</aside>
+</section>
+
+<!-- 11 -->
+<section class="slide dots" id="liability" data-title="Three tiers of liability" data-sec="03 · Legal framework" data-steps="2">
+  <i class="glow" style="--x:1060px;--y:240px;--s:800px;--c:rgba(255,149,0,.15)"></i>
+  <header class="hd"><p class="eyebrow">03 · Enforcement</p><h2>Three tiers of liability.</h2></header>
+  <div class="row" style="gap:24px">
+    <div class="col" style="flex:1;gap:24px">
+      <div class="card col" data-step="0" style="padding:30px 36px;gap:14px">
+        <div class="row" style="gap:20px;align-items:center"><span class="gi"><svg class="ic"><use href="#i-doc"/></svg></span><div><p class="meta">Tier 1</p><h3>Administrative</h3></div></div>
+        <p class="body">Code of Administrative Offences (2015): emission and discharge limits. In 2024 the fine for littering with cigarette waste rose from <b style="color:var(--ink)">50</b> to <b style="color:var(--ink)" data-count="300">300</b> AZN.</p>
+      </div>
+      <div class="card col" data-step="1" style="padding:30px 36px;gap:14px">
+        <div class="row" style="gap:20px;align-items:center"><span class="gi v"><svg class="ic"><use href="#i-gavel"/></svg></span><div><p class="meta">Tier 2</p><h3>Criminal</h3></div></div>
+        <p class="body">Criminal Code, Section 28 on ecological crimes. Example, Art. 254, poisoning land: a fine of 3,000–6,000 AZN.</p>
+      </div>
+    </div>
+    <div class="card warm col" data-step="2" style="flex:1;padding:36px 40px;gap:10px">
+      <p class="meta" style="color:var(--orange)">Tier 3 · since 22 October 2024</p>
+      <h3 style="font-size:44px">Ecocide · Art. 104-1</h3>
+      <p class="big grad-o"><span data-count="10" data-delay="200">10</span>–<span data-count="15" data-delay="350">15</span></p>
+      <p style="font:600 32px/1.2 var(--text);color:var(--ink)">years in prison</p>
+      <p class="body">Deliberate large-scale, long-term and serious harm to ecosystems, or a real threat of ecological disaster</p>
+    </div>
+  </div>
+  <div class="sev rise" style="--i:3" id="sev">
+    <div class="sev-track"><i class="sev-fill" id="sev-fill"></i><i class="sev-m" style="left:12%"></i><i class="sev-m" style="left:50%"></i><i class="sev-m o" style="left:94%"></i></div>
+    <div class="sev-l"><span class="hint">Fines</span><span class="hint">Criminal fines and prison</span><span class="hint">10–15 years</span></div>
+  </div>
+  <p class="foot">Sources: FAOLEX; prg.kz (Criminal Code, to Jul 2025); Trend and APA (2024); Stop Ecocide</p>
+  <i class="g cube p" style="left:1700px;top:230px;--sz:130px;--z:40;--i:0"></i>
+  <i class="g orb" style="left:24px;top:330px;--sz:110px;--z:56;--i:1"></i>
+  <aside class="notes">Liability runs from fines to prison. Press → to add each tier. The 2024 ecocide article was a presidential initiative adopted just before COP29 in Baku and sits among crimes against peace and humanity. For water, the tools used most in practice are still administrative fines and the pollution offences of the Criminal Code.</aside>
+</section>
+
+<!-- 12 -->
+<section class="slide waves alt" id="institutions" data-title="Who protects the water" data-sec="03 · Legal framework">
+  <i class="glow" style="--x:560px;--y:180px;--s:820px;--c:rgba(20,184,198,.15)"></i>
+  <header class="hd"><p class="eyebrow">03 · Institutions</p><h2>Who protects the water.</h2></header>
+  <div class="row" style="gap:24px">
+    <div class="card lift rise col" style="--i:2;flex:1;padding:34px;gap:12px"><span class="gi l"><svg class="ic"><use href="#i-building"/></svg></span><h3>Ministry of Ecology and Natural Resources</h3><p class="meta">Since 23 May 2001 · Minister Rashad Ismayilov</p><p class="body">Policy, ecological expertise of EIAs, monitoring including the Caspian</p></div>
+    <div class="card cool lift rise col" style="--i:3;flex:1;padding:34px;gap:12px"><span class="gi l t"><svg class="ic"><use href="#i-drop"/></svg></span><h3>State Water Resources Agency</h3><p class="meta">Since 30 Mar 2023 · Chair Zaur Mikayilov</p><p class="body">Water supply and integrated management; took over Azersu and Melioration</p></div>
+    <div class="card lift rise col" style="--i:4;flex:1;padding:34px;gap:12px"><span class="gi l v"><svg class="ic"><use href="#i-search"/></svg></span><h3>State Water Control Service</h3><p class="meta">Since 17 Nov 2023 · within the Agency</p><p class="body">State control over the use and protection of water</p></div>
+  </div>
+  <div class="card cd rise" style="--i:5" id="countdown">
+    <span class="gi o"><svg class="ic"><use href="#i-activity"/></svg></span>
+    <div class="grow"><h3>National Water Strategy, adopted 10 October 2024</h3><p class="body">Target: one unified water management system by the end of 2027</p><div class="cd-bar"><i id="cd-fill"></i></div></div>
+    <div class="cd-n"><b id="cd-days" data-count="0" data-delay="600">0</b><span class="body">days left</span></div>
+  </div>
+  <p class="foot">Sources: Trend; AzVision; FAOLEX (Decree No. 2356); Report.az; CIA World Leaders (2026)</p>
+  <i class="g orb t" style="left:1150px;top:236px;--sz:120px;--z:50;--i:0"></i>
+  <i class="g ring" style="left:1700px;top:96px;--sz:170px;--z:30;--i:1"></i>
+  <aside class="notes">Until 2023, water management was split between several companies and agencies. The 2023 reform put water supply, irrigation and water control under one agency, while the Ministry of Ecology keeps policy, EIA expertise and monitoring. The bar shows how much of the strategy period has passed and counts the days left to the end of 2027.</aside>
+</section>
+
+<!-- 13 -->
+<section class="slide dots" id="treaties" data-title="Treaties that bind Azerbaijan" data-sec="03 · Legal framework" data-steps="6">
+  <i class="glow" style="--x:600px;--y:280px;--s:720px;--c:rgba(0,113,227,.2)"></i>
+  <header class="hd"><p class="eyebrow">03 · International obligations</p><h2>Treaties that bind Azerbaijan.</h2><p class="lede rise" style="--i:2">Bilateral: Samur (Russia) · Araz (Iran) · Jandari Lake (Georgia)</p></header>
+  <svg class="tr-lines" id="tr-lines" viewBox="0 0 1920 1080" aria-hidden="true"></svg>
+  <div id="tr-nodes"></div>
+  <div class="hub" id="hub">
+    <button class="hub-def" type="button" data-hub><b>Azerbaijan</b><span>treaties prevail</span></button>
+    <div class="hub-det" id="hub-det"></div>
+  </div>
+  <p class="foot">Sources: UNECE treaty status; Presidential Library; Tehran Convention; Caucasus Edition; Azernews</p>
+  <aside class="notes">Because treaties outrank national law, these conventions are part of Azerbaijan’s water law. Click a treaty to open its card, click the centre or × to close, or press → to go through them. The Water Convention matters most for rivers, but its reach is limited because upstream Armenia has not joined.</aside>
+</section>
+
+<!-- 14 -->
+<section class="slide waves blue" id="statement" data-title="Shared rivers need shared rules" data-sec="04 · Azerbaijan in court">
+  <p class="eyebrow rise">04 · Azerbaijan in court</p>
+  <h1 style="width:1240px;color:#FFFFFF">Shared rivers need shared rules.</h1>
+  <p class="lede rise" style="--i:6;width:1040px;font-size:44px;line-height:1.3;color:#E6F0FF">Azerbaijan now takes its water and environment claims to court, abroad and at home.</p>
+  <i class="g orb wht" style="left:1360px;top:150px;--sz:400px;--z:30;--i:0"></i>
+  <i class="g cube wht" style="left:1250px;top:600px;--sz:210px;--z:52;--rot:22deg;--i:1"></i>
+  <i class="g ring wht" style="left:1560px;top:620px;--sz:240px;--z:24;--i:2"></i>
+  <i class="g orb wht" style="left:760px;top:780px;--sz:140px;--z:66;--i:3"></i>
+  <aside class="notes">Transition to the cases. Most of Azerbaijan’s water comes from abroad and treaties prevail over domestic law, so its disputes are fought under international conventions. First the cases against Armenia, then a domestic case.</aside>
+</section>
+
+<!-- 19 -->
+<section class="slide waves alt" id="azcases" data-title="Azerbaijan’s own cases" data-sec="04 · Case law">
+  <i class="glow" style="--x:120px;--y:260px;--s:820px;--c:rgba(20,184,198,.15)"></i>
+  <header class="hd"><p class="eyebrow">04 · Azerbaijan as a party</p><h2>Azerbaijan’s own cases.</h2></header>
+  <div class="card rise col" style="--i:2;padding:32px 40px;gap:22px">
+    <div class="row" style="align-items:center;gap:20px"><span class="gi t"><svg class="ic"><use href="#i-leaf"/></svg></span><h3 style="font-size:40px">Bern Convention arbitration</h3><span class="pill o" style="margin-left:auto"><i class="dot"></i>Pending · PCA Case 2023-60</span></div>
+    <div class="trk">
+      <i class="trk-line"></i><i class="trk-fill"></i>
+      <div class="ms done" style="--k:0"><i></i><b>18 Jan 2023</b><span>Case filed</span></div>
+      <div class="ms done" style="--k:1"><i></i><b>12 Feb 2025</b><span>Statement of Claim</span></div>
+      <div class="ms done" style="--k:2"><i></i><b>23 Dec 2025</b><span>Bifurcation decided</span></div>
+      <div class="ms now" style="--k:3"><i></i><b>Award</b><span>Not yet issued</span></div>
+    </div>
+    <p class="body">Includes a duty to cooperate on the Okhchuchay (Voghji) River · Armenia raised seven preliminary objections · first known inter-state case under the Bern Convention</p>
+  </div>
+  <div class="row" style="gap:24px">
+    <div class="card lift rise col" style="--i:3;flex:1;padding:30px 36px;gap:10px"><span class="pill v" style="align-self:flex-start">ICJ · 12 Nov 2024</span><h3>CERD case v. Armenia</h3><p class="body">No jurisdiction over the environmental-harm claims, including water: they were not racial discrimination under CERD.</p></div>
+    <div class="card warm rise col" style="--i:4;flex:1;padding:30px 36px;gap:10px"><span class="pill o" style="align-self:flex-start">Peace agreement · Art. XV</span><h3>Claims may be withdrawn</h3><p class="body">Initialled in August 2025: both states withdraw inter-state claims within a month of entry into force, which has not yet happened.</p></div>
+  </div>
+  <p class="foot">Sources: PCA; Jus Mundi; MFA of Azerbaijan; EJIL:Talk!; Armenpress and CivilNet (Nov 2026)</p>
+  <i class="g cube v" style="left:1720px;top:220px;--sz:130px;--z:40;--i:0"></i>
+  <aside class="notes">Azerbaijan is testing environmental treaties in court. The Bern Convention case, over damage in formerly occupied territories, includes cooperation to protect the Okhchuchay River, polluted by mining upstream. The ICJ case under the racial discrimination convention shows the limits of using a non-environmental treaty. Both may be withdrawn if the peace agreement enters into force.</aside>
+</section>
+
+<!-- 20 -->
+<section class="slide dots" id="domestic" data-title="Inside Azerbaijani courts" data-sec="04 · Case law" data-steps="4">
+  <i class="glow" style="--x:120px;--y:260px;--s:900px;--c:rgba(0,113,227,.12)"></i>
+  <header class="hd"><p class="eyebrow">04 · Domestic practice</p><h2>Inside Azerbaijani courts.</h2></header>
+  <div class="row" style="gap:24px">
+    <div class="card col rise" style="--i:2;flex:3;padding:36px 40px;gap:20px">
+      <p class="meta">Supreme Court · No. 2[1-8]-1463/2026 · 1 July 2026</p>
+      <h3 style="font-size:40px">A wastewater complaint meets a reputation claim</h3>
+      <div class="story" id="story"><i class="story-fill" id="story-fill"></i>
+        <div class="st" data-step="0"><span class="nb">1</span><span>A resident reported odours and wastewater from a plant to public bodies</span></div>
+        <div class="st" data-step="1"><span class="nb">2</span><span>The company sued to protect its business reputation, citing inspections and lab results</span></div>
+        <div class="st" data-step="2"><span class="nb">3</span><span>The courts found the complaints untrue and ordered a retraction; no damages were proven</span></div>
+        <div class="st" data-step="3"><span class="nb">4</span><span>The Supreme Court dismissed the cassation appeal</span></div>
+      </div>
+    </div>
+    <div class="col" style="flex:2;gap:24px">
+      <div class="card col rise" style="--i:3;padding:32px 36px;gap:12px"><div class="row" style="gap:16px;align-items:center"><span class="gi"><svg class="ic"><use href="#i-search"/></svg></span><p class="meta">Observation</p></div><p class="body" style="color:var(--ink)">Published rulings on water pollution are rare; enforcement runs mostly through inspections and fines</p></div>
+      <div class="card warm col" data-step="4" style="padding:32px 36px;gap:12px"><div class="row" style="gap:16px;align-items:center"><span class="gi o"><svg class="ic"><use href="#i-chat"/></svg></span><p class="meta" style="color:var(--orange)">For discussion</p></div><p class="body" style="color:var(--ink)">Aarhus Art. 3(8) bars penalising people who use their environmental rights. Could retraction orders chill pollution reporting?</p></div>
+    </div>
+  </div>
+  <p class="foot">Source: Supreme Court of Azerbaijan, case 2[1-8]-1463/2026 (sc.supremecourt.gov.az; summary via LexVira)</p>
+  <i class="g orb" style="left:1040px;top:250px;--sz:120px;--z:50;--i:0"></i>
+  <i class="g cube p" style="left:1730px;top:830px;--sz:110px;--z:40;--i:1"></i>
+  <aside class="notes">Domestic case law on water is thin and rarely published. This case shows how the burden of proof works against a citizen who reports suspected pollution: inspections found no breach, so the complaints were held untrue. Press → to tell the story step by step and open the discussion question.</aside>
+</section>
+
+<!-- 21 -->
+<section class="slide waves alt" id="outlook" data-title="Four open problems" data-sec="05 · Outlook">
+  <i class="glow" style="--x:560px;--y:200px;--s:820px;--c:rgba(255,149,0,.12)"></i>
+  <header class="hd"><p class="eyebrow">05 · Outlook</p><h2>Four open problems.</h2></header>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
+    <div class="card lift rise row" style="--i:2;padding:32px 36px;gap:24px;align-items:flex-start"><span class="gi o"><svg class="ic"><use href="#i-factory"/></svg></span><div class="col grow" style="gap:8px"><h3>Transboundary pollution</h3><p class="body">The main threats start upstream, beyond Azerbaijan’s jurisdiction</p></div></div>
+    <div class="card lift rise row" style="--i:3;padding:32px 36px;gap:24px;align-items:flex-start"><span class="gi"><svg class="ic"><use href="#i-drop"/></svg></span><div class="col grow" style="gap:8px"><h3>Scarcity and climate</h3><p class="body">Supply keeps shrinking; NDC 3.0 aims for −40% net emissions by 2035</p></div></div>
+    <div class="card lift rise row" style="--i:4;padding:32px 36px;gap:24px;align-items:flex-start"><span class="gi v"><svg class="ic"><use href="#i-book"/></svg></span><div class="col grow" style="gap:8px"><h3>Ageing, scattered law</h3><p class="body">A 1997 Water Code with many amendments, and no unified Environmental Code</p></div></div>
+    <div class="card lift rise row" style="--i:5;padding:32px 36px;gap:24px;align-items:flex-start"><span class="gi t"><svg class="ic"><use href="#i-users"/></svg></span><div class="col grow" style="gap:8px"><h3>Enforcement and participation</h3><p class="body">Rules on paper are rarely tested in court</p></div></div>
+  </div>
+  <p class="foot">Sources: EU Reporter (2021); UNFCCC (2025)</p>
+  <i class="g orb p" style="left:1740px;top:190px;--sz:150px;--z:44;--i:0"></i>
+  <i class="g cube" style="left:30px;top:830px;--sz:120px;--z:56;--rot:-14deg;--i:1"></i>
+  <aside class="notes">The framework is broad, but much of it dates from the late 1990s and is scattered across many laws. The biggest threats to water come from outside the borders, which is why treaties, monitoring data and dispute settlement matter. Watch the 2027 deadline, the climate targets, and whether the peace agreement closes the inter-state cases.</aside>
+</section>
+
+<!-- 22 -->
+<section class="slide waves alt" id="court" data-title="Moot court" data-sec="05 · Outlook" data-steps="7">
+  <i class="glow" style="--x:1000px;--y:220px;--s:860px;--c:rgba(94,92,230,.12)"></i>
+  <i class="glow" style="--x:60px;--y:420px;--s:700px;--c:rgba(255,149,0,.10)"></i>
+  <header class="hd"><p class="eyebrow">05 · Moot court</p><h2>The court is in session.</h2></header>
+  <div class="pips" id="court-pips" hidden></div>
+  <div class="court-qr rise" style="--i:2"><div class="cq-text"><p class="meta">Join the court</p><p class="body">Your role appears on your phone</p><p class="live" id="court-live"><i></i><span>Connecting…</span></p></div><div class="qr qr-sm"><svg viewBox="0 0 53 53" shape-rendering="crispEdges" role="img" aria-label="QR code that opens the court page"><rect width="53" height="53" fill="#fff"/><path fill="#1D1D1F" d="M4 4h1v1h-1zM5 4h1v1h-1zM6 4h1v1h-1zM7 4h1v1h-1zM8 4h1v1h-1zM9 4h1v1h-1zM10 4h1v1h-1zM17 4h1v1h-1zM19 4h1v1h-1zM20 4h1v1h-1zM23 4h1v1h-1zM24 4h1v1h-1zM25 4h1v1h-1zM26 4h1v1h-1zM29 4h1v1h-1zM30 4h1v1h-1zM34 4h1v1h-1zM36 4h1v1h-1zM40 4h1v1h-1zM42 4h1v1h-1zM43 4h1v1h-1zM44 4h1v1h-1zM45 4h1v1h-1zM46 4h1v1h-1zM47 4h1v1h-1zM48 4h1v1h-1zM4 5h1v1h-1zM10 5h1v1h-1zM13 5h1v1h-1zM14 5h1v1h-1zM16 5h1v1h-1zM18 5h1v1h-1zM24 5h1v1h-1zM26 5h1v1h-1zM30 5h1v1h-1zM31 5h1v1h-1zM32 5h1v1h-1zM33 5h1v1h-1zM34 5h1v1h-1zM35 5h1v1h-1zM39 5h1v1h-1zM42 5h1v1h-1zM48 5h1v1h-1zM4 6h1v1h-1zM6 6h1v1h-1zM7 6h1v1h-1zM8 6h1v1h-1zM10 6h1v1h-1zM13 6h1v1h-1zM15 6h1v1h-1zM18 6h1v1h-1zM21 6h1v1h-1zM22 6h1v1h-1zM25 6h1v1h-1zM26 6h1v1h-1zM31 6h1v1h-1zM35 6h1v1h-1zM36 6h1v1h-1zM39 6h1v1h-1zM42 6h1v1h-1zM44 6h1v1h-1zM45 6h1v1h-1zM46 6h1v1h-1zM48 6h1v1h-1zM4 7h1v1h-1zM6 7h1v1h-1zM7 7h1v1h-1zM8 7h1v1h-1zM10 7h1v1h-1zM15 7h1v1h-1zM16 7h1v1h-1zM18 7h1v1h-1zM19 7h1v1h-1zM20 7h1v1h-1zM23 7h1v1h-1zM24 7h1v1h-1zM26 7h1v1h-1zM28 7h1v1h-1zM30 7h1v1h-1zM31 7h1v1h-1zM35 7h1v1h-1zM39 7h1v1h-1zM40 7h1v1h-1zM42 7h1v1h-1zM44 7h1v1h-1zM45 7h1v1h-1zM46 7h1v1h-1zM48 7h1v1h-1zM4 8h1v1h-1zM6 8h1v1h-1zM7 8h1v1h-1zM8 8h1v1h-1zM10 8h1v1h-1zM14 8h1v1h-1zM15 8h1v1h-1zM16 8h1v1h-1zM17 8h1v1h-1zM18 8h1v1h-1zM21 8h1v1h-1zM24 8h1v1h-1zM25 8h1v1h-1zM26 8h1v1h-1zM27 8h1v1h-1zM28 8h1v1h-1zM29 8h1v1h-1zM30 8h1v1h-1zM33 8h1v1h-1zM34 8h1v1h-1zM35 8h1v1h-1zM37 8h1v1h-1zM38 8h1v1h-1zM39 8h1v1h-1zM40 8h1v1h-1zM42 8h1v1h-1zM44 8h1v1h-1zM45 8h1v1h-1zM46 8h1v1h-1zM48 8h1v1h-1zM4 9h1v1h-1zM10 9h1v1h-1zM12 9h1v1h-1zM13 9h1v1h-1zM14 9h1v1h-1zM15 9h1v1h-1zM17 9h1v1h-1zM19 9h1v1h-1zM20 9h1v1h-1zM21 9h1v1h-1zM22 9h1v1h-1zM23 9h1v1h-1zM24 9h1v1h-1zM28 9h1v1h-1zM29 9h1v1h-1zM30 9h1v1h-1zM31 9h1v1h-1zM33 9h1v1h-1zM34 9h1v1h-1zM36 9h1v1h-1zM42 9h1v1h-1zM48 9h1v1h-1zM4 10h1v1h-1zM5 10h1v1h-1zM6 10h1v1h-1zM7 10h1v1h-1zM8 10h1v1h-1zM9 10h1v1h-1zM10 10h1v1h-1zM12 10h1v1h-1zM14 10h1v1h-1zM16 10h1v1h-1zM18 10h1v1h-1zM20 10h1v1h-1zM22 10h1v1h-1zM24 10h1v1h-1zM26 10h1v1h-1zM28 10h1v1h-1zM30 10h1v1h-1zM32 10h1v1h-1zM34 10h1v1h-1zM36 10h1v1h-1zM38 10h1v1h-1zM40 10h1v1h-1zM42 10h1v1h-1zM43 10h1v1h-1zM44 10h1v1h-1zM45 10h1v1h-1zM46 10h1v1h-1zM47 10h1v1h-1zM48 10h1v1h-1zM13 11h1v1h-1zM15 11h1v1h-1zM19 11h1v1h-1zM20 11h1v1h-1zM21 11h1v1h-1zM22 11h1v1h-1zM23 11h1v1h-1zM24 11h1v1h-1zM28 11h1v1h-1zM29 11h1v1h-1zM30 11h1v1h-1zM31 11h1v1h-1zM37 11h1v1h-1zM38 11h1v1h-1zM4 12h1v1h-1zM7 12h1v1h-1zM9 12h1v1h-1zM10 12h1v1h-1zM12 12h1v1h-1zM14 12h1v1h-1zM16 12h1v1h-1zM19 12h1v1h-1zM20 12h1v1h-1zM24 12h1v1h-1zM25 12h1v1h-1zM26 12h1v1h-1zM27 12h1v1h-1zM28 12h1v1h-1zM31 12h1v1h-1zM32 12h1v1h-1zM35 12h1v1h-1zM37 12h1v1h-1zM40 12h1v1h-1zM41 12h1v1h-1zM43 12h1v1h-1zM4 13h1v1h-1zM5 13h1v1h-1zM6 13h1v1h-1zM8 13h1v1h-1zM11 13h1v1h-1zM12 13h1v1h-1zM13 13h1v1h-1zM17 13h1v1h-1zM21 13h1v1h-1zM23 13h1v1h-1zM26 13h1v1h-1zM32 13h1v1h-1zM35 13h1v1h-1zM36 13h1v1h-1zM41 13h1v1h-1zM44 13h1v1h-1zM45 13h1v1h-1zM48 13h1v1h-1zM7 14h1v1h-1zM8 14h1v1h-1zM10 14h1v1h-1zM12 14h1v1h-1zM15 14h1v1h-1zM17 14h1v1h-1zM18 14h1v1h-1zM22 14h1v1h-1zM24 14h1v1h-1zM26 14h1v1h-1zM28 14h1v1h-1zM29 14h1v1h-1zM31 14h1v1h-1zM36 14h1v1h-1zM38 14h1v1h-1zM39 14h1v1h-1zM40 14h1v1h-1zM45 14h1v1h-1zM48 14h1v1h-1zM4 15h1v1h-1zM7 15h1v1h-1zM11 15h1v1h-1zM17 15h1v1h-1zM18 15h1v1h-1zM19 15h1v1h-1zM20 15h1v1h-1zM21 15h1v1h-1zM22 15h1v1h-1zM23 15h1v1h-1zM24 15h1v1h-1zM25 15h1v1h-1zM27 15h1v1h-1zM29 15h1v1h-1zM31 15h1v1h-1zM32 15h1v1h-1zM34 15h1v1h-1zM35 15h1v1h-1zM36 15h1v1h-1zM37 15h1v1h-1zM39 15h1v1h-1zM41 15h1v1h-1zM42 15h1v1h-1zM43 15h1v1h-1zM47 15h1v1h-1zM48 15h1v1h-1zM4 16h1v1h-1zM6 16h1v1h-1zM7 16h1v1h-1zM8 16h1v1h-1zM9 16h1v1h-1zM10 16h1v1h-1zM13 16h1v1h-1zM14 16h1v1h-1zM17 16h1v1h-1zM21 16h1v1h-1zM22 16h1v1h-1zM23 16h1v1h-1zM24 16h1v1h-1zM25 16h1v1h-1zM28 16h1v1h-1zM30 16h1v1h-1zM31 16h1v1h-1zM32 16h1v1h-1zM34 16h1v1h-1zM35 16h1v1h-1zM36 16h1v1h-1zM37 16h1v1h-1zM41 16h1v1h-1zM42 16h1v1h-1zM43 16h1v1h-1zM44 16h1v1h-1zM4 17h1v1h-1zM7 17h1v1h-1zM9 17h1v1h-1zM11 17h1v1h-1zM12 17h1v1h-1zM17 17h1v1h-1zM18 17h1v1h-1zM20 17h1v1h-1zM22 17h1v1h-1zM27 17h1v1h-1zM28 17h1v1h-1zM29 17h1v1h-1zM32 17h1v1h-1zM33 17h1v1h-1zM36 17h1v1h-1zM38 17h1v1h-1zM41 17h1v1h-1zM43 17h1v1h-1zM45 17h1v1h-1zM46 17h1v1h-1zM48 17h1v1h-1zM6 18h1v1h-1zM7 18h1v1h-1zM8 18h1v1h-1zM10 18h1v1h-1zM11 18h1v1h-1zM14 18h1v1h-1zM19 18h1v1h-1zM20 18h1v1h-1zM21 18h1v1h-1zM22 18h1v1h-1zM28 18h1v1h-1zM29 18h1v1h-1zM30 18h1v1h-1zM31 18h1v1h-1zM32 18h1v1h-1zM33 18h1v1h-1zM40 18h1v1h-1zM44 18h1v1h-1zM46 18h1v1h-1zM47 18h1v1h-1zM5 19h1v1h-1zM6 19h1v1h-1zM7 19h1v1h-1zM9 19h1v1h-1zM11 19h1v1h-1zM14 19h1v1h-1zM19 19h1v1h-1zM22 19h1v1h-1zM26 19h1v1h-1zM27 19h1v1h-1zM30 19h1v1h-1zM32 19h1v1h-1zM34 19h1v1h-1zM36 19h1v1h-1zM37 19h1v1h-1zM39 19h1v1h-1zM40 19h1v1h-1zM41 19h1v1h-1zM42 19h1v1h-1zM43 19h1v1h-1zM48 19h1v1h-1zM5 20h1v1h-1zM7 20h1v1h-1zM10 20h1v1h-1zM11 20h1v1h-1zM13 20h1v1h-1zM17 20h1v1h-1zM18 20h1v1h-1zM21 20h1v1h-1zM22 20h1v1h-1zM28 20h1v1h-1zM36 20h1v1h-1zM38 20h1v1h-1zM39 20h1v1h-1zM43 20h1v1h-1zM45 20h1v1h-1zM5 21h1v1h-1zM7 21h1v1h-1zM8 21h1v1h-1zM9 21h1v1h-1zM11 21h1v1h-1zM12 21h1v1h-1zM15 21h1v1h-1zM16 21h1v1h-1zM19 21h1v1h-1zM21 21h1v1h-1zM22 21h1v1h-1zM24 21h1v1h-1zM26 21h1v1h-1zM30 21h1v1h-1zM32 21h1v1h-1zM33 21h1v1h-1zM35 21h1v1h-1zM36 21h1v1h-1zM39 21h1v1h-1zM42 21h1v1h-1zM45 21h1v1h-1zM46 21h1v1h-1zM4 22h1v1h-1zM8 22h1v1h-1zM10 22h1v1h-1zM11 22h1v1h-1zM12 22h1v1h-1zM13 22h1v1h-1zM14 22h1v1h-1zM15 22h1v1h-1zM17 22h1v1h-1zM18 22h1v1h-1zM23 22h1v1h-1zM24 22h1v1h-1zM25 22h1v1h-1zM26 22h1v1h-1zM27 22h1v1h-1zM28 22h1v1h-1zM29 22h1v1h-1zM30 22h1v1h-1zM31 22h1v1h-1zM32 22h1v1h-1zM36 22h1v1h-1zM37 22h1v1h-1zM39 22h1v1h-1zM41 22h1v1h-1zM43 22h1v1h-1zM44 22h1v1h-1zM46 22h1v1h-1zM48 22h1v1h-1zM4 23h1v1h-1zM5 23h1v1h-1zM7 23h1v1h-1zM9 23h1v1h-1zM13 23h1v1h-1zM14 23h1v1h-1zM16 23h1v1h-1zM18 23h1v1h-1zM20 23h1v1h-1zM21 23h1v1h-1zM22 23h1v1h-1zM23 23h1v1h-1zM25 23h1v1h-1zM26 23h1v1h-1zM29 23h1v1h-1zM30 23h1v1h-1zM35 23h1v1h-1zM36 23h1v1h-1zM37 23h1v1h-1zM40 23h1v1h-1zM42 23h1v1h-1zM43 23h1v1h-1zM44 23h1v1h-1zM47 23h1v1h-1zM7 24h1v1h-1zM8 24h1v1h-1zM9 24h1v1h-1zM10 24h1v1h-1zM11 24h1v1h-1zM12 24h1v1h-1zM13 24h1v1h-1zM19 24h1v1h-1zM20 24h1v1h-1zM22 24h1v1h-1zM23 24h1v1h-1zM24 24h1v1h-1zM25 24h1v1h-1zM26 24h1v1h-1zM27 24h1v1h-1zM28 24h1v1h-1zM30 24h1v1h-1zM31 24h1v1h-1zM32 24h1v1h-1zM33 24h1v1h-1zM34 24h1v1h-1zM35 24h1v1h-1zM39 24h1v1h-1zM40 24h1v1h-1zM41 24h1v1h-1zM42 24h1v1h-1zM43 24h1v1h-1zM44 24h1v1h-1zM45 24h1v1h-1zM46 24h1v1h-1zM4 25h1v1h-1zM5 25h1v1h-1zM6 25h1v1h-1zM8 25h1v1h-1zM12 25h1v1h-1zM13 25h1v1h-1zM15 25h1v1h-1zM19 25h1v1h-1zM20 25h1v1h-1zM21 25h1v1h-1zM22 25h1v1h-1zM23 25h1v1h-1zM24 25h1v1h-1zM28 25h1v1h-1zM30 25h1v1h-1zM32 25h1v1h-1zM33 25h1v1h-1zM35 25h1v1h-1zM36 25h1v1h-1zM39 25h1v1h-1zM40 25h1v1h-1zM44 25h1v1h-1zM48 25h1v1h-1zM5 26h1v1h-1zM6 26h1v1h-1zM8 26h1v1h-1zM10 26h1v1h-1zM12 26h1v1h-1zM14 26h1v1h-1zM16 26h1v1h-1zM17 26h1v1h-1zM20 26h1v1h-1zM22 26h1v1h-1zM24 26h1v1h-1zM26 26h1v1h-1zM28 26h1v1h-1zM29 26h1v1h-1zM30 26h1v1h-1zM33 26h1v1h-1zM36 26h1v1h-1zM39 26h1v1h-1zM40 26h1v1h-1zM42 26h1v1h-1zM44 26h1v1h-1zM46 26h1v1h-1zM48 26h1v1h-1zM4 27h1v1h-1zM5 27h1v1h-1zM7 27h1v1h-1zM8 27h1v1h-1zM12 27h1v1h-1zM13 27h1v1h-1zM15 27h1v1h-1zM18 27h1v1h-1zM20 27h1v1h-1zM21 27h1v1h-1zM23 27h1v1h-1zM24 27h1v1h-1zM28 27h1v1h-1zM30 27h1v1h-1zM31 27h1v1h-1zM32 27h1v1h-1zM33 27h1v1h-1zM34 27h1v1h-1zM35 27h1v1h-1zM36 27h1v1h-1zM37 27h1v1h-1zM40 27h1v1h-1zM44 27h1v1h-1zM45 27h1v1h-1zM6 28h1v1h-1zM7 28h1v1h-1zM8 28h1v1h-1zM9 28h1v1h-1zM10 28h1v1h-1zM11 28h1v1h-1zM12 28h1v1h-1zM15 28h1v1h-1zM19 28h1v1h-1zM22 28h1v1h-1zM24 28h1v1h-1zM25 28h1v1h-1zM26 28h1v1h-1zM27 28h1v1h-1zM28 28h1v1h-1zM29 28h1v1h-1zM30 28h1v1h-1zM31 28h1v1h-1zM32 28h1v1h-1zM34 28h1v1h-1zM35 28h1v1h-1zM36 28h1v1h-1zM37 28h1v1h-1zM39 28h1v1h-1zM40 28h1v1h-1zM41 28h1v1h-1zM42 28h1v1h-1zM43 28h1v1h-1zM44 28h1v1h-1zM45 28h1v1h-1zM47 28h1v1h-1zM6 29h1v1h-1zM7 29h1v1h-1zM9 29h1v1h-1zM12 29h1v1h-1zM14 29h1v1h-1zM23 29h1v1h-1zM24 29h1v1h-1zM25 29h1v1h-1zM28 29h1v1h-1zM38 29h1v1h-1zM39 29h1v1h-1zM40 29h1v1h-1zM42 29h1v1h-1zM44 29h1v1h-1zM46 29h1v1h-1zM48 29h1v1h-1zM4 30h1v1h-1zM6 30h1v1h-1zM10 30h1v1h-1zM11 30h1v1h-1zM12 30h1v1h-1zM14 30h1v1h-1zM20 30h1v1h-1zM22 30h1v1h-1zM24 30h1v1h-1zM26 30h1v1h-1zM27 30h1v1h-1zM30 30h1v1h-1zM31 30h1v1h-1zM33 30h1v1h-1zM36 30h1v1h-1zM37 30h1v1h-1zM39 30h1v1h-1zM41 30h1v1h-1zM43 30h1v1h-1zM47 30h1v1h-1zM4 31h1v1h-1zM7 31h1v1h-1zM12 31h1v1h-1zM15 31h1v1h-1zM22 31h1v1h-1zM23 31h1v1h-1zM24 31h1v1h-1zM25 31h1v1h-1zM26 31h1v1h-1zM29 31h1v1h-1zM30 31h1v1h-1zM31 31h1v1h-1zM32 31h1v1h-1zM34 31h1v1h-1zM37 31h1v1h-1zM39 31h1v1h-1zM40 31h1v1h-1zM44 31h1v1h-1zM47 31h1v1h-1zM5 32h1v1h-1zM7 32h1v1h-1zM8 32h1v1h-1zM10 32h1v1h-1zM11 32h1v1h-1zM12 32h1v1h-1zM13 32h1v1h-1zM14 32h1v1h-1zM15 32h1v1h-1zM16 32h1v1h-1zM17 32h1v1h-1zM18 32h1v1h-1zM19 32h1v1h-1zM20 32h1v1h-1zM21 32h1v1h-1zM24 32h1v1h-1zM25 32h1v1h-1zM27 32h1v1h-1zM30 32h1v1h-1zM31 32h1v1h-1zM33 32h1v1h-1zM36 32h1v1h-1zM38 32h1v1h-1zM40 32h1v1h-1zM41 32h1v1h-1zM43 32h1v1h-1zM44 32h1v1h-1zM45 32h1v1h-1zM47 32h1v1h-1zM48 32h1v1h-1zM4 33h1v1h-1zM6 33h1v1h-1zM7 33h1v1h-1zM9 33h1v1h-1zM11 33h1v1h-1zM12 33h1v1h-1zM14 33h1v1h-1zM17 33h1v1h-1zM19 33h1v1h-1zM21 33h1v1h-1zM22 33h1v1h-1zM23 33h1v1h-1zM26 33h1v1h-1zM30 33h1v1h-1zM31 33h1v1h-1zM33 33h1v1h-1zM39 33h1v1h-1zM40 33h1v1h-1zM41 33h1v1h-1zM45 33h1v1h-1zM48 33h1v1h-1zM4 34h1v1h-1zM6 34h1v1h-1zM8 34h1v1h-1zM10 34h1v1h-1zM12 34h1v1h-1zM16 34h1v1h-1zM17 34h1v1h-1zM18 34h1v1h-1zM19 34h1v1h-1zM20 34h1v1h-1zM22 34h1v1h-1zM23 34h1v1h-1zM24 34h1v1h-1zM26 34h1v1h-1zM28 34h1v1h-1zM36 34h1v1h-1zM37 34h1v1h-1zM42 34h1v1h-1zM44 34h1v1h-1zM45 34h1v1h-1zM47 34h1v1h-1zM48 34h1v1h-1zM4 35h1v1h-1zM7 35h1v1h-1zM8 35h1v1h-1zM11 35h1v1h-1zM13 35h1v1h-1zM14 35h1v1h-1zM16 35h1v1h-1zM17 35h1v1h-1zM19 35h1v1h-1zM20 35h1v1h-1zM23 35h1v1h-1zM24 35h1v1h-1zM28 35h1v1h-1zM31 35h1v1h-1zM35 35h1v1h-1zM36 35h1v1h-1zM38 35h1v1h-1zM40 35h1v1h-1zM42 35h1v1h-1zM43 35h1v1h-1zM44 35h1v1h-1zM45 35h1v1h-1zM48 35h1v1h-1zM4 36h1v1h-1zM8 36h1v1h-1zM9 36h1v1h-1zM10 36h1v1h-1zM12 36h1v1h-1zM13 36h1v1h-1zM15 36h1v1h-1zM17 36h1v1h-1zM18 36h1v1h-1zM20 36h1v1h-1zM23 36h1v1h-1zM24 36h1v1h-1zM25 36h1v1h-1zM26 36h1v1h-1zM27 36h1v1h-1zM30 36h1v1h-1zM31 36h1v1h-1zM32 36h1v1h-1zM35 36h1v1h-1zM37 36h1v1h-1zM39 36h1v1h-1zM40 36h1v1h-1zM42 36h1v1h-1zM44 36h1v1h-1zM4 37h1v1h-1zM6 37h1v1h-1zM9 37h1v1h-1zM11 37h1v1h-1zM13 37h1v1h-1zM16 37h1v1h-1zM19 37h1v1h-1zM20 37h1v1h-1zM24 37h1v1h-1zM25 37h1v1h-1zM26 37h1v1h-1zM28 37h1v1h-1zM31 37h1v1h-1zM40 37h1v1h-1zM42 37h1v1h-1zM46 37h1v1h-1zM48 37h1v1h-1zM8 38h1v1h-1zM10 38h1v1h-1zM11 38h1v1h-1zM13 38h1v1h-1zM15 38h1v1h-1zM16 38h1v1h-1zM23 38h1v1h-1zM27 38h1v1h-1zM29 38h1v1h-1zM30 38h1v1h-1zM32 38h1v1h-1zM35 38h1v1h-1zM37 38h1v1h-1zM38 38h1v1h-1zM40 38h1v1h-1zM42 38h1v1h-1zM45 38h1v1h-1zM46 38h1v1h-1zM48 38h1v1h-1zM5 39h1v1h-1zM6 39h1v1h-1zM7 39h1v1h-1zM8 39h1v1h-1zM13 39h1v1h-1zM14 39h1v1h-1zM15 39h1v1h-1zM19 39h1v1h-1zM23 39h1v1h-1zM24 39h1v1h-1zM29 39h1v1h-1zM30 39h1v1h-1zM32 39h1v1h-1zM34 39h1v1h-1zM36 39h1v1h-1zM37 39h1v1h-1zM39 39h1v1h-1zM41 39h1v1h-1zM44 39h1v1h-1zM45 39h1v1h-1zM47 39h1v1h-1zM4 40h1v1h-1zM7 40h1v1h-1zM8 40h1v1h-1zM10 40h1v1h-1zM16 40h1v1h-1zM17 40h1v1h-1zM19 40h1v1h-1zM20 40h1v1h-1zM21 40h1v1h-1zM22 40h1v1h-1zM23 40h1v1h-1zM24 40h1v1h-1zM25 40h1v1h-1zM26 40h1v1h-1zM27 40h1v1h-1zM28 40h1v1h-1zM29 40h1v1h-1zM30 40h1v1h-1zM32 40h1v1h-1zM33 40h1v1h-1zM34 40h1v1h-1zM35 40h1v1h-1zM36 40h1v1h-1zM37 40h1v1h-1zM38 40h1v1h-1zM40 40h1v1h-1zM41 40h1v1h-1zM42 40h1v1h-1zM43 40h1v1h-1zM44 40h1v1h-1zM46 40h1v1h-1zM48 40h1v1h-1zM12 41h1v1h-1zM14 41h1v1h-1zM15 41h1v1h-1zM17 41h1v1h-1zM19 41h1v1h-1zM21 41h1v1h-1zM24 41h1v1h-1zM28 41h1v1h-1zM32 41h1v1h-1zM35 41h1v1h-1zM36 41h1v1h-1zM38 41h1v1h-1zM40 41h1v1h-1zM44 41h1v1h-1zM48 41h1v1h-1zM4 42h1v1h-1zM5 42h1v1h-1zM6 42h1v1h-1zM7 42h1v1h-1zM8 42h1v1h-1zM9 42h1v1h-1zM10 42h1v1h-1zM16 42h1v1h-1zM17 42h1v1h-1zM21 42h1v1h-1zM22 42h1v1h-1zM24 42h1v1h-1zM26 42h1v1h-1zM28 42h1v1h-1zM29 42h1v1h-1zM31 42h1v1h-1zM32 42h1v1h-1zM37 42h1v1h-1zM40 42h1v1h-1zM42 42h1v1h-1zM44 42h1v1h-1zM45 42h1v1h-1zM46 42h1v1h-1zM47 42h1v1h-1zM4 43h1v1h-1zM10 43h1v1h-1zM12 43h1v1h-1zM15 43h1v1h-1zM18 43h1v1h-1zM24 43h1v1h-1zM28 43h1v1h-1zM30 43h1v1h-1zM31 43h1v1h-1zM32 43h1v1h-1zM36 43h1v1h-1zM37 43h1v1h-1zM40 43h1v1h-1zM44 43h1v1h-1zM47 43h1v1h-1zM48 43h1v1h-1zM4 44h1v1h-1zM6 44h1v1h-1zM7 44h1v1h-1zM8 44h1v1h-1zM10 44h1v1h-1zM14 44h1v1h-1zM15 44h1v1h-1zM17 44h1v1h-1zM18 44h1v1h-1zM22 44h1v1h-1zM23 44h1v1h-1zM24 44h1v1h-1zM25 44h1v1h-1zM26 44h1v1h-1zM27 44h1v1h-1zM28 44h1v1h-1zM29 44h1v1h-1zM31 44h1v1h-1zM33 44h1v1h-1zM35 44h1v1h-1zM36 44h1v1h-1zM38 44h1v1h-1zM39 44h1v1h-1zM40 44h1v1h-1zM41 44h1v1h-1zM42 44h1v1h-1zM43 44h1v1h-1zM44 44h1v1h-1zM45 44h1v1h-1zM47 44h1v1h-1zM48 44h1v1h-1zM4 45h1v1h-1zM6 45h1v1h-1zM7 45h1v1h-1zM8 45h1v1h-1zM10 45h1v1h-1zM12 45h1v1h-1zM13 45h1v1h-1zM14 45h1v1h-1zM16 45h1v1h-1zM17 45h1v1h-1zM21 45h1v1h-1zM22 45h1v1h-1zM24 45h1v1h-1zM25 45h1v1h-1zM28 45h1v1h-1zM30 45h1v1h-1zM32 45h1v1h-1zM33 45h1v1h-1zM35 45h1v1h-1zM36 45h1v1h-1zM39 45h1v1h-1zM40 45h1v1h-1zM41 45h1v1h-1zM43 45h1v1h-1zM44 45h1v1h-1zM4 46h1v1h-1zM6 46h1v1h-1zM7 46h1v1h-1zM8 46h1v1h-1zM10 46h1v1h-1zM13 46h1v1h-1zM16 46h1v1h-1zM19 46h1v1h-1zM21 46h1v1h-1zM25 46h1v1h-1zM26 46h1v1h-1zM27 46h1v1h-1zM31 46h1v1h-1zM33 46h1v1h-1zM34 46h1v1h-1zM35 46h1v1h-1zM36 46h1v1h-1zM40 46h1v1h-1zM43 46h1v1h-1zM44 46h1v1h-1zM45 46h1v1h-1zM47 46h1v1h-1zM48 46h1v1h-1zM4 47h1v1h-1zM10 47h1v1h-1zM15 47h1v1h-1zM20 47h1v1h-1zM24 47h1v1h-1zM27 47h1v1h-1zM29 47h1v1h-1zM35 47h1v1h-1zM36 47h1v1h-1zM38 47h1v1h-1zM41 47h1v1h-1zM45 47h1v1h-1zM4 48h1v1h-1zM5 48h1v1h-1zM6 48h1v1h-1zM7 48h1v1h-1zM8 48h1v1h-1zM9 48h1v1h-1zM10 48h1v1h-1zM12 48h1v1h-1zM17 48h1v1h-1zM18 48h1v1h-1zM21 48h1v1h-1zM23 48h1v1h-1zM25 48h1v1h-1zM28 48h1v1h-1zM30 48h1v1h-1zM31 48h1v1h-1zM32 48h1v1h-1zM34 48h1v1h-1zM35 48h1v1h-1zM37 48h1v1h-1zM39 48h1v1h-1zM43 48h1v1h-1zM44 48h1v1h-1zM45 48h1v1h-1zM47 48h1v1h-1z"/></svg></div></div>
+  <div class="card case-card rise" style="--i:2">
+    <span class="tag o" style="align-self:flex-start">Fictional case</span>
+    <h3 style="font-size:38px;line-height:1.15">Azerbaijan v. Upland</h3>
+    <div class="fact"><span class="gi s o"><svg class="ic"><use href="#i-sun"/></svg></span><p>The worst drought in 50 years. Upland’s harvest is failing.</p></div>
+    <div class="fact"><span class="gi s"><svg class="ic"><use href="#i-waves"/></svg></span><p>Upland fills its Tala reservoir to water its fields. For four months, the river’s flow into Azerbaijan falls by 30%.</p></div>
+    <div class="fact"><span class="gi s t"><svg class="ic"><use href="#i-drop"/></svg></span><p>Downstream farms lose part of their harvest; two villages need water trucks.</p></div>
+    <div class="fact"><span class="gi s v"><svg class="ic"><use href="#i-doc"/></svg></span><p>The dam and its rules were notified in 2019, for normal years. Both states are in the UNECE Water Convention, with no water-sharing deal.</p></div>
+  </div>
+  <div class="card court-card rise" style="--i:3" id="court-card" aria-live="polite"></div>
+  <p class="foot">Fictional facts · rules from the UNECE Water Convention (1992) and the UN Watercourses Convention (UNWC, 1997)</p>
+  <i class="g cube v" style="left:1750px;top:890px;--sz:110px;--z:40;--rot:16deg;--i:0"></i>
+  <aside class="notes">You are the judge. Read the facts aloud, then explain the roles: about half the room are jurors, and the rest are counsel for Azerbaijan (claimant) or for Upland (respondent). Phones assign the role when the code is scanned and show each counsel a brief for the question on screen; the counsel who opens each question is named on their phone. Each question has two steps. In the hearing, counsel speak for about a minute each, and you may question them. Then the jury votes on phones (add raised hands with + and −, or keys 1–3, for jurors without a phone). After the third question the screen shows what the jury decided, and the last screen is your ruling: it starts from the jury’s majority, and a click on a line (or keys 1–3) changes it, so you can depart from the jury. A note appears when two rulings pull against each other. There is no single right answer: the case pits equitable use against the duty not to cause significant harm. Press Reset only before people scan the code, because it hands out roles again.</aside>
+</section>
+
+<!-- 23 -->
+<section class="slide waves alt" id="sources" data-title="Key references" data-sec="05 · Outlook">
+  <i class="glow" style="--x:1100px;--y:120px;--s:780px;--c:rgba(0,113,227,.13)"></i>
+  <header class="hd" style="flex-direction:row;justify-content:space-between;align-items:flex-end"><div class="hd"><p class="eyebrow">Sources</p><h2>Thank you.</h2></div>
+</header>
+  <div class="row" style="gap:24px">
+    <div class="card rise col" style="--i:3;flex:1;padding:34px 40px;gap:16px"><div class="row" style="gap:16px;align-items:center"><span class="gi s"><svg class="ic"><use href="#i-book"/></svg></span><h3>Legislation and treaties</h3></div>
+      <ul class="body" style="display:flex;flex-direction:column;gap:6px;color:var(--ink-2)"><li>Constitution of the Republic of Azerbaijan (1995)</li><li>Water Code, Law No. 418-IQ (1997)</li><li>Environmental Protection Law, No. 678-IQ (1999)</li><li>EIA Law (2018); Cabinet Resolution No. 362 (2022)</li><li>Cabinet Decision No. 56 on water protection zones (2000)</li><li>Criminal Code, Art. 104-1; Code of Administrative Offences</li><li>UNECE Water, Aarhus, Espoo Conventions; Tehran Convention</li><li>UN Watercourses Convention (1997), used in the moot court</li></ul></div>
+    <div class="card rise col" style="--i:4;flex:1;padding:34px 40px;gap:16px"><div class="row" style="gap:16px;align-items:center"><span class="gi s v"><svg class="ic"><use href="#i-gavel"/></svg></span><h3>Cases and policy documents</h3></div>
+      <ul class="body" style="display:flex;flex-direction:column;gap:6px;color:var(--ink-2)"><li>Azerbaijan v. Armenia (CERD), Judgment of 12 Nov 2024</li><li>Bern Convention Arbitration, PCA Case No. 2023-60</li><li>Supreme Court of Azerbaijan, No. 2[1-8]-1463/2026</li><li>National Water Strategy (2024); NDC 3.0 (2025)</li></ul></div>
+  </div>
+  <p class="foot">Texts: e-qanun.az, FAOLEX, icj-cij.org, pca-cpa.org, sc.supremecourt.gov.az</p>
+  <i class="g orb" style="left:1700px;top:860px;--sz:130px;--z:44;--i:0"></i>
+  <aside class="notes">Official texts of Azerbaijani laws are on e-qanun.az in Azerbaijani; English translations on FAOLEX may be outdated, so check the current version before quoting. Thank the audience and invite questions.</aside>
+</section>
+
+<div id="tip" role="tooltip"></div>
+</div>
+</div>
+
+<nav id="controls" aria-label="Presentation controls">
+  <button type="button" id="b-prev" aria-label="Previous (←)"><svg class="ic"><use href="#i-chev-l"/></svg></button>
+  <div class="ctr"><b id="c-num">1 / 23</b><span id="c-sec">Introduction</span></div>
+  <button type="button" id="b-next" aria-label="Next (→)"><svg class="ic"><use href="#i-chev-r"/></svg></button>
+  <i class="sep"></i>
+  <button type="button" id="b-ov" aria-label="All slides (O)" data-overview><svg class="ic"><use href="#i-grid"/></svg></button>
+  <button type="button" id="b-notes" aria-label="Speaker notes (N)" aria-pressed="false"><svg class="ic"><use href="#i-notes"/></svg></button>
+  <button type="button" id="b-theme" aria-label="Dark theme (T)" aria-pressed="false"><svg class="ic"><use href="#i-moon"/></svg></button>
+  <button type="button" id="b-fs" aria-label="Full screen (F)"><svg class="ic"><use href="#i-expand"/></svg></button>
+</nav>
+<div id="notes" hidden><h4>Speaker notes</h4><p id="notes-t"></p></div>
+<div id="overview" hidden>
+  <div class="ov-top"><h4>All slides</h4><button type="button" class="ov-x" id="ov-close">Close · Esc</button></div>
+  <div id="ov-grid"></div>
+</div>
+</div>
+
+<script>
+(() => {
+'use strict';
+const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
+const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const icon = (id, cls = 'ic') => `<svg class="${cls}"><use href="#i-${id}"/></svg>`;
+
+const app = $('#app'), viewport = $('#viewport'), stage = $('#stage');
+const slides = $$('.slide', stage);
+const N = slides.length;
+const hooks = {};
+let cur = -1, step = 0;
+const mode = 'deck';
+const leaveTimers = new Map();
+
+/* ---------- decorate slides ---------- */
+slides.forEach((sl, i) => {
+  const vig = document.createElement('i'); vig.className = 'vig';
+  const pat = document.createElement('i'); pat.className = 'pat';
+  sl.prepend(vig); sl.prepend(pat);
+  const f = $('.foot', sl);
+  if (f) f.textContent = String(i + 1).padStart(2, '0') + ' · ' + f.textContent;
+  $$('h1, h2', sl).forEach(h => {
+    const text = h.textContent.trim();
+    h.setAttribute('aria-label', text);
+    h.innerHTML = text.split(/\s+/).map((w, k) => `<span class="w" aria-hidden="true" style="--k:${k}"><span>${esc(w)}</span></span>`).join(' ');
+  });
+});
+
+/* ---------- scaling ---------- */
+function fit() {
+  const s = Math.min(viewport.clientWidth / 1920, viewport.clientHeight / 1080);
+  stage.style.transform = `translate(-50%, -50%) scale(${s})`;
+}
+new ResizeObserver(fit).observe(viewport);
+fit();
+
+/* ---------- counters ---------- */
+function fmt(el, v) {
+  const dec = +(el.dataset.dec || 0);
+  const n = el.hasAttribute('data-plain') ? v.toFixed(dec) : v.toLocaleString('en-US', { minimumFractionDigits: dec, maximumFractionDigits: dec });
+  return (el.dataset.prefix || '') + n + (el.dataset.suffix || '');
+}
+function countUp(el, from) {
+  const to = +el.dataset.count;
+  const start = from != null ? from : (el.dataset.from != null ? +el.dataset.from : 0);
+  cancelAnimationFrame(el._raf); clearTimeout(el._to);
+  if (reduced) { el.textContent = fmt(el, to); return; }
+  el.textContent = fmt(el, start);
+  const dur = +(el.dataset.dur || 1400);
+  el._to = setTimeout(() => {
+    const t0 = performance.now();
+    const tick = t => {
+      const k = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - k, 3);
+      el.textContent = fmt(el, start + (to - start) * e);
+      if (k < 1) el._raf = requestAnimationFrame(tick);
+    };
+    el._raf = requestAnimationFrame(tick);
+  }, +(el.dataset.delay || 0));
+}
+function counters(root) {
+  const list = root.matches && root.matches('[data-count]') ? [root] : [];
+  list.concat($$('[data-count]', root)).forEach(el => {
+    const hidden = el.closest('[data-step]:not(.on)');
+    if (!hidden) countUp(el);
+  });
+}
+
+/* ---------- segmented controls ---------- */
+function segSelect(seg, v) {
+  let t = $('.thumb', seg);
+  if (!t) { t = document.createElement('i'); t.className = 'thumb'; seg.prepend(t); }
+  let target = null;
+  $$('button', seg).forEach(b => { const on = b.dataset.v === String(v); b.setAttribute('aria-pressed', on); if (on) target = b; });
+  if (target) { t.style.width = target.offsetWidth + 'px'; t.style.transform = `translateX(${target.offsetLeft}px)`; t.style.opacity = 1; }
+  else t.style.opacity = 0;
+  seg._v = v;
+}
+function refreshSegs() { $$('.seg').forEach(s => { if (s._v != null) segSelect(s, s._v); }); }
+
+/* ---------- navigation ---------- */
+function maxSteps(sl) {
+  if (sl.dataset.steps) return +sl.dataset.steps;
+  return $$('[data-step]', sl).reduce((m, e) => Math.max(m, +e.dataset.step), 0);
+}
+function applyStep(sl, n) {
+  $$('[data-step]', sl).forEach(e => {
+    const on = +e.dataset.step <= n;
+    if (on && !e.classList.contains('on')) { e.classList.add('on'); if (sl.classList.contains('in')) counters(e); }
+    else if (!on) e.classList.remove('on');
+  });
+  const h = hooks[sl.id]; if (h && h.step) h.step(n);
+}
+function enterAnim(sl) {
+  sl.classList.add('reset'); sl.classList.remove('in');
+  void sl.offsetWidth;
+  sl.classList.remove('reset');
+  requestAnimationFrame(() => requestAnimationFrame(() => { sl.classList.add('in'); counters(sl); refreshSegs(); }));
+}
+function go(i, s = 0) {
+  i = clamp(i, 0, N - 1);
+  const sl = slides[i], changed = i !== cur;
+  if (changed && cur >= 0) {
+    const old = slides[cur];
+    hooks[old.id] && hooks[old.id].leave && hooks[old.id].leave();
+    leaveTimers.set(old, setTimeout(() => old.classList.remove('in'), 900));
+  }
+  slides.forEach((x, k) => { x.classList.toggle('active', k === i); x.classList.toggle('past', k < i); x.inert = k !== i; });
+  cur = i; step = clamp(s, 0, maxSteps(sl));
+  if (changed) {
+    clearTimeout(leaveTimers.get(sl));
+    $$('[data-step]', sl).forEach(e => e.classList.remove('on'));
+    hooks[sl.id] && hooks[sl.id].enter && hooks[sl.id].enter(step);
+    enterAnim(sl);
+  }
+  applyStep(sl, step);
+  ui();
+}
+function setStep(n) { step = clamp(n, 0, maxSteps(slides[cur])); applyStep(slides[cur], step); ui(); }
+function next() {
+  const sl = slides[cur], h = hooks[sl.id];
+  if (h && h.next && h.next()) return;
+  if (step < maxSteps(sl)) setStep(step + 1);
+  else if (cur < N - 1) go(cur + 1, 0);
+}
+function prev() {
+  const sl = slides[cur], h = hooks[sl.id];
+  if (h && h.prev && h.prev()) return;
+  if (step > 0) setStep(step - 1);
+  else if (cur > 0) go(cur - 1, maxSteps(slides[cur - 1]));
+}
+function replay() { const sl = slides[cur]; const h = hooks[sl.id]; enterAnim(sl); h && h.enter && h.enter(step); applyStep(sl, step); }
+
+/* ---------- chrome ---------- */
+const cNum = $('#c-num'), cSec = $('#c-sec'), prog = $('#prog'), notesBox = $('#notes'), notesT = $('#notes-t');
+function ui() {
+  const sl = slides[cur], m = maxSteps(sl);
+  cNum.textContent = `${cur + 1} / ${N}`;
+  cSec.textContent = sl.dataset.sec || '';
+  prog.style.width = ((cur + (m ? step / (m + 1) : 0)) / (N - 1) * 100) + '%';
+  const nt = $('.notes', sl); notesT.textContent = nt ? nt.textContent : '';
+  $$('.ov-item').forEach((b, k) => b.classList.toggle('cur', k === cur));
+  if (mode === 'deck') { try { history.replaceState(null, '', '#slide-' + (cur + 1)); } catch (e) {} }
+}
+let uiTimer;
+function poke() {
+  app.classList.add('show-ui'); clearTimeout(uiTimer);
+  uiTimer = setTimeout(() => { if (!$('#controls').matches(':hover')) app.classList.remove('show-ui'); else poke(); }, 2800);
+}
+document.addEventListener('pointermove', poke, { passive: true });
+document.addEventListener('pointerdown', poke, { passive: true });
+
+const ov = $('#overview'), ovGrid = $('#ov-grid');
+ovGrid.innerHTML = slides.map((s, k) => `<button class="ov-item" type="button" data-k="${k}"><span class="ov-n">${String(k + 1).padStart(2, '0')}</span><span class="ov-s">${esc(s.dataset.sec)}</span><span class="ov-t">${esc(s.dataset.title)}</span></button>`).join('');
+function toggleOverview(force) {
+  const open = force != null ? force : ov.hidden;
+  ov.hidden = !open;
+  if (open) { const c = $('.ov-item.cur', ovGrid); c && c.focus({ preventScroll: false }); }
+}
+ovGrid.addEventListener('click', e => { const b = e.target.closest('.ov-item'); if (b) { toggleOverview(false); go(+b.dataset.k); } });
+$('#ov-close').addEventListener('click', () => toggleOverview(false));
+function toggleNotes() { notesBox.hidden = !notesBox.hidden; $('#b-notes').setAttribute('aria-pressed', !notesBox.hidden); }
+function toggleTheme() {
+  const night = document.documentElement.classList.toggle('night');
+  $('#b-theme').setAttribute('aria-pressed', night);
+  try { localStorage.setItem('awl-theme', night ? 'night' : 'day'); } catch (e) {}
+}
+try { if (localStorage.getItem('awl-theme') === 'night') { document.documentElement.classList.add('night'); $('#b-theme').setAttribute('aria-pressed', 'true'); } } catch (e) {}
+function toggleFs() {
+  try {
+    if (document.fullscreenElement) document.exitFullscreen && document.exitFullscreen();
+    else if (app.requestFullscreen) { const p = app.requestFullscreen(); p && p.catch && p.catch(() => {}); }
+  } catch (e) {}
+}
+document.addEventListener('fullscreenchange', () => setTimeout(fit, 50));
+$('#b-prev').addEventListener('click', prev);
+$('#b-next').addEventListener('click', next);
+$('#b-notes').addEventListener('click', toggleNotes);
+$('#b-theme').addEventListener('click', toggleTheme);
+$('#b-fs').addEventListener('click', toggleFs);
+document.addEventListener('click', e => {
+  const o = e.target.closest('[data-overview]'); if (o) { toggleOverview(true); return; }
+  const g = e.target.closest('[data-go]');
+  if (g) { const v = g.dataset.go; if (v === 'next') next(); else if (v === 'prev') prev(); else go(+v); return; }
+  const j = e.target.closest('[data-jump]');
+  if (j) { const k = slides.findIndex(s => s.id === j.dataset.jump); if (k >= 0) go(k); return; }
+  if (e.target.closest('[data-replay]')) replay();
+});
+
+/* keyboard */
+document.addEventListener('keydown', e => {
+  if (mode === 'vote' || e.metaKey || e.ctrlKey || e.altKey) return;
+  const k = e.key, sl = slides[cur], h = hooks[sl.id];
+  if (!ov.hidden) { if (k === 'Escape' || k === 'o' || k === 'O') { toggleOverview(false); e.preventDefault(); } return; }
+  const onButton = e.target.closest && e.target.closest('button, [role="button"]');
+  if (h && h.key && h.key(k, e)) { e.preventDefault(); return; }
+  switch (k) {
+    case 'ArrowRight': case 'PageDown': next(); break;
+    case ' ': case 'Enter': if (onButton) return; next(); break;
+    case 'ArrowLeft': case 'PageUp': case 'Backspace': prev(); break;
+    case 'ArrowUp': case 'ArrowDown': if (h && h.vert) h.vert(k === 'ArrowDown' ? 1 : -1); else return; break;
+    case 'Home': go(0); break;
+    case 'End': go(N - 1); break;
+    case 'o': case 'O': case 'Escape': if (k === 'Escape' && ov.hidden) { if (!notesBox.hidden) toggleNotes(); break; } toggleOverview(); break;
+    case 'n': case 'N': toggleNotes(); break;
+    case 'f': case 'F': toggleFs(); break;
+    case 't': case 'T': toggleTheme(); break;
+    case 'r': case 'R': replay(); break;
+    default: return;
+  }
+  e.preventDefault();
+});
+
+/* swipe */
+let sx = null, sy = 0;
+viewport.addEventListener('pointerdown', e => { if (e.pointerType === 'touch') { sx = e.clientX; sy = e.clientY; } });
+viewport.addEventListener('pointerup', e => {
+  if (sx == null) return;
+  const dx = e.clientX - sx, dy = e.clientY - sy; sx = null;
+  if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.5) dx < 0 ? next() : prev();
+});
+
+/* parallax + specular highlight */
+let pr = null;
+viewport.addEventListener('pointermove', e => {
+  if (reduced || e.pointerType === 'touch') return;
+  const r = viewport.getBoundingClientRect();
+  const px = ((e.clientX - r.left) / r.width) * 2 - 1, py = ((e.clientY - r.top) / r.height) * 2 - 1;
+  if (pr) return;
+  pr = requestAnimationFrame(() => { stage.style.setProperty('--px', px.toFixed(3)); stage.style.setProperty('--py', py.toFixed(3)); pr = null; });
+  const c = e.target.closest && e.target.closest('.card, .opt');
+  if (c) { const cr = c.getBoundingClientRect(); c.style.setProperty('--mx', ((e.clientX - cr.left) / cr.width * 100).toFixed(1) + '%'); c.style.setProperty('--my', ((e.clientY - cr.top) / cr.height * 100).toFixed(1) + '%'); }
+}, { passive: true });
+
+/* tooltip */
+const tip = $('#tip');
+stage.addEventListener('pointerover', e => {
+  const t = e.target.closest('[data-tip]'); if (!t) return;
+  const sr = stage.getBoundingClientRect(), r = t.getBoundingClientRect(), s = sr.width / 1920;
+  tip.textContent = t.dataset.tip;
+  tip.style.left = ((r.left + r.width / 2 - sr.left) / s) + 'px';
+  tip.style.top = ((r.top - sr.top) / s) + 'px';
+  tip.classList.add('show');
+});
+stage.addEventListener('pointerout', e => { const t = e.target.closest('[data-tip]'); if (t && !t.contains(e.relatedTarget)) tip.classList.remove('show'); });
+
+/* ================= slide components ================= */
+
+/* context donut */
+hooks.context = (() => {
+  const d = $('#donut'), seg = $('#donut-seg'), num = $('.dn', d), lbl = $('.dl', d);
+  function mode(m, animate) {
+    if (d.dataset.mode === m && animate) return;
+    d.dataset.mode = m; segSelect(seg, m);
+    num.dataset.count = m === 'out' ? 70 : 30;
+    lbl.textContent = m === 'out' ? 'from transboundary rivers' : 'forms inside the country';
+    if (animate) { num.dataset.delay = 0; countUp(num, m === 'out' ? 30 : 70); }
+    else num.textContent = fmt(num, +num.dataset.count);
+  }
+  seg.addEventListener('click', e => { const b = e.target.closest('button'); if (b) mode(b.dataset.v, true); });
+  d.addEventListener('click', () => mode(d.dataset.mode === 'out' ? 'in' : 'out', true));
+  d.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); e.stopPropagation(); d.click(); } });
+  return { enter() { mode('out', false); num.dataset.delay = 300; } };
+})();
+
+/* history timeline: six key dates, with every milestone one click away */
+hooks.history = (() => {
+  const EV = [
+    { y: 1970, c: 'law', t: 'Soviet water rules', d: 'Water use in the Azerbaijan SSR followed the USSR Fundamentals of Water Legislation of 1970.' },
+    { y: 1992, c: 'law', t: 'Law No. 79 on Nature Protection', d: 'The first national environmental act, of 25 February 1992. Water is protected as one component of nature; the law was replaced in 1999.' },
+    { y: 1995, c: 'law', t: 'Constitution', d: 'Art. 39 gives everyone the right to live in a healthy environment; Art. 78 makes protecting it everyone’s duty.' },
+    { y: 1996, c: 'law', t: 'Melioration and Irrigation Law', d: 'Sets the legal regime for irrigation and drainage networks.' },
+    { y: 1997, c: 'law', main: true, t: 'Water Code', d: 'One code for rivers, lakes, groundwater and the Azerbaijani sector of the Caspian.' },
+    { y: 1998, c: 'law', t: 'Waste Law', d: 'Law No. 514-IQ on industrial and household waste, a main pathway of water pollution. Renamed “On Waste” in 2023.' },
+    { y: 1999, c: 'law', main: true, t: 'Three environmental laws', d: 'General rules of environmental protection arrive, with laws on ecological safety and on drinking water.' },
+    { y: 1999, c: 'treaty', main: true, t: 'Aarhus and Espoo', d: 'The public gains rights to information and a say; neighbours must be consulted on cross-border projects.' },
+    { y: 2000, c: 'treaty', main: true, t: 'UNECE Water Convention', d: 'Joins the main treaty on shared rivers and lakes, the basis for working with upstream states.' },
+    { y: 2000, c: 'law', main: true, t: 'Water protection zones', d: 'The Cabinet draws buffer zones around water bodies.' },
+    { y: 2001, c: 'inst', t: 'Ministry of Ecology', d: 'The Ministry of Ecology and Natural Resources is created on 23 May 2001 as one body for environmental policy and control.' },
+    { y: 2006, c: 'treaty', t: 'Tehran Convention', d: 'Joins the framework convention on the Caspian marine environment on 4 April 2006.' },
+    { y: 2012, c: 'treaty', t: 'Aktau Protocol', d: 'Ratifies the Tehran Convention’s protocol on oil-pollution incidents on 21 December 2012.' },
+    { y: 2018, c: 'law', main: true, t: 'EIA Law', d: 'Assessing a project’s impact before building becomes a legal duty.' },
+    { y: 2018, c: 'treaty', t: 'Caspian Sea Convention', d: 'Legal status of the Caspian, signed by all five coastal states on 12 August.' },
+    { y: 2022, c: 'law', t: 'EIA Rules', d: 'Cabinet Resolution No. 362 of 21 September 2022 sets procedures for projects with and without transboundary impact.' },
+    { y: 2023, c: 'case', t: 'Bern Convention arbitration', d: 'Azerbaijan starts PCA Case 2023-60 against Armenia on 18 January.' },
+    { y: 2023, c: 'inst', main: true, t: 'State Water Resources Agency', d: 'Water supply, irrigation and water control move under one agency.' },
+    { y: 2024, c: 'inst', main: true, t: 'National Water Strategy', d: 'A plan to bring all water management into one system.' },
+    { y: 2024, c: 'law', main: true, t: 'Ecocide', d: 'Mass, long-term harm to ecosystems becomes one of the gravest crimes.' },
+    { y: 2024, c: 'case', t: 'ICJ judgment on CERD', d: '12 November: no jurisdiction over Azerbaijan’s environmental-harm claims.' },
+    { y: 2025, c: 'treaty', t: 'NDC 3.0', d: 'Climate target: −40% net emissions by 2035 against 1990, conditional on support.' },
+    { y: 2026, c: 'law', t: 'EIA thresholds', d: 'October amendments replace vague EIA terms with numeric criteria; small and medium farms are exempt.' }
+  ];
+  const KEYS = [
+    { y: 1997, s: 'The Water Code' },
+    { y: 1999, s: 'Core environmental laws; Aarhus' },
+    { y: 2000, s: 'Water Convention; protection zones' },
+    { y: 2018, s: 'EIA becomes binding' },
+    { y: 2023, s: 'One agency for water' },
+    { y: 2024, s: 'Water Strategy; ecocide' }
+  ];
+  const CAT = { law: ['National law', ''], treaty: ['International', 't'], inst: ['Institutions', 'v'], case: ['Disputes', 'o'] };
+  const ERAS = [{ n: 'USSR', a: 0, b: 0 }, { n: 'Building the system', a: 1, b: 8 }, { n: 'Caspian and treaties', a: 9, b: 11 }, { n: 'Modernisation', a: 12, b: 16 }];
+  const years = [...new Set(EV.map(e => e.y))];
+  const keyYears = KEYS.map(k => k.y);
+  const tl = $('#tl'), panel = $('#tl-panel'), fseg = $('#tl-filter');
+  let sel = -1, mode = 'key', shown = null;
+  tl.innerHTML = `<div class="tl-eras">${ERAS.map((e, k) => `<span class="era" data-e="${k}" style="grid-column:${e.a + 1} / ${e.b + 2}">${e.n}</span>`).join('')}</div>
+    <div class="tl-axis" id="tl-axis"><i class="tl-track"></i><i class="tl-fill" id="tl-fill"></i>
+    ${years.map((y, k) => `<button class="tl-node ${keyYears.includes(y) ? 'key' : 'minor'}" type="button" data-k="${k}" style="--k:${k}" aria-label="Show ${y}"><i></i><span>${y}</span></button>`).join('')}</div>`;
+  const nodes = $$('.tl-node', tl), fillEl = $('#tl-fill'), axis = $('#tl-axis'), track = $('.tl-track', tl), eras = $$('.era', tl);
+  function layout() {
+    const col = axis.clientWidth / years.length;
+    track.style.left = fillEl.style.left = (col / 2) + 'px';
+    track.style.right = (col / 2) + 'px';
+    fillEl.style.width = (sel < 0 ? 0 : sel * col) + 'px';
+  }
+  function render() {
+    tl.classList.toggle('all', mode === 'all');
+    nodes.forEach((n, k) => { n.classList.toggle('sel', k === sel); n.setAttribute('aria-pressed', k === sel); });
+    eras.forEach(er => { const e = ERAS[+er.dataset.e]; er.classList.toggle('on', sel >= e.a && sel <= e.b); });
+    layout();
+    if (sel < 0) {
+      panel.innerHTML = `<div class="tlp-y"><p class="yy grad">6</p><p class="body">key dates out of ${EV.length} milestones</p></div>
+        <div class="tlp-ov"><div class="kd-grid">${KEYS.map((k, i) => `<button class="kd" type="button" data-key="${i}" style="--i:${i}"><b>${k.y}</b><span>${esc(k.s)}</span></button>`).join('')}</div>
+</div>`;
+      shown = null; return;
+    }
+    const y = years[sel], isKey = keyYears.includes(y);
+    const evs = EV.filter(e => e.y === y && (mode === 'all' || !isKey || e.main));
+    const era = ERAS.find(e => sel >= e.a && sel <= e.b).n;
+    const ki = keyYears.indexOf(y);
+    panel.innerHTML = `<div class="tlp-y"><p class="yy grad" data-count="${y}" data-plain data-dur="700">${y}</p><p class="body">${ki >= 0 ? `Key date ${ki + 1} of 6 · ` : ''}${era}</p></div>
+      <div class="tlp-list">${evs.map((e, i) => `<div class="ev" style="--i:${i}"><span class="tag ${CAT[e.c][1]}">${CAT[e.c][0]}</span><h3>${esc(e.t)}</h3><p class="body">${esc(e.d)}</p></div>`).join('')}</div>`;
+    const yy = $('.yy', panel);
+    if (shown != null && shown !== y) countUp(yy, shown);
+    shown = y;
+  }
+  tl.addEventListener('click', e => {
+    const n = e.target.closest('.tl-node'); if (!n) return;
+    const k = +n.dataset.k, ki = keyYears.indexOf(years[k]);
+    if (ki >= 0) setStep(ki + 1);
+    else if (mode === 'all') { sel = k; render(); }
+  });
+  panel.addEventListener('click', e => { const b = e.target.closest('[data-key]'); if (b) setStep(+b.dataset.key + 1); });
+  fseg.addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; mode = b.dataset.v; segSelect(fseg, mode); render(); });
+  segSelect(fseg, 'key');
+  new ResizeObserver(layout).observe(axis);
+  return {
+    enter() { mode = 'key'; segSelect(fseg, 'key'); },
+    step(n) { sel = n > 0 ? years.indexOf(keyYears[n - 1]) : -1; render(); }
+  };
+})();
+
+/* framework layers */
+hooks.framework = (() => {
+  const sl = $('#framework'), stack = $('#stack');
+  sl.addEventListener('click', e => { const b = e.target.closest('[data-layer]'); if (!b) return; const n = +b.dataset.layer; setStep(step === n ? 0 : n); });
+  return {
+    step(n) {
+      $$('.slab', sl).forEach(s => s.classList.toggle('sel', +s.dataset.layer === n));
+      $$('.acc', sl).forEach(a => { const on = +a.dataset.layer === n; a.classList.toggle('sel', on); a.setAttribute('aria-expanded', on); });
+      stack.classList.toggle('has-sel', n > 0);
+    }
+  };
+})();
+
+/* protection zones */
+hooks.zones = (() => {
+  const Z = [
+    { t: 'Water conservation zone', s: 'Outer band', ic: 'shield', c: 't', items: ['Using pesticides', 'Building wastewater treatment plants', 'Storing oil products', 'Pipes, cables or lines without approval'] },
+    { t: 'Coastal strip', s: 'Inner band · the strictest regime', ic: 'leaf', c: '', items: ['Cutting or uprooting trees and shrubs', 'Farming and using fertilisers', 'Allocating land for construction', 'Driving vehicles'] },
+    { t: 'Protected areas', s: 'Special status inside a zone', ic: 'leaf', c: 't', text: 'Where a zone holds fish spawning grounds or drinking-water sources, it is designated a protected area.' }
+  ];
+  const sl = $('#zones'), panel = $('#zpanel');
+  sl.addEventListener('click', e => { const b = e.target.closest('[data-z]'); if (b) setStep(+b.dataset.z); });
+  return {
+    step(n) {
+      $$('[data-z]', sl).forEach(b => { b.classList.toggle('sel', +b.dataset.z === n); b.setAttribute('aria-pressed', +b.dataset.z === n); });
+      const z = Z[n];
+      panel.innerHTML = `<div class="zp-in"><div class="zp-h"><span class="gi ${z.c}">${icon(z.ic)}</span><div><h3>${z.t}</h3><p class="body">${z.s}</p></div></div>
+        ${z.items ? `<p class="meta" style="color:var(--orange)">Prohibited</p><ul class="zp-list">${z.items.map((it, i) => `<li style="--i:${i}"><span class="xb">${icon('x')}</span>${esc(it)}</li>`).join('')}</ul>`
+          : `<p style="font:400 30px/1.45 var(--text);color:var(--ink)">${esc(z.text)}</p>`}</div>`;
+    }
+  };
+})();
+
+/* EIA flow */
+hooks.eia = (() => {
+  const S = [
+    'The developer checks whether the project needs an EIA. Since October 2026, numeric thresholds decide for farms.',
+    'The developer assesses likely impacts on water, air, soil and people, including across borders.',
+    'The public is informed and can comment before a decision is made (Aarhus Convention).',
+    'The Ministry of Ecology and Natural Resources reviews the EIA in its state ecological expertise.',
+    'The project is approved, with conditions, or refused; its impacts are monitored over its life.'
+  ];
+  const sl = $('#eia'), flow = $('#eia-flow'), call = $('#eia-call'), fill = $('#eia-fill');
+  const nodes = $$('.eia-node', flow), W = 700;
+  flow.addEventListener('click', e => { const b = e.target.closest('.eia-node'); if (b) setStep(+b.dataset.k); });
+  return {
+    step(k) {
+      nodes.forEach((n, i) => { n.classList.toggle('done', i < k); n.classList.toggle('sel', i === k); n.setAttribute('aria-pressed', i === k); });
+      fill.style.width = (k / 4 * 80) + '%';
+      const n = nodes[k], cx = 128 + n.offsetLeft + n.offsetWidth / 2;
+      const left = clamp(cx - W / 2, 128, 1792 - W);
+      call.style.left = left + 'px';
+      call.style.setProperty('--pl', (cx - left) + 'px');
+      call.innerHTML = `<p class="meta">Stage ${k + 1} of 5</p><p class="ct">${esc(S[k])}</p>`;
+    }
+  };
+})();
+
+/* liability meter */
+hooks.liability = (() => {
+  const fill = $('#sev-fill'), marks = $$('.sev-m');
+  return { step(n) { fill.style.width = [12, 50, 94][n] + '%'; marks.forEach((m, i) => m.classList.toggle('on', i <= n)); } };
+})();
+
+/* institutions countdown */
+(() => {
+  const start = new Date(2024, 9, 10), end = new Date(2027, 11, 31), now = new Date();
+  const days = Math.max(0, Math.ceil((end - now) / 86400000));
+  const done = clamp((now - start) / (end - start), 0, 1);
+  const d = $('#cd-days'); d.dataset.count = days; d.textContent = days.toLocaleString('en-US');
+  $('#cd-fill').style.setProperty('--w', (done * 100).toFixed(1) + '%');
+  $('#cd-fill').setAttribute('title', Math.round(done * 100) + '% of the strategy period has passed');
+})();
+
+/* treaties constellation */
+hooks.treaties = (() => {
+  const T = [
+    { n: 'Water Convention', s: 'Helsinki · acceded 3 Aug 2000', ic: 'waves', c: '', d: 'The UNECE convention on transboundary watercourses and international lakes. Its reach in the Kura–Araz basin is limited: upstream Armenia is not a party.' },
+    { n: 'Aarhus Convention', s: 'Joined 9 Nov 1999', ic: 'users', c: 't', d: 'Access to environmental information, public participation in decisions, and access to justice.' },
+    { n: 'Espoo Convention', s: 'In force since 1999', ic: 'search', c: 'v', d: 'Transboundary EIA. In 2023 the Ministry of Ecology invoked it over a planned metallurgical plant in Armenia near the border.' },
+    { n: 'Tehran Convention', s: 'Joined 4 Apr 2006', ic: 'waves', c: 't', d: 'Protection of the Caspian marine environment. The Aktau protocol on oil-pollution incidents was ratified in 2012.' },
+    { n: 'Caspian Sea Convention', s: 'Signed 12 Aug 2018', ic: 'globe', c: '', d: 'The legal status of the Caspian Sea, signed by all five coastal states.' },
+    { n: 'Bern Convention', s: 'Ratified 2000', ic: 'leaf', c: 't', d: 'Conservation of European wildlife and natural habitats, and the treaty behind one of Azerbaijan’s own cases (next section).' }
+  ];
+  const tops = [340, 560, 780];
+  const holder = $('#tr-nodes'), svg = $('#tr-lines'), hub = $('#hub'), det = $('#hub-det');
+  holder.innerHTML = T.map((t, k) => {
+    const left = k < 3 ? 128 : 1332, top = tops[k % 3];
+    return `<button class="card lift tr-node rise" type="button" data-t="${k + 1}" style="left:${left}px;top:${top}px;--i:${k + 2}"><span class="gi s ${t.c}">${icon(t.ic)}</span><span class="col"><span class="nm">${t.n}</span><span class="sb">${t.s}</span></span></button>`;
+  }).join('');
+  svg.innerHTML = T.map((t, k) => { const x = k < 3 ? 588 : 1332, y = tops[k % 3] + 52; return `<line x1="${x}" y1="${y}" x2="960" y2="618" pathLength="1" style="--k:${k}"/>`; }).join('');
+  const lines = $$('line', svg), btns = $$('.tr-node', holder);
+  holder.addEventListener('click', e => { const b = e.target.closest('[data-t]'); if (b) { const k = +b.dataset.t; setStep(step === k ? 0 : k); } });
+  hub.addEventListener('click', e => { if (e.target.closest('[data-hub], .x')) setStep(0); });
+  return {
+    step(n) {
+      hub.classList.toggle('open', n > 0); svg.classList.toggle('has-sel', n > 0);
+      lines.forEach((l, i) => l.classList.toggle('hot', i === n - 1));
+      btns.forEach((b, i) => { b.classList.toggle('sel', i === n - 1); b.setAttribute('aria-pressed', i === n - 1); });
+      if (n > 0) { const t = T[n - 1]; det.innerHTML = `<button class="x" type="button" aria-label="Close">${icon('x')}</button><span class="gi ${t.c}">${icon(t.ic)}</span><p class="meta">${t.s}</p><h3 style="font-size:40px">${t.n}</h3><p style="font:400 26px/1.45 var(--text);color:var(--ink-2)">${esc(t.d)}</p>`; }
+    }
+  };
+})();
+
+/* domestic story line */
+hooks.domestic = (() => {
+  const fill = $('#story-fill'), story = $('#story');
+  return {
+    step(n) {
+      const items = $$('.st', story), k = Math.min(n, 3);
+      const a = items[0], b = items[k];
+      fill.style.height = (b.offsetTop - a.offsetTop) + 'px';
+    }
+  };
+})();
+
+/* ================= audience: phones (the voting page) ================= */
+const APP_URL = 'https://script.google.com/macros/s/AKfycbwsRMt9u3p8yfMEryERcrq9w7eKzFURwt8FGlgXg2oRN0n3iwDzb_lMLBJY5EzAsVv8/exec';
+const PRESENTER_KEY = 'cGfy3UBkmvIwwnG7';
+const live = { court: null, courtAt: 0, directOk: null, fails: 0, timer: 0, listeners: new Set() };
+function emitLive() { live.listeners.forEach(f => { try { f(); } catch (e) { console.error(e); } }); }
+const COURT_N = [2, 2, 3];
+function validCourt(c) { return c && Array.isArray(c.votes) && c.votes.length === COURT_N.length && COURT_N.every((n, i) => Array.isArray(c.votes[i]) && c.votes[i].length === n && c.votes[i].every(v => Number.isInteger(v) && v >= 0)) && c.roles && ['jury', 'az', 'up'].every(k => Number.isInteger(c.roles[k]) && c.roles[k] >= 0); }
+// Talks to the voting page directly (works from the presentation file; some hosts block it, then hands still work).
+async function callApp(params) {
+  const q = new URLSearchParams(Object.assign({ t: Date.now() }, params)).toString();
+  const r = await fetch(APP_URL + '?' + q, { cache: 'no-store' });
+  if (!r.ok) throw { code: 'http_' + r.status };
+  const j = await r.json();
+  if (j && j.error) throw { code: j.error };
+  return j;
+}
+function takeSnapshot(j) {
+  if (j && validCourt(j.court)) { live.court = j.court; live.courtAt = Date.now(); }
+  emitLive();
+}
+let inFlight = false;
+async function refreshPhones() {
+  if (inFlight) return;
+  inFlight = true;
+  try { const j = await callApp({ action: 'results' }); live.directOk = true; live.fails = 0; takeSnapshot(j); }
+  catch (e) { if (live.directOk !== true && ++live.fails >= 2) { live.directOk = false; emitLive(); } }
+  finally { inFlight = false; }
+}
+// Refreshes every 2 s while the moot court is on screen.
+function startTicker() {
+  clearInterval(live.timer);
+  refreshPhones();
+  live.timer = setInterval(() => { if (document.visibilityState === 'visible') refreshPhones(); }, 2000);
+}
+function stopTicker() { clearInterval(live.timer); }
+function courtPhones(qi) { const c = live.court; return c && c.votes[qi] ? c.votes[qi] : null; }
+function setCourtState(q, r) {
+  callApp({ action: 'court', key: PRESENTER_KEY, q: q, r: r }).then(j => { live.directOk = true; live.fails = 0; takeSnapshot(j); }).catch(() => {});
+}
+function resetCourtPhones() {
+  live.court = null; emitLive();
+  return callApp({ action: 'courtreset', key: PRESENTER_KEY }).then(takeSnapshot).catch(() => {});
+}
+
+/* tally rows for the moot court */
+function tallyRow(k, label, extra) {
+  return `<div class="trow" data-o="${k}"><span class="ol">${'ABCD'[k]}</span>
+    <div class="tmain"><div class="tlab"><span class="tname">${esc(label)}${extra || ''}</span><span class="tnum"><b>0</b>0%</span></div><div class="tbar"><i></i><s class="tick"></s></div></div>
+    <div class="hands"><button type="button" data-d="-1" aria-label="One hand fewer for ${'ABCD'[k]}">${icon('minus')}</button><span title="Raised hands">${icon('hand')}<em style="font-style:normal">0</em></span><button type="button" data-d="1" aria-label="One more hand for ${'ABCD'[k]}">${icon('plus')}</button></div></div>`;
+}
+function paintRows(rowsEl, totals, handsArr) {
+  const sum = totals.reduce((a, b) => a + b, 0), max = Math.max(0, ...totals);
+  $$('.trow', rowsEl).forEach((r, k) => {
+    const v = totals[k] || 0, pct = sum ? Math.round(v / sum * 100) : 0;
+    $('.tbar i', r).style.width = (sum ? v / sum * 100 : 0) + '%';
+    $('.tnum', r).innerHTML = `<b>${v}</b>${pct}%`;
+    $('.hands em', r).textContent = handsArr[k] || 0;
+    r.classList.toggle('lead', sum > 0 && v === max);
+  });
+  return sum;
+}
+function digitKey(e, n) { const m = /^(?:Digit|Numpad)([1-9])$/.exec(e && e.code || ''); if (!m) return -1; const d = +m[1] - 1; return d < n ? d : -1; }
+
+/* ================= audience: moot court (counsel speak, the jury votes on phones, the presenter is the judge) ================= */
+hooks.court = (() => {
+  const C = [
+    { q: 'Was filling the reservoir a lawful use of the river?', o: ['Yes: a fair use in a drought', 'No: it harmed Azerbaijan too much'], s: 'Lawful use?', sh: ['Yes', 'No'], side: { az: 1, up: 0 },
+      claim: { az: 'Unlawful: it harmed Azerbaijan too much.', up: 'Lawful: a fair use of a shared river in a drought.' } },
+    { q: 'Did Upland have to warn Azerbaijan before filling?', o: ['Yes, before it started', 'No, the dam was already notified'], s: 'Warning needed?', sh: ['Yes', 'No'], side: { az: 0, up: 1 },
+      claim: { az: 'Yes: a fresh warning was due before filling.', up: 'No: the dam and its rules were already notified.' } },
+    { q: 'Should Upland compensate the downstream farmers?', o: ['Yes, for the lost harvest', 'No, the drought caused it', 'Share the cost and agree a plan'], s: 'Compensation?', sh: ['Yes', 'No', 'Share'], side: { az: 0, up: 1 },
+      claim: { az: 'Yes: pay for the lost harvest.', up: 'No: the drought caused the loss.' } }
+  ];
+  const RULING = [
+    ['Filling the reservoir was a lawful, equitable use of the river.', 'Filling the reservoir harmed Azerbaijan too much to be lawful.'],
+    ['Upland had to warn Azerbaijan before it started filling.', 'Upland did not have to warn again: the dam was already notified.'],
+    ['Upland must compensate the downstream farmers.', 'Upland owes no compensation: the drought caused the loss.', 'The states share the cost and agree a plan for low flows.']
+  ];
+  const PH = ['hear', 'vote'], PN = ['Hearing', 'Jury vote'], NP = PH.length;
+  const LAST = C.length * NP, END = LAST + 1;      // LAST: what the jury decided · END: the judge's ruling
+  const blank = () => C.map(c => c.o.map(() => 0));
+  let v1 = blank();                                // raised hands of jurors without a phone
+  let jp = C.map(() => -1), jpSet = C.map(() => false);   // the judge's own pick per question, once changed
+  const card = $('#court-card'), pips = $('#court-pips'), cpill = $('#court-live');
+  let s = -1, builtQ = -1, builtPh = '';
+  pips.innerHTML = C.map((_, i) => `<i class="pip" data-i="${i}"></i>`).join('');
+  const sum = t => t.reduce((a, b) => a + b, 0);
+  const tot = qi => { const ph = courtPhones(qi); return v1[qi].map((v, k) => v + (ph ? ph[k] : 0)); };
+  function majority(t) {
+    const n = sum(t); if (!n) return { k: -1, n, pct: 0 };
+    const max = Math.max(...t), top = t.reduce((acc, v, k) => (v === max ? acc.concat(k) : acc), []);
+    return { k: top.length === 1 ? top[0] : -2, n, pct: Math.round(max / n * 100) };
+  }
+  const juryK = i => majority(tot(i)).k;
+  const pick = i => jpSet[i] ? jp[i] : (juryK(i) >= 0 ? juryK(i) : -1);   // the judge's ruling: the jury's majority unless changed
+  function label(qi) { const m = majority(tot(qi)); return m.k === -1 ? 'No votes' : m.k === -2 ? 'Split' : `${C[qi].sh[m.k]} · ${m.pct}%`; }
+  function paintPips() {
+    const qi = Math.floor(s / NP);
+    $$('.pip', pips).forEach((p, i) => { p.classList.toggle('cur', s < LAST && i === qi); p.classList.toggle('ok', s >= LAST || i < qi); });
+  }
+  function build(qi) {
+    card.dataset.sum = '';
+    card.innerHTML = `<div class="court-view"><div class="ctop"><div class="cphase"><span class="cq-n"></span>${PN.map((n, i) => `<span class="cph" data-p="${i}">${n}</span>`).join('')}</div><div class="row" style="gap:12px"><button class="btn sm" type="button" data-creset>${icon('replay')}Reset</button><button class="btn sm primary" type="button" data-cnext></button></div></div>
+      <p class="court-q">${esc(C[qi].q)}</p><div class="cbody"></div></div>`;
+    builtQ = qi; builtPh = '';
+  }
+  function body(qi, ph) {
+    const c = C[qi];
+    if (ph === 'hear') {
+      return `<div class="sides"><div class="side az" style="--i:0"><p class="sn">Azerbaijan <span>claimant</span></p><p class="sc">${esc(c.claim.az)}</p></div><div class="side up" style="--i:1"><p class="sn">Upland <span>respondent</span></p><p class="sc">${esc(c.claim.up)}</p></div></div>
+        <div class="verdict pending"><span class="gi gr">${icon('users')}</span><p class="body" style="color:var(--ink-2)">Counsel make their case. The jury listens, then votes${qi === 2 ? ', and may also choose to share the cost' : ''}.</p></div>`;
+    }
+    return `<div class="trows">${c.o.map((o, k) => tallyRow(k, o, '')).join('')}</div><div class="verdict pending"><span class="gi gr">${icon('users')}</span><p class="body" style="color:var(--ink-2)">Jurors vote on their phones or by raised hand.</p></div>`;
+  }
+  function paintPill() {
+    if (!cpill) return;
+    const roles = live.court && live.court.roles, joined = roles ? roles.jury + roles.az + roles.up : 0;
+    const qi = s >= 0 && s < LAST ? Math.floor(s / NP) : -1, voting = qi >= 0 && PH[s % NP] === 'vote';
+    let cls = 'live', txt;
+    if (live.directOk === true) {
+      cls = 'live on';
+      if (voting) { const ph = courtPhones(qi), n = ph ? sum(ph) : 0; txt = `Live · ${n} of ${roles ? roles.jury : 0} jurors voted`; }
+      else txt = joined ? `Live · ${joined} in court` : 'Live';
+    } else if (live.directOk === false) txt = 'Phones can’t connect here · count hands';
+    else txt = 'Connecting…';
+    cpill.className = cls; $('span', cpill).textContent = txt;
+  }
+  function update() {
+    paintPips(); paintPill();
+    if (s === LAST && card.dataset.sum === '1') { tableRows(); return; }
+    if (s === END && card.dataset.sum === '2') { judgmentRows(); return; }
+    if (s >= LAST || builtQ < 0) return;
+    const rowsEl = $('.trows', card); if (!rowsEl) return;
+    paintRows(rowsEl, tot(builtQ), v1[builtQ]);
+  }
+  function render(n) {
+    const qi = Math.floor(n / NP), pi = n % NP, ph = PH[pi];
+    if (qi !== builtQ) build(qi);
+    const view = $('.court-view', card);
+    $('.cq-n', view).textContent = `Q${qi + 1} of ${C.length}`;
+    $$('.cph', view).forEach((el, i) => { el.classList.toggle('on', i === pi); el.classList.toggle('done', i < pi); });
+    $('[data-cnext]', view).innerHTML = [PN[1], qi < C.length - 1 ? 'Next question' : 'Jury verdict'][pi] + ' ' + icon('chev-r');
+    if (builtPh !== ph) {
+      const b = $('.cbody', view);
+      b.innerHTML = body(qi, ph);
+      b.style.animation = 'none'; void b.offsetWidth; b.style.animation = '';
+      builtPh = ph;
+    }
+    requestAnimationFrame(update);
+  }
+  /* what the jury decided */
+  const sideOf = i => { const k = juryK(i); return k < 0 ? '' : k === C[i].side.az ? 'az' : k === C[i].side.up ? 'up' : 'sh'; };
+  const tally = i => { const t = tot(i); return sum(t) ? t.join(' : ') : '—'; };
+  function sideStamp(i) { const x = sideOf(i); return `<span class="stamp sd ${x || 'none'}" style="--k:${i}" title="${x === 'az' ? 'Sided with Azerbaijan' : x === 'up' ? 'Sided with Upland' : x === 'sh' ? 'Neither side' : 'No majority'}">${x === 'az' ? 'A' : x === 'up' ? 'U' : x === 'sh' ? '½' : '–'}</span>`; }
+  function tableRowsHTML() { return C.map((c, i) => `<i class="sum-line"></i><p class="c">${esc(c.s)}</p><p class="c" style="color:var(--blue)">${esc(label(i))}</p><p class="c" style="color:var(--ink-2)">${esc(tally(i))}</p>${sideStamp(i)}`).join(''); }
+  function tableLine() {
+    const x = C.map((c, i) => sideOf(i)), n = k => x.filter(v => v === k).length;
+    if (!x.some(Boolean)) return 'No jury votes yet.';
+    const parts = [];
+    const q = v => `${v} question${v === 1 ? '' : 's'}`;
+    if (n('az')) parts.push(`with Azerbaijan on ${q(n('az'))}`);
+    if (n('up')) parts.push(`with Upland on ${q(n('up'))}`);
+    if (n('sh')) parts.push(`for sharing on ${q(n('sh'))}`);
+    const open = x.filter(v => !v).length;
+    if (n('az') === 3) return 'The jury sided with Azerbaijan on all three questions.';
+    if (n('up') === 3) return 'The jury sided with Upland on all three questions.';
+    return `The jury sided ${parts.join(', ')}${open ? `; ${open} without a majority` : ''}.`;
+  }
+  let tableKey = '';
+  function tableRows() {
+    const k = JSON.stringify(C.map((c, i) => tot(i)));
+    if (k === tableKey) return; tableKey = k;
+    const g = $('.sum', card); if (!g) return;
+    g.innerHTML = '<p class="h">Question</p><p class="h">Jury verdict</p><p class="h">Votes</p><p class="h">Side</p>' + tableRowsHTML();
+    const sh = $('.shiftall', card); if (sh) sh.textContent = tableLine();
+  }
+  function table() {
+    builtQ = -1; builtPh = ''; card.dataset.sum = '1'; tableKey = '';
+    card.innerHTML = `<div class="court-view">
+      <div class="ctop"><p class="meta">What the jury decided</p><div class="row" style="gap:12px"><button class="btn sm" type="button" data-creset>${icon('replay')}Reset</button><button class="btn sm primary" type="button" data-cnext>Judge’s ruling ${icon('chev-r')}</button></div></div>
+      <div class="sum"><p class="h">Question</p><p class="h">Jury verdict</p><p class="h">Votes</p><p class="h">Side</p>${tableRowsHTML()}</div>
+      <div class="verdict" style="align-items:center"><span class="gi t">${icon('users')}</span><div class="vt"><p class="vh">The jury has spoken</p><p class="body shiftall" style="color:var(--ink-2)">${esc(tableLine())}</p></div></div></div>`;
+    paintPips();
+  }
+  /* the judge's ruling: one line per question, the jury's majority unless the judge clicks to change it */
+  function ruling(i) {
+    const k = pick(i);
+    if (k >= 0) return RULING[i][k];
+    return sum(tot(i)) ? 'The jury is split. Click to rule.' : 'No votes were counted. Click to rule.';
+  }
+  function tension() {
+    const k = C.map((c, i) => pick(i));
+    if (k[0] === 1 && k[2] === 1) return { h: 'A breach with no remedy?', t: 'The court found the filling unlawful but refused compensation. A state that breaches its duties normally has to repair the harm it causes.' };
+    if (k[0] === 0 && k[2] === 0) return { h: 'Lawful, yet compensated', t: 'The court found the filling lawful and still awarded compensation. That can fit: where a lawful use causes significant harm, states should discuss compensation (UNWC, Art. 7(2)).' };
+    if (k[0] === 0 && k[1] === 0) return { h: 'Lawful, but not without a warning', t: 'The court found the use lawful and the warning missing. Both can be true: the duty to warn is separate from the right to use the river.' };
+    return null;
+  }
+  function rulStamp(i) {
+    const k = pick(i), j = juryK(i);
+    return k < 0 ? `<span class="stamp v" style="--k:${i}" title="No ruling yet">${icon('minus')}</span>`
+      : j >= 0 && j !== k ? `<span class="stamp o" style="--k:${i}" title="The judge departs from the jury">${icon('refresh')}</span>`
+      : `<span class="stamp t" style="--k:${i}" title="${j >= 0 ? 'The judge follows the jury' : 'The judge broke the tie'}">${icon('check')}</span>`;
+  }
+  function judgmentRowsHTML() {
+    return C.map((c, i) => {
+      const j = juryK(i), k = pick(i), dep = k >= 0 && j >= 0 && j !== k;
+      return `<i class="sum-line"></i><p class="c q">${esc(c.s)}<small>Jury: ${esc(label(i))}${dep ? ' · judge differs' : ''}</small></p><button type="button" class="jrow${k < 0 ? ' open' : ''}" data-j="${i}" title="Click to change the ruling"><span class="c">${esc(ruling(i))}</span></button>${rulStamp(i)}`;
+    }).join('');
+  }
+  function noteHTML() { const t = tension(); return t ? `<span class="gi o">${icon('warn')}</span><div class="vt"><p class="vh">${esc(t.h)}</p><p class="body">${esc(t.t)}</p></div>` : ''; }
+  let judgeKey = '';
+  function judgmentRows() {
+    const k = JSON.stringify([C.map((c, i) => tot(i)), jp, jpSet]);
+    if (k === judgeKey) return; judgeKey = k;
+    const g = $('.rul', card), nt = $('.jnote', card); if (!g || !nt) return;
+    g.innerHTML = judgmentRowsHTML(); const h = noteHTML(); nt.innerHTML = h; nt.hidden = !h;
+  }
+  function judgment() {
+    builtQ = -1; builtPh = ''; card.dataset.sum = '2'; judgeKey = '';
+    const h = noteHTML();
+    card.innerHTML = `<div class="court-view">
+      <div class="ctop"><p class="meta">The judge’s ruling</p><button class="btn sm" type="button" data-creset>${icon('replay')}Reset</button></div>
+      <div class="rul">${judgmentRowsHTML()}</div>
+      <div class="jnote"${h ? '' : ' hidden'}>${h}</div>
+      <div class="verdict" style="align-items:center"><span class="gi t">${icon('waves')}</span><p style="font:600 27px/1.35 var(--text);color:var(--ink)">Without a water-sharing agreement, every drought can turn into a dispute. That is why basin treaties and joint commissions matter.</p></div></div>`;
+    paintPips();
+  }
+  function cyclePick(i) {
+    const n = C[i].o.length, cur = pick(i);
+    jp[i] = cur < 0 ? 0 : (cur + 1) % n; jpSet[i] = true; update();
+  }
+  function resetAll() { v1 = blank(); jp = C.map(() => -1); jpSet = C.map(() => false); builtQ = -1; resetCourtPhones().then(update); setStep(0); }
+  function addHand(k, d) {
+    if (s >= LAST || builtQ < 0 || PH[s % NP] !== 'vote') return;
+    v1[builtQ][k] = clamp(v1[builtQ][k] + d, 0, 9999); update();
+  }
+  card.addEventListener('click', e => {
+    const b = e.target.closest('[data-d]'); if (b) { addHand(+b.closest('.trow').dataset.o, +b.dataset.d); return; }
+    if (e.target.closest('[data-cnext]')) { next(); return; }
+    const jr = e.target.closest('[data-j]'); if (jr) { cyclePick(+jr.dataset.j); return; }
+    const rb = e.target.closest('[data-creset]');
+    if (rb) {
+      if (rb.dataset.armed) { resetAll(); return; }
+      rb.dataset.armed = '1'; rb.innerHTML = `${icon('replay')}Click again to reset`;
+      setTimeout(() => { if (rb.isConnected) { delete rb.dataset.armed; rb.innerHTML = `${icon('replay')}Reset`; } }, 3000);
+    }
+  });
+  live.listeners.add(update);
+  return {
+    enter() { startTicker(); },
+    leave() { setCourtState(-1, 0); stopTicker(); },
+    step(n) {
+      s = n;
+      if (n >= LAST) { setCourtState(-1, 0); if (n === LAST) table(); else judgment(); }
+      else { setCourtState(Math.floor(n / NP), PH[n % NP] === 'vote' ? 1 : 0); render(n); }
+    },
+    key(k, e) {
+      if (s === END) { const d = digitKey(e, C.length); if (d < 0) return false; cyclePick(d); return true; }
+      if (s >= LAST || builtQ < 0 || PH[s % NP] !== 'vote') return false;
+      const d = digitKey(e, C[builtQ].o.length); if (d < 0) return false; addHand(d, e.shiftKey ? -1 : 1); return true;
+    }
+  };
+})();
+
+function burstFrom(el) {
+  if (reduced || !el) return;
+  const sr = stage.getBoundingClientRect(), r = el.getBoundingClientRect(), sc = sr.width / 1920;
+  const x = (r.left + r.width * 0.3 - sr.left) / sc, y = (r.top + r.height / 2 - sr.top) / sc;
+  for (let k = 0; k < 14; k++) {
+    const b = document.createElement('i'); b.className = 'bubble';
+    b.style.left = (x + (Math.random() - .5) * r.width / sc * .6) + 'px'; b.style.top = y + 'px';
+    b.style.setProperty('--s', (14 + Math.random() * 26) + 'px');
+    b.style.setProperty('--dx', ((Math.random() - .5) * 160) + 'px');
+    b.style.setProperty('--d', (Math.random() * .35) + 's');
+    stage.appendChild(b); setTimeout(() => b.remove(), 2200);
+  }
+}
+
+/* ---------- start ---------- */
+function fromHash() { const m = /^#slide-(\d+)$/.exec(location.hash); return m ? clamp(+m[1] - 1, 0, N - 1) : 0; }
+window.addEventListener('hashchange', () => { const k = fromHash(); if (k !== cur) go(k); });
+go(fromHash());
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => { refreshSegs(); const h = hooks[slides[cur].id]; h && h.step && applyStep(slides[cur], step); });
+poke();
+})();
+</script>
+</body></html>
